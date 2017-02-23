@@ -18,8 +18,8 @@ def main():
 			#print scaling
 		if i[0:3] == ',,,':
 			d = i[3:-2].split(',')
-			print i
-			print d
+#			print i
+#			print d
 			x = d[0]
 			y = d[1]
 			#y = d.split(',')
@@ -31,12 +31,12 @@ def main():
 	minpoint = 0
 	maxpoint = 0
 	ave = 0
-#	for i in range(len(data_raw)):
-#		if data_raw[i] >= 0.33:
-#			minpoint = i
-#		if minpoint != 0 and data_raw[i] <= 0.33:
-#			maxpoint = i
-#			break 
+	for i in range(len(data_raw)):
+		if data_raw[i] >= 0.33:
+			minpoint = i
+		if minpoint != 0 and data_raw[i] <= 0.33:
+			maxpoint = i
+			break 
 #	print max(data_raw)*scaling[0]
 	j=0
 	while (data_raw[j] < 0.30):

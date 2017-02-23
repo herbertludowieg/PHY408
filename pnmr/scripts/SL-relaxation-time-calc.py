@@ -41,7 +41,7 @@ def main():
 	print 'Spin-Lattice relaxation time = '+str(T1)
 	x2 = np.linspace(0,350,250)
 	y2 = func(x2,a,k,b)
-	raw = plt.figure(1)
+#	raw = plt.figure(1)
 	plt.plot(x,y,'rx',x2,y2,'-b')
 	plt.ylim([-0.5,1.5])
 	plt.title('$M_z$ vs. delay time for mineral water')
@@ -51,6 +51,6 @@ def main():
 		'Best fit equation:\nY = $-A * e^{-k*x} + B$\nA = '+str(a)+ \
 		'\nB = '+str(b)+'\nk = '+str(k))
 	plt.grid()
-	raw.show()
-
+	plt.show()
+#	raw_input
 main()
