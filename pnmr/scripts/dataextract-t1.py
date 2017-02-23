@@ -1,4 +1,15 @@
 #!/usr/bin/env python
+#
+# program takes the file that is inputted either from the command line or by
+# the shell script and selects data according to the maximum value that is set
+# for the data
+# will then print the result on the command line to view or save to a file
+# will also calculate the average offset within the data and proceed to
+# subtract the average offset from the data values that are of interest
+# scales the data as it prints
+# will only work when there is a negative number contained in the data so that 
+# it can select and splice the correct data
+#
 import sys
 import numpy as np
 def main():

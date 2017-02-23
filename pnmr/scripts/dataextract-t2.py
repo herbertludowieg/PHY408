@@ -1,4 +1,10 @@
 #!/usr/bin/env python
+#
+# this is to be used much like with the *-t1.py script except that it will work
+# for the spin echo rather than the magnetization values
+# will only use the values that are above a certain value that must be set or
+# it will take all of the inputted data
+#
 import sys
 import numpy as np
 def main():

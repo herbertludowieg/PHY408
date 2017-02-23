@@ -1,4 +1,10 @@
 #!/usr/bin/env python
+#
+# calculates the exponential decay function for a data set
+# will be able to be used with only one data set rather than two as was the
+# case from before
+# will then find the y-intercept and calculate the T2 time constant
+#
 import matplotlib.pyplot as plt
 import sys
 import numpy as np

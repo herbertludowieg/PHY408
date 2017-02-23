@@ -1,4 +1,10 @@
 #!/usr/bin/env python
+#
+# finds the exponential decay function for the inputted data
+# must be two different data sets
+# this program will then calculate the y-intercept to find the T2 relaxation
+# time for a sample
+#
 import matplotlib.pyplot as plt
 import sys
 import numpy as np

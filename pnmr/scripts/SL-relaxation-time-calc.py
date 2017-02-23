@@ -1,4 +1,11 @@
 #!/usr/bin/env python
+#
+# finds the exponential fit function for the inputted data
+# must input two seperate data files
+# calculates a rising exponential function and then finds the x-intercept
+# for the purpose that this program is used for this finds the T1 relaxation
+# time for a PNMR experiment
+#
 import matplotlib.pyplot as plt
 import sys
 import numpy as np
@@ -15,21 +22,21 @@ def main():
 		y.append(float(i))
 	for n in time.readlines():
 		x.append(float(n))
-	for j in range(len(x)-1):
-		if y[j] <= 0.5:
-			if y[j] <= y[j+1]:
-				if y[j+1] <= y[j+2]:
-					startpoint = j
-					break
-	lnx = np.zeros(len(x[startpoint:]))
-	lny = np.zeros(len(y[startpoint:]))
-	for i in range(len(lnx)):
-		lnx[i] = 1/(x[i+startpoint])
-		lny[i] = mt.log(y[i+startpoint])
-	xx = np.zeros(len(x[startpoint:]))
-	yy = np.zeros(len(y[startpoint:]))
-	xx [:] = x[startpoint:]
-	yy [:] = y[startpoint:]
+#	for j in range(len(x)-1):
+#		if y[j] <= 0.5:
+#			if y[j] <= y[j+1]:
+#				if y[j+1] <= y[j+2]:
+#					startpoint = j
+#					break
+#	lnx = np.zeros(len(x[startpoint:]))
+#	lny = np.zeros(len(y[startpoint:]))
+#	for i in range(len(lnx)):
+#		lnx[i] = 1/(x[i+startpoint])
+#		lny[i] = mt.log(y[i+startpoint])
+#	xx = np.zeros(len(x[startpoint:]))
+#	yy = np.zeros(len(y[startpoint:]))
+#	xx [:] = x[startpoint:]
+#	yy [:] = y[startpoint:]
 	p0 = (1.,0.5e-2,1)
 	param, pcov = curve_fit(func, xx, yy, p0, method='lm')
 	a,k,b = param

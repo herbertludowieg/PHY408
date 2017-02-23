@@ -1,5 +1,10 @@
 #!/usr/bin/env python
-
+#
+# this script is used when reading one file with many different maxima
+# it will only get the maximum value when the values of the data are above
+# a certain threshold
+# be mindful of the limits that are set
+#
 import sys
 import numpy as np
 def main():
