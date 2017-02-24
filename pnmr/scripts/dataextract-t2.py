@@ -43,7 +43,7 @@ def main():
 		if minpoint != 0 and data_raw[i] <= 0.33:
 			maxpoint = i
 			break 
-#	print max(data_raw)*scaling[0]
+	print max(data_raw)#*scaling[0]
 	j=0
 	while (data_raw[j] < 0.30):
 		ave = ave + data_raw[j]
