@@ -31,16 +31,11 @@ def main():
 				if y[j+1] <= y[j+2]:
 					startpoint = j
 					break
-#	lnx = np.zeros(len(x[startpoint:]))
-#	lny = np.zeros(len(y[startpoint:]))
-#	for i in range(len(lnx)):
-#		lnx[i] = 1/(x[i+startpoint])
-#		lny[i] = mt.log(y[i+startpoint])
 	xx = np.zeros(len(x[startpoint:]))
 	yy = np.zeros(len(y[startpoint:]))
 	xx [:] = x[startpoint:]
 	yy [:] = y[startpoint:]
-	p0 = (1.,0.5e-2,1)
+	p0 = (1.,0.5,0.947)
 	param, pcov = curve_fit(func, xx, yy, p0, method='lm')
 	a,k,b = param
 	sigma_a,sigma_k,sigma_b = np.sqrt(np.diag(pcov))
@@ -57,15 +52,16 @@ def main():
 	round_T1 = sig_fig(sigma_T1,T1)
 	print 'Spin-Lattice relaxation time = '+str(round_T1[1])+' +/- '+ \
 							str(round_T1[0])
-	x2 = np.linspace(0,350,250)
+	x2 = np.linspace(0,350,5000)
 	y2 = func(x2,a,k,b)
 #	raw = plt.figure(1)
 	plt.plot(x,y,'rx',x2,y2,'-b')
 	plt.ylim([-0.5,1.5])
-	plt.title('$M_z$ vs. delay time for mineral water')
-	plt.xlabel('Delay Time (ms)')
+	plt.xlim([0,100.0])
+	plt.title(r'$M_z$ vs. $\tau$')
+	plt.xlabel(r'$\tau$ (ms)')
 	plt.ylabel('Magnetization (V)')
-	plt.text(75,1.0, \
+	plt.text(40,0.0, \
 		'Best fit equation:\nY = $-A * e^{-k*x} + B$\nA = '+ \
 		str(round_a[1])+' +/- '+str(round_a[0])+'\nB = '+ \
 		str(round_b[1])+' +/- '+str(round_b[0])+'\nk = '+ \

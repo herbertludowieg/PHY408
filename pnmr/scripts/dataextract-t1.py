@@ -37,7 +37,7 @@ def main():
 			y = y.strip()
 #			print x,y
 			data_raw.append(float(y))
-#	print max(data_raw)*scaling[0]
+#	print max(data_raw)
 	minpoint = 0
 	maxpoint = 0
 	ave = 0
@@ -47,10 +47,12 @@ def main():
 		if minpoint != 0 and data_raw[i] <= 0.4:
 			maxpoint = i
 	j=0
+	if data_raw[j] <= 0.2:
+		j = 50 
 	while (data_raw[j] > 0.20):
 		ave = ave + data_raw[j]
 		j += 1
 	ave = ave/j
-	print (max(data_raw[minpoint:maxpoint])-ave)*scaling[0]
+	print (max(data_raw)-ave)*scaling[0]
 			
 main()
