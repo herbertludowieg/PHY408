@@ -82,7 +82,7 @@ def main():
 	plt.title(r'$M_z$ vs. $2\tau$')
 	plt.xlabel(r'$2\tau$ (ms)')
 	plt.ylabel('Magnetization (V)')
-	plt.text(1.5,0.8, \
+	plt.text(20.0,4.0, \
 		'Best fit equation:\nY = $-A * e^{-k*x}$\nA = '+ \
 		str(round_a[1])+' +/- '+str(round_a[0])+'\nk = '+ \
 #		str(round_b[1])+' +/- '+str(round_b[0])+'\nk = '+ \

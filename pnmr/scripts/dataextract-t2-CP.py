@@ -28,7 +28,7 @@ def main():
 			data_raw.append((float(x)*1000,float(y)))
 	maxvalues = []
 	for i in range(1,len(data_raw)-1):
-		if data_raw[i][1] >= data_raw[i-1][1] and data_raw[i][1] >= 0.32:
+		if data_raw[i][1] >= data_raw[i-1][1] and data_raw[i][1] >= 0.5:
 			if data_raw[i][1] > data_raw[i+1][1]:
 #				print data_raw[i][0],data_raw[i][1]*scaling[0]
 				maxvalues.append((data_raw[i][0],data_raw[i][1]))
