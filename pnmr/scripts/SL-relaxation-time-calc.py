@@ -26,17 +26,19 @@ def main():
 	for n in time.readlines():
 		x.append(float(n))
 	for j in range(len(x)-1):
-		if y[j] <= 0.5:
-			if y[j] <= y[j+1]:
-				if y[j+1] <= y[j+2]:
-					startpoint = j
-					break
-	xx = np.zeros(len(x[startpoint:]))
-	yy = np.zeros(len(y[startpoint:]))
-	xx [:] = x[startpoint:]
-	yy [:] = y[startpoint:]
+#		print y[j-1],y[j],y[j+1]
+		if y[j] <= y[j+1] and y[j] < 0.5:
+			if y[j] < y[j-1]:
+				for l in range(len(y[:j+1])):
+					y[l] = -1*y[l]
+				break
+#	print y
+#	xx = np.zeros(len(x[startpoint:]))
+#	yy = np.zeros(len(y[startpoint:]))
+#	xx [:] = x[startpoint:]
+#	yy [:] = y[startpoint:]
 	p0 = (1.,0.5e-2,0.947)
-	param, pcov = curve_fit(func, xx, yy, p0, method='lm')
+	param, pcov = curve_fit(func, x, y, p0, method='lm')
 	a,k,b = param
 	sigma_a,sigma_k,sigma_b = np.sqrt(np.diag(pcov))
 	round_a = sig_fig(sigma_a,a)
@@ -56,12 +58,12 @@ def main():
 	y2 = func(x2,a,k,b)
 #	raw = plt.figure(1)
 	plt.plot(x,y,'rx',x2,y2,'-b')
-	plt.ylim([-0.5,1.5])
+#	plt.ylim([-0.5,1.5])
 	plt.xlim([0,x[-1]])
 	plt.title(r'$M_z$ vs. $\tau$')
 	plt.xlabel(r'$\tau$ (ms)')
 	plt.ylabel('Magnetization (V)')
-	plt.text(500,0.75, \
+	plt.text(1000,-0.5, \
 		'Best fit equation:\nY = $-A * e^{-k*x} + B$\nA = '+ \
 		str(round_a[1])+' +/- '+str(round_a[0])+'\nB = '+ \
 		str(round_b[1])+' +/- '+str(round_b[0])+'\nk = '+ \
