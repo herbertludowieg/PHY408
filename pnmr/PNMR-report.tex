@@ -5,13 +5,15 @@
 \usepackage{changepage}
 \usepackage{multicol}
 \usepackage{ragged2e}
+\renewcommand{\thesection}{\Roman{section}}
+\renewcommand{\thesubsection}{\thesection.\roman{section}}
 \setlength{\columnsep}{1cm}
 \setlength\parindent{5pt}
 \begin{document}
 %\begin{multicols}{1}
 \Centering
-\textbf{Pulsed NMR Experiment on Mineral Oil, CuSO\textsubscript{4} and 
-Isoproponyl-2 samples} \\
+\Large{\textbf{Pulsed NMR Experiment on Mineral Oil, CuSO\textsubscript{4} and 
+Isoproponyl-2 samples}} \\
 \small{Herbert D. Ludowieg \\
 \begin{adjustwidth}{0.5in}{0.5in}
 \justify
@@ -23,11 +25,76 @@ and Isoproponyl-2 were measured. The Spin-Lattice relaxation times of mineral
 oil and Isoproponyl-2 solution were measured to be: 37.7 $\pm$ 0.9 ms, 570 
 $\pm$ 30 ms respectively. The Spin-Lattice relaxation times of the CuSO
 \textsubscript{4} are as follows: 0.005M solution 99 $\pm$ 8 ms, 0.010M 
-solution 61 $\pm$ 2 ms, 0.050M solution 13.6 $\pm$ 0.2 ms, The methods used for the Spin-Spin relaxation 
-time were by reading the individual Hahn-Echo signals, Carr-Purcell method and 
-the Meiboom-Gill method. 
+solution 61 $\pm$ 2 ms, 0.050M solution 13.6 $\pm$ 0.2 ms, 0.100M solution
+6.5 $\pm$ 0.1 ms, 0.200M solution 3.26 $\pm$ 0.06 ms, 0.500M solution 1.25 
+$\pm$ 0.03 ms, 1.000M solution 0.69 $\pm$ 0.01 ms. For the Spin-Spin relaxation 
+times of mineral oil the results are as follows: 58.2 $\pm$ 0.4 ms with 
+individual measurements, 27.1 $\pm$ 0.9 ms with Carr-Purcell method and 54.8 
+$\pm$ 0.4 with the Meiboom-Gill method. For Isoproponyl-2 the Spin-Spin 
+relaxation time was measured to be 174 $\pm$ 3 ms with the Meiboom-Gill method. 
+For the CuSO\textsubscript{4} solutions the Meiboom-Gill method was employed 
+and the Spin-Spin relaxation times are as follows: 0.005M solution 98 $\pm$ 3 
+ms, 0.010M solution 79 $\pm$ 1 ms, 0.050M solution 17.3 $\pm$ 0.6 ms, 0.100M 
+solution 9.6 $\pm$ 0.3 ms, 0.200M solution 4.5 $\pm$ 0.1 ms, 0.500M solution 
+1.74 $\pm$ 0.05 ms and 1.000M solution 0.93 $\pm$ 0.02 ms.
 \end{adjustwidth}%\end{multicols}
 \begin{multicols}{2}
+\justify
+\section{Introduction}
+Nuclear Magnetic Resonance (NMR) is a spectroscopic method that was developed 
+by Edward Purcell and Felix Bloch independently with different instrumentation 
+in the late 1940's. This new spectroscopic technique made use of the nuclear 
+magnetic moments of atoms to be able to tell structure among other intrinsic 
+properties of solids and liquids. This discovery marked a landmark in the 
+study of materials by many different disciplines in scince including: physics, 
+chemistry and biology. 
+\\
+Originally the method was developed with taking measurements of the Free 
+Induction Decay (FID) signal. This was a signal that could be measured when 
+a population of spins aligned in a magnetic filed given by a permanent 
+magnetic field (B\textsubscript{0}) were disturbed from that position along 
+the z-axis by a Continuous Wave (CW) Radio Frequency (RF) magnetic field 
+(B\textsubscript{1}) along the xy-plane of the sample spins. The decay of the 
+spins back to their equilibrium position along the z-axis became known as the 
+FID signal. By analyzing this signal different properties of the material 
+being tested would be found such as the Spin-Spin and the Spin-Lattice 
+relaxation times.
+\\
+However, in 1950 Edward L. Hahn had discovered that after the sample spins were excited by the B\textsubscript{1} pulse there would be a secondary pulse on the
+FID signal at resonance. It was noticed that this secondary would not be in 
+response to the previous pulse which was a strong RF pulse lasting for a given 
+amount of time. This would be known as the Hahn Spin Echo. This method has 
+become widely used and is the basis for the measurements in this experiment.
+\\
+NMR has also made its way into medicine in Magnetic Resonance Imaging (MRI) 
+where it has offered a better alternative of imaging tissues by utilizing ions 
+and other substances that can be imaged with NMR. It has become a better 
+alternative since there is no longer the requirement of a radioactive sample 
+being injected into the patient like in CAT scans where the patient is exposed 
+to X-Rays. The only downside is that there can be no magnetic materials present 
+or it can damage the high magnetic field magnet or the patient.
+\section{Theory}
+NMR makes use of the uneven spin configurations of protons and neutrons which, 
+like with electrons they are a spin 1/2 particle and arrange themselves in 
+a configuration called the Nuclear Shell model which is depicted in a very 
+similar fashion to that of the Atomic Shell model which describes the 
+arrangement 
+of electrons in the electron cloud. This is to say that they too fill up their 
+respective shell positions respecting the Pauli Exclusion principle. So the 
+first problem to resolve was how to make sure that there would be enough of a 
+population density of spins pointing in a similar direction. This was resolved 
+by placing the sample of material to be measured in a B\textsubscript{0} field 
+strong enough to be able to align the spins
+spins along a similar axis which will be the z-axis. By placing a 
+second magnet on the perpendicular plane (xy-plane) in a Helmholtz 
+configuration a the second CW-RF field could be created. When current at the 
+resonant frequency of the sample being tested was passed thorugh this coil it 
+would 
+\\
+However, in 1950 Edward L. Hahn had discovered that after the sample spins were 
+excited by the B\textsubscript{1} pulse there would be a secondary pulse on the 
+FID signal at resonance. This would occur when a strong RF pulse was applied on 
+the sample 
 \end{multicols}
 }
 \end{document}
