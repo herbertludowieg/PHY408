@@ -1,0 +1,169 @@
+::::::::::::::
+0.0005M-CuSO4-T2-MG.dat
+::::::::::::::
+Best Fit Equation:
+Y = Ae^(-kx)
+A = 0.196 +/- 0.004
+k = 0.0102 +/- 0.0003
+Spin-Spin relaxation time = 98.0 +/- 3.0
+::::::::::::::
+0.0005M-t1.dat
+::::::::::::::
+Best Fit Equation:
+Y = -Ae^(-kx)+B
+A = 1.89 +/- 0.04
+B = 1.09 +/- 0.04
+k = 0.0055 +/- 0.0002
+Spin-Lattice relaxation time = 99.0 +/- 8.0
+::::::::::::::
+0.010M-CuSO4-T1.dat
+::::::::::::::
+Best Fit Equation:
+Y = -Ae^(-kx)+B
+A = 2.11 +/- 0.02
+B = 1.09 +/- 0.02
+k = 0.0108 +/- 0.0002
+Spin-Lattice relaxation time = 61.0 +/- 2.0
+::::::::::::::
+0.010M-CuSO4-T2-MG.dat
+::::::::::::::
+Best Fit Equation:
+Y = Ae^(-kx)
+A = 0.987 +/- 0.009
+k = 0.0127 +/- 0.0002
+Spin-Spin relaxation time = 79.0 +/- 1.0
+::::::::::::::
+0.050M-CuSO4-T1.dat
+::::::::::::::
+Best Fit Equation:
+Y = -Ae^(-kx)+B
+A = 1.773 +/- 0.007
+B = 0.883 +/- 0.005
+k = 0.0511 +/- 0.0007
+Spin-Lattice relaxation time = 13.6 +/- 0.2
+::::::::::::::
+0.050M-CuSO4-T2-MG.dat
+::::::::::::::
+Best Fit Equation:
+Y = Ae^(-kx)
+A = 1.18 +/- 0.03
+k = 0.058 +/- 0.002
+Spin-Spin relaxation time = 17.3 +/- 0.6
+::::::::::::::
+0.100M-CuSO4-T1.dat
+::::::::::::::
+Best Fit Equation:
+Y = -Ae^(-kx)+B
+A = 1.932 +/- 0.01
+B = 0.954 +/- 0.006
+k = 0.108 +/- 0.001
+Spin-Lattice relaxation time = 6.5 +/- 0.1
+::::::::::::::
+0.100M-CuSO4-T2-MG.dat
+::::::::::::::
+Best Fit Equation:
+Y = Ae^(-kx)
+A = 1.37 +/- 0.04
+k = 0.104 +/- 0.004
+Spin-Spin relaxation time = 9.6 +/- 0.3
+::::::::::::::
+0.200M-CuSO4-T1.dat
+::::::::::::::
+Best Fit Equation:
+Y = -Ae^(-kx)+B
+A = 1.97 +/- 0.01
+B = 0.962 +/- 0.006
+k = 0.22 +/- 0.003
+Spin-Lattice relaxation time = 3.26 +/- 0.06
+::::::::::::::
+0.200M-CuSO4-T2-MG.dat
+::::::::::::::
+Best Fit Equation:
+Y = Ae^(-kx)
+A = 1.29 +/- 0.03
+k = 0.22 +/- 0.007
+Spin-Spin relaxation time = 4.5 +/- 0.1
+::::::::::::::
+0.500M-CuSO4-T1.dat
+::::::::::::::
+Best Fit Equation:
+Y = -Ae^(-kx)+B
+A = 1.95 +/- 0.01
+B = 0.945 +/- 0.007
+k = 0.582 +/- 0.009
+Spin-Lattice relaxation time = 1.25 +/- 0.03
+::::::::::::::
+0.500M-CuSO4-T2-MG.dat
+::::::::::::::
+Best Fit Equation:
+Y = Ae^(-kx)
+A = 1.36 +/- 0.03
+k = 0.58 +/- 0.01
+Spin-Spin relaxation time = 1.74 +/- 0.05
+::::::::::::::
+1.000M-CuSO4-T1.dat
+::::::::::::::
+Best Fit Equation:
+Y = -Ae^(-kx)+B
+A = 2.03 +/- 0.01
+B = 0.984 +/- 0.007
+k = 1.06 +/- 0.01
+Spin-Lattice relaxation time = 0.69 +/- 0.01
+::::::::::::::
+1.000M-CUSO4-T2-MG.dat
+::::::::::::::
+Best Fit Equation:
+Y = Ae^(-kx)
+A = 1.4 +/- 0.02
+k = 1.07 +/- 0.02
+Spin-Spin relaxation time = 0.93 +/- 0.02
+::::::::::::::
+isoproponyl-2-T1.dat
+::::::::::::::
+Best Fit Equation:
+Y = -Ae^(-kx)+B
+A = 1.84 +/- 0.03
+B = 1.02 +/- 0.03
+k = 0.00104 +/- 3e-05
+Spin-Lattice relaxation time = 570.0 +/- 30.0
+::::::::::::::
+isoproponyl-2-t2-MG.dat
+::::::::::::::
+Best Fit Equation:
+Y = Ae^(-kx)
+A = 1.17 +/- 0.01
+k = 0.00575 +/- 8e-05
+Spin-Spin relaxation time = 174.0 +/- 3.0
+::::::::::::::
+mineral-oil-T1.dat
+::::::::::::::
+Best Fit Equation:
+Y = -Ae^(-kx)+B
+A = 2.05 +/- 0.01
+B = 1.01 +/- 0.01
+k = 0.0189 +/- 0.0003
+Spin-Lattice relaxation time = 37.7 +/- 0.9
+::::::::::::::
+mineral-oil-t2-CP.dat
+::::::::::::::
+Best Fit Equation:
+Y = Ae^(-kx)
+A = 5.7 +/- 0.1
+k = 0.037 +/- 0.001
+Spin-Spin relaxation time = 27.1 +/- 0.9
+::::::::::::::
+mineral-oil-t2.dat
+::::::::::::::
+Best Fit Equation:
+Y = Ae^(-kx)
+A = 1.23 +/- 0.003
+k = 0.0172 +/- 0.0001
+Spin-Spin relaxation time = 58.2 +/- 0.4
+::::::::::::::
+mineral-oil-t2-MG.dat
+::::::::::::::
+Best Fit Equation:
+Y = Ae^(-kx)
+A = 1.028 +/- 0.005
+k = 0.0183 +/- 0.0001
+Spin-Spin relaxation time = 54.8 +/- 0.4
