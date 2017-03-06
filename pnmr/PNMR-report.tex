@@ -1,18 +1,19 @@
 \documentclass{article}
+\usepackage{caption}
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath}
 \usepackage[margin=1in]{geometry}
 \usepackage{changepage}
 \usepackage{multicol}
 \usepackage{ragged2e}
-
+\usepackage{amsmath}
+\usepackage{graphicx}
 \usepackage{hyperref}
 \renewcommand{\thesection}{\Roman{section}}
 \renewcommand{\thesubsection}{\thesection.\roman{section}}
 \setlength{\columnsep}{1cm}
 \setlength\parindent{5pt}
 \begin{document}
-%\begin{multicols}{1}
 \Centering
 \Large{\textbf{Pulsed NMR Experiment on Mineral Oil, CuSO\textsubscript{4} and 
 Isoproponyl-2 samples}} \\
@@ -39,7 +40,7 @@ and the Spin-Spin relaxation times are as follows: 0.005M solution 98 $\pm$ 3
 ms, 0.010M solution 79 $\pm$ 1 ms, 0.050M solution 17.3 $\pm$ 0.6 ms, 0.100M 
 solution 9.6 $\pm$ 0.3 ms, 0.200M solution 4.5 $\pm$ 0.1 ms, 0.500M solution 
 1.74 $\pm$ 0.05 ms and 1.000M solution 0.93 $\pm$ 0.02 ms.
-\end{adjustwidth}%\end{multicols}
+\end{adjustwidth}
 \begin{multicols}{2}
 \justify
 \section{Introduction}
@@ -89,10 +90,14 @@ spins could be alinged in the direction of the magnetic field (z-axis). With
 magnetic energy given by,
 \begin{equation} %1
 U = -\vec{\mu}\cdot\vec{B}
+\label{eqn:1}
+\cite{ref:2}
 \end{equation}
 Where, $\vec{\mu}$ is defined by,
 \begin{equation} %2
 \vec{\mu} = \gamma\hbar\vec{I}
+\label{eqn:2}
+\cite{ref:2}
 \end{equation}
 Where, $\vec{J} = \hbar\vec{I}$ is the angular momentum and $\vec{\mu}$ is the 
 magnetic moment of the particle. With $\gamma$ being the gyromagnetic ratio, 
@@ -100,6 +105,8 @@ $\vec{I}$ is the spin of the particle which is $\pm1/2$ in our case. Therefore,
 the energy difference between the two energy levels becomes,
 \begin{equation} %3
 \Delta U = \hbar\omega_0 = \gamma\hbar B_0
+\label{eqn:3}
+\cite{ref:2}
 \end{equation}
 Where, $B_0$ is the permanent magnetic field aligned with the z-axis and 
 $\omega_0 = \gamma B_0$ which gives the resonance value for a proton. In which 
@@ -112,8 +119,10 @@ energy difference between the two spins is very small and there is an almost
 equal probability of the spins being in one direction or the opposite when in 
 the magnetic field. The Boltzman Distribution gives us the ratio of the spin 
 populations as such,
-\begin{equation}
+\begin{equation} %4
 \frac{N_1}{N_2} = e^{\frac{-\Delta U}{kT}} = e^{\frac{-h\omega_0}{kT}}
+\label{eqn:4}
+\cite{ref:2}
 \end{equation}
 Where, there will be a net spin population of approximately 1 in 10,000 in any 
 of the directions. This is one reason for which NMR requires high number of 
@@ -136,21 +145,148 @@ B\textsubscript{0} field must be a variable radio frequency (RF) field known as
 the B\textsubscript{1} field and it must have a frequency equal to the resonant 
 frequency of the nucleons in the sample. It should also be noted that the 
 transitions obey the transition rules of the angular momenta, that is to say, 
-the difference in the angular momenta between the transitions cannot exceed 1.
+the difference in the angular momenta between the transitions cannot exceed 1
+\cite{ref:2}.
+\center
+\includegraphics[width = \linewidth]{/home/silvefight/Pictures/splitting-levels-man.jpg}
+\captionof{figure}{Zeeman splitting levels under presence of B\textsubscript{0} 
+field\cite{ref:2}.}
+\label{fig:1}
+\justify
+Figure 1 gives a representation of the energy splitting in the different spin 
+levels in a nucleus with spin $\pm$1/2. However, there can exist a different 
+number of spin states in different atoms depending on their total spin like in 
+atoms with a total spin of 3/2. In figure 1 the energy splitting level is equal 
+to the enrgy representation in equation \ref{eqn:3}.
 \\
+The magnetization of the nuclei in the sample can be given by the following 
+equation,
+\begin{equation}
+M_z = (N_1-N_2)\mu
+\label{eqn:5}
+\cite{ref:2}
+\end{equation}
+Which is to say that this equation stems directly from the initial hypothesis 
+that there is a correlation between the net spin populations in the sample and 
+the magnetization of the sample. So then the expression to give the thermal 
+equilibrium magnetization of the sample can be given by,
+\begin{equation}
+M_0 = N\mu \tanh(\frac{\mu B}{kT})\approx N \frac{\mu^2 B}{kT}
+\label{eqn:6}
+\cite{ref:2}
+\end{equation}
+Where, N is the difference between the spin states. It should be noted that 
+this thermal equilibrium magnetization is not instantaneous. Though, nothing is 
+instantaneous; nothing can be faster than the speed of light. This property is 
+time dependent and it grows in an exponential fashion as represented of Figure 
+\ref{fig:2}. The differential equation that describes the process of rate of 
+aproach to thermal equilibrium is give by equation \ref{eqn:7}.
+\begin{equation}
+\frac{dM_z}{dt} = \frac{M_0 - M_z}{T_1}
+\label{eqn:7}
+\cite{ref:2}
+\end{equation}
+In which, T\textsubscript{1} is the Spin-Lattice relaxation time. This property 
+is a property which is different between samples and describes the lifetime of 
+a nucleonic spin in an excited state before relaxing back to its thermal 
+equilibrium position. By which, may be 
+one extremely important factor in an experiment since were it not for the spins 
+re-establishing thermal equilibrium the experiment would not be able to 
+continue. The Spin-Lattice environment is defined by the Spin reffering to the 
+individual nucleonic spin that is being measured and the Lattice which includes 
+the entire surroundings of the nuceleons. By integrating equation \ref{eqn:7} 
+we get to equation \ref{eqn:8} which relates the exponential decaying of the 
+measurable magnetization, which can only occur in the xy-plane, to the 
+Spin-Lattice relaxation time \cite{ref:1}.
+\begin{equation}
+M_z (t) = M_0 (1-e^{-t/T_1})
+\label{eqn:8}
+\cite{ref:2}
+\end{equation}
+As it has been stated the T\textsubscript{1} time depends on the material being 
+tested and can have a very wide range which can range from milliseconds to 
+seconds \cite{ref:2}. Since this property gives the amount of time that will 
+take for the 
+system to re-establish equilibrium. One must give this much time in between 
+repetitions of measurements to be able to take correct measurements or else the 
+spins may be in an excited state and never give useful data.
 \\
-NMR can only be employed on atoms that have a net spin. One example of this 
-such an atom is \textsuperscript{13}C which has 6 protons and 7 neutrons. 
-However, in 1950 Edward L. Hahn had discovered that after the sample spins were 
-excited by the B\textsubscript{1} pulse there would be a secondary pulse on the 
-FID signal at resonance. This would occur when a strong RF pulse was applied on 
-the sample 
+Now, one should keep in mind that this is the very basic concepts behind the 
+Spin-Lattice phenomena. The other forms of Relaxation Phenomena related to 
+Spin-Lattice relaxation may come into play when delaing with organic molecules 
+and multi-species samples. Some of them are: Dipole-Dipole Relaxation, 
+Spin-Rotation Relaxation, Chemical Shift Anisotropy and Scalar relaxation. 
+These are believed to be outside the scope of this report so they will not be 
+explained \cite{ref:1}.
+\center
+\includegraphics[width=\linewidth]{/home/silvefight/Pictures/T1-exponential-rep.jpg}
+\captionof{figure}{Upper trace: graphical representation of the relaxation of 
+the spins after exriencing a 180\textsuperscript{o} pulse. The intersection 
+with the x-axis gives the Spin-Lattice relaxation time. Lower trace: measured 
+representation of the spins during the experiment. Note the initial decay as 
+compared to the upper trace.}
+\label{fig:2}
+\justify
+As is mentioned in the caption on Figure \ref{fig:2} one method to get the 
+T\textsubscript{1} relaxation time is by finding the intersection on the 
+x-axis. Now here comes the problem, by inspection of equation \ref{eqn:8} there 
+will be a problem when trying to solve the equation for 0 analytically. The 
+steps one can take are the following.
+\begin{equation*}
+\begin{aligned}[c] 
+M_z (t) &= M_0 (1-e^{-t/T_1}) \\
+0 &= M_0 (1-e^{-t/T_1}) \\
+1 &= e^{-t/T_1} \\
+\ln{1} &= \frac{-t}{T_1} \\
+0 &= \frac{-t}{T_1}
+\end{aligned}
+\end{equation*}
+In which, the very last line presented makes no mathematical sense since t/
+T\textsubscript{1} will not be zero unless t = 0. To combat this an error term, 
+$\epsilon$, is added by splitting equation \ref{eqn:8} to look like,
+\begin{equation}
+M_z (t) = (M_0 + \epsilon) \cdot (-M_0 e^{-t/T_1})\
+\label{eqn:9}
+\end{equation}
+Where the first term will be represented as one whole number in the discussion 
+section. However, there is another method that can also be used. By simple 
+inspection of equation \ref{eqn:8}, once again, one can see that the value of 
+interest is contained in the exponential term, for which one could in fact, 
+make use of the fact that the data will have an exponential fit and use the 
+exponential term to calculate the T\textsubscript{1} relaxation time. The 
+accuracy of these two will be compared and discussed further in the Discussion 
+section.
+\\
+There exists a second form of relaxation different to that previously 
+introduced, Spin-Spin Relaxation time (T\textsubscript{2}). While the 
+T\textsubscript{1} process describes the transfer of energy from a spin into 
+the environment, the T\textsubscript{2} process describes the loss of phase of 
+a system over time \cite{ref:3}. This dephasing is usually due to 
+neighboring spins that interact with each other and since they themselves have 
+a magnetic moment they will make an inhomogenous magnetic field on a 
+microspcopic scale. Due to these inhomogenieties in the magnetic field the 
+individual magnetic moments will precess at different frequencies \cite{ref:1}.
+\\
+This type of relaxation is only present when the proper B\textsubscript{1} 
+field is applied on the sample inducing a rotation of the magnetic momenta. 
+Which then leads to the precession of the spins about the B\textsubscript{0} 
+field. This secondary magnetic field B\textsubscript{1} is actually a 
+circularly polraized magnetic field which can be represented by the equation,
+\begin{equation}
+\vec{B} = B_1\cos(\omega t)\hat{i} + B_1\sin(\omega t)\hat{j} + B_0 \hat{k}
+\label{eqn:10}
+\cite{ref:2}
+\end{equation}
+
 \begin{thebibliography}{9}
 \bibitem{ref:1}
 Paudler, W. W. (1987) \emph{Nuclear Magnetic Resonance General 
 Concepts and Applications}. John Wiley \& Sons Inc.
 \bibitem{ref:2}
 PHY 408 Lab manual. \emph{Pulsed NMR}
+\bibitem{ref:3}
+Ratner, M. A.; Schatz,G. C. (1993) \emph{Quantum Mechanics in Chemistry}. 
+Englewood Cliffs, New Jersey : Prentice-Hall Inc.
 \end{thebibliography}
 \end{multicols}
 }
