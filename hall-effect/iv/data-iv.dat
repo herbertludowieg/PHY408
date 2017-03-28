@@ -1,11 +1,14 @@
 #measured the voltage across the sample when using an AC power supply
+#frequency = 30.50 Hz
 scale
 1e-3
+current
+1e-6
 V1
-1.736
+1.045
 V2
-0.503
+0.313
 V3
-0.731
+0.733
 V4
-0.165
+0.312
