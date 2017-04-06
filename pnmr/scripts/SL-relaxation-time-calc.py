@@ -37,7 +37,7 @@ def main():
 #	yy = np.zeros(len(y[startpoint:]))
 #	xx [:] = x[startpoint:]
 #	yy [:] = y[startpoint:]
-	p0 = (1.,0.5e-2,0.947)
+	p0 = (1.,0.5e-5,0.947)
 	param, pcov = curve_fit(func, x, y, p0, method='lm')
 	a,k,b = param
 	sigma_a,sigma_k,sigma_b = np.sqrt(np.diag(pcov))
@@ -59,7 +59,7 @@ def main():
 #	raw = plt.figure(1)
 	plt.plot(x,y,'rx',x2,y2,'-b')
 #	plt.ylim([-0.5,1.5])
-	plt.xlim([0,x[-1]])
+	plt.xlim([0,25])
 	plt.title(r'$M_z$ vs. $\tau$')
 	plt.xlabel(r'$\tau$ (ms)')
 	plt.ylabel('Magnetization (V)')
