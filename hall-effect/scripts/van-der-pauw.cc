@@ -1,13 +1,9 @@
 #include"van-der-pauw.h"
 
-//using namespace std;
 VanDerPauw::VanDerPauw(){}
 VanDerPauw::~VanDerPauw(){}
 double VanDerPauw::scale() const {return scale_;}
 double VanDerPauw::current() const {return current_;}
-/*double voltages(vector<double>::const_iterator i=voltages_.begin()) const {
-  return *i;
-}*/
 void VanDerPauw::reset_counter(){counter_ = 0;}
 void VanDerPauw::print(std::ostream & out = std::cout) {
   out << "Scale: " << scale() << " V" << std::endl << "Current: " << current() 
@@ -20,7 +16,6 @@ void VanDerPauw::print(std::ostream & out = std::cout) {
 bool VanDerPauw::input (std::istream & in) {
   std::string line;
   std::getline(in,line);
-  //std::cout<<"line val "<<line<<std::endl;
   if (line[0]=='#') {
     return true;
   } else if (line=="scale" && counter_==0) {
@@ -49,14 +44,15 @@ bool VanDerPauw::input (std::istream & in) {
 double VanDerPauw::find_resistivity(double v1, double v2){
   double resistivity,f,r_val,ln2=std::log(2.0),other_f;
   r_val = ((v1-v2)/(v1+v2));
-  //using equation from van der pauw's paper
   f = 1-std::pow(r_val,2)*(ln2/2.0)-std::pow(r_val,4)*
            ((std::pow(ln2,2)/4.0)-(std::pow(ln2,3)/12.0));
-  resistivity = ((PI*t)/(ln2))*((v1+v2)/(2.0*current_))*f;
+  resistivity = ((PI*t)/(ln2))*(((v1+v2)*scale_)/(2.0*current_))*f;
   other_f = v1/v2;
   std::cout<<"============================"
            <<"\nR_AB,CD = "<<v1
            <<"\nR_BC,AD = "<<v2
+           <<"\nVoltage scale = "<<scale_
+           <<"\nPI*t/ln2 = "<<PI*t/ln2
            <<"\nResistivity = "<<resistivity
            <<"\nf value = "<<f
            <<"\nR_AB,CD/R_BC,AD = "<<other_f
@@ -99,5 +95,4 @@ void VanDerPauw::vanderpauw(void){
       resistivity_.push_back(resistivity);
     }
   }
-  std::cout << "We got something right" << std::endl;
 }
