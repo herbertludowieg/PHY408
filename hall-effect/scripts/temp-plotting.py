@@ -4,27 +4,30 @@ from scipy.optimize import curve_fit
 from numpy import log10,floor,sqrt,diag,zeros,linspace,log,pi
 import matplotlib.pyplot as plt
 
+# will reduce the significant digits of the inputs by rounding to the first
+# significant digit of the uncertainty
 def sig_fig(x,y):
 	return round(x,-int(floor(log10(abs(x))))), \
 			round(y,-int(floor(log10(abs(x)))))
 
+# simple function for the linear fitting with curve_fit
 def func(x,a,b):
 	return a * x + b
 
-#def carriers():
-
+# function that makes a switch statement in essence and returns line
+# parameters for plotting
 def colors(i):
-	if i == 0: return 'rx'
-	elif i == 1: return 'bx'
-	elif i == 2: return 'gx'
-	elif i == 3: return 'cx'
-	elif i == 4: return 'mx'
-	elif i == 5: return 'yx'
-	elif i == 6: return 'kx'
-	elif i == 7: return 'ro'
-	elif i == 8: return 'bo'
-	elif i == 9: return 'go'
-	else: return 'ko'
+	if i == 0: return 'ro'
+	elif i == 1: return 'bo'
+	elif i == 2: return 'go'
+	elif i == 3: return 'co'
+	elif i == 4: return 'mo'
+	elif i == 5: return 'yo'
+	elif i == 6: return 'ko'
+	elif i == 7: return 'rs'
+	elif i == 8: return 'bs'
+	elif i == 9: return 'gs'
+	else: return 'ks'
 
 def fit_colors(i):
 	if i == 0: return '-r'
@@ -39,6 +42,20 @@ def fit_colors(i):
 	elif i == 9: return '-.g'
 	else: return '-.k'
 
+def magvscurrent():
+	x = [0,5,10,15,20,25,30,35]
+	y = [0,0.1056,0.2125,0.3179,0.4265,0.5258,0.6058,0.6678]
+	mag_plot,mag = plt.subplots(1)
+	mag.plot(x,y,'ro')
+	mag.set_title(r'$\vec B$ vs. Current')
+	mag.set_xlabel('Current (A)')
+	mag.set_ylabel('Magnetic Field (T)')
+	mag_plot.show()
+
+# function that plots the room temperature hall voltage as a function of
+# magnetic field the slope of theis tells the type of doping for the semi
+# conductor.
+# the data for this must be in the last argument on the command line
 def room_temp():
 	fn = open(sys.argv[-1],'r')
 	x = []
@@ -60,12 +77,15 @@ def room_temp():
 	x2 = linspace(-0.67,0.67,200)
 	y2 = func(x2,a,b)
 	rt_plot,rt = plt.subplots(1)
-	rt.plot(x,y,'rx',x2,y2,'-b')
+	rt.plot(x,y,'ro',x2,y2,'-r')
 	rt.set_title(r'Room Temperature Hall Voltage vs. $\vec B$')
 	rt.set_xlabel('Magnetic Field (T)')
 	rt.set_ylabel('Hall Voltage (mV)')
 	rt_plot.show()
 
+# function that will take the data from the second to last input file
+# and find the resistivity using the van der pauw method.
+# the file must be second to last
 def vanderpauw():
 	fn = open(sys.argv[-2],'r')
 	raw_data = []
@@ -89,22 +109,25 @@ def vanderpauw():
 	print 'Temperature and Resistivity results'
 	for i in range(len(raw_data)):
 		#print raw_data[i][0]
-		r_val = (raw_data[i][0]-raw_data[i][1])/(raw_data[i][0]+raw_data[i][1])
+		r_val = (raw_data[i][0]-raw_data[i][1])/ \
+				(raw_data[i][0]+raw_data[i][1])
 		f = 1 - (r_val**2)*(ln2/2.) - (r_val**4)*((ln2**2/4)-(ln2**3/12))
 		resistivity[i] = (pi*T/ln2) * \
 					(((raw_data[i][0]+raw_data[i][1])*scale)/(2*current)) * f
 		print temperature[i],resistivity[i]
 	print '================================================='
 	res_plot,res = plt.subplots(1)
-	res.plot(temperature,resistivity,'bx')
+	res.plot(temperature,resistivity,'bo')
 	res.set_title("Resistivity vs. Temperature")
 	res.set_xlabel("Temperature (K)")
 	res.set_ylabel("Resistivity ($\Omega \cdot m$)")
 	res_plot.show()
 	return temperature[:-2],resistivity[:-2]
 
+# finds the carrier mobility and carrier density.
+# receives input from hall voltage
 def carriers(all_val,temp,resistivity):
-	#all_val = [bfa,bfa_sigma,aea,aea_sigma]
+	#all_val = [tot_a,tot_a_sigma]
 	bf_n = zeros(len(all_val[0]))
 	#ae_n = zeros(len(all_val[0]))
 	bf_mob_d = zeros(len(all_val[0]))
@@ -151,7 +174,7 @@ def carriers(all_val,temp,resistivity):
 	# plot absolutely everything
 	bf_fig,(bf_car,bf_mob) = plt.subplots(nrows = 2)
 	#ae_fig,(ae_car,ae_mob) = plt.subplots(nrows = 2)
-	bf_car.plot(temp,bf_n,'rx',bf_nx,bf_ny,'-r')
+	bf_car.plot(temp,bf_n,'ro',bf_nx,bf_ny,'-r')
 	#ae_car.plot(temp,ae_n,'bx',ae_nx,ae_ny,'-b')
 	bf_car.set_title('Carrier density vs. Temperature')
 	bf_car.set_xlabel('Temperature (K)')
@@ -159,7 +182,7 @@ def carriers(all_val,temp,resistivity):
 	#ae_car.set_title('Carrier density vs. Temperature\nConfiguration 3,4')
 	#ae_car.set_xlabel('Temperature (K)')
 	#ae_car.set_ylabel('Carrier density ($m^{-3}$)')
-	bf_mob.plot(temp,bf_mob_d,'rx',bf_nx,bf_moby,'-r')
+	bf_mob.plot(temp,bf_mob_d,'ro',bf_nx,bf_moby,'-r')
 	#ae_mob.plot(temp,ae_mob_d,'bx',ae_nx,ae_moby,'-b')
 	bf_mob.set_title('Carrier Mobility vs. Temperature')
 	bf_mob.set_xlabel('Temperature (K)')
@@ -233,7 +256,10 @@ def hall_voltage():
 	tot_b_sigma = zeros(len(bfield))
 	round_tot_b = zeros((len(bfield),2))	
 	total_volt_plot,total_volt = plt.subplots(1)
-	#print ae_voltage
+	# due to our experimental set-up the ae_voltages list must be inverted
+	# to get a similar trend in both the ae_voltages and bf_voltages
+	# this is then passed through the for loop to average them out 
+	# and later plot the average
 	for i in range(len(bfield)):
 		for j in range(len(bfield[0])/2):
 			#print ae_voltage[i][j]
@@ -282,18 +308,21 @@ def hall_voltage():
 		#round_bfb[i] = sig_fig(bfb_sigma[i],bfb[i])
 		#round_aea[i] = sig_fig(aea_sigma[i],aea[i])
 		#round_aeb[i] = sig_fig(aeb_sigma[i],aeb[i])
+		round_tot_a[i] = sig_fig(tot_a_sigma[i],tot_a[i])
+		round_tot_b[i] = sig_fig(tot_b_sigma[i],tot_b[i])
 		# print parameters
-		print "Best-Fit line for "+sys.argv[i+1]+"\nAverage y = "+ \
-			str(tot_a[i])+" + "+str(tot_b[i])
-	print '==============================================='
-	#total_voltages = zeros(len(bfield))
-	#total_volt_plot,total_volt = plt.subplots(1)
-	#for i in range(len(total_voltages)):
-	#	total_voltages[i] = (bf_voltage[0][i]+ae_voltage[0][i])/2.
+		print "Best-Fit line for "+sys.argv[i+1][-4:]+"\nAverage y = ax + b"+ \
+			"\nParameters: \na = "+str(round_tot_a[i][1])+" +/- "+ \
+			str(round_tot_a[i][0])+"\nb =  "+str(round_tot_b[i][1])+" +/- "+ \
+			str(round_tot_b[i][0])
+	print '=================================================='
+	# plot properties of the Average hall voltage plot
 	total_volt.set_title(r'Average Hall Voltage vs. $\vec B$')
 	total_volt.set_xlabel('Magnetic Field (T)')
 	total_volt.set_ylabel('Hall Voltage (mV)')
+	# puts the legend outside the plot area
 	total_volt.legend(bbox_to_anchor=(1.05,1), loc=2, borderaxespad=0.)
+	# configures the whitespace in the plot
 	total_volt_plot.subplots_adjust(right=0.75,top=0.92,left=0.09,bottom=0.08)
 	#bf.legend(bbox_to_anchor=(1.05,1), loc=2, borderaxespad=0.)
 	#bf.set_xlabel('Magnetic Field (T)')
@@ -326,6 +355,7 @@ def main():
 				"it easier to input the data. Make the last two\n"+ \
 				"the files to find resistivity and the room\ntemperature Hall Voltage."
 		sys.exit()
+	magvscurrent()
 	room_temp()
 	temp,resistivity = vanderpauw()
 	all_val = hall_voltage()
