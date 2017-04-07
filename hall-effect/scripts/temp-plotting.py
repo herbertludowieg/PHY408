@@ -17,7 +17,7 @@ def func(x,a,b):
 def func_0(x,a):
 	return a*x
 
-# function that makes a switch statement in essence and returns line
+# function that makes a switch statement in essence and returns color
 # parameters for plotting
 def colors(i):
 	if i == 0: return (1,0,0)
@@ -41,11 +41,10 @@ def magvscurrent():
 	xx = linspace(0,35,50)
 	yy = func_0(xx,a)
 	round_a = sig_fig(a_sigma,a)
-	#round_b = sig_fig(b_sigma,b)
-	print "Magnetic Filed vs Current Fit\ny = ax + b\nParameters: \n"+ \
+	print "Magnetic Filed vs Current Fit\ny = a*x\nParameters: \n"+ \
 		"a = "+str(round_a[1])+" +/- "+str(round_a[0])
-		#"\nb = "+str(round_b[1])+" +/- "+str(round_b[0])
 	print "==============================================="
+	# plot properties
 	mag_plot,mag = plt.subplots(1)
 	mag.plot(x,y,'ro',xx,yy,'-r')
 	mag.set_title(r'$\vec B$ vs. Current')
@@ -75,7 +74,7 @@ def room_temp():
 		'a = '+str(round_a[1])+' +/- '+str(round_a[0])+ \
 		'\nb = '+str(round_b[1])+' +/- '+str(round_b[0])+ \
 		'\n================================================='
-	x2 = linspace(-0.67,0.67,200)
+	x2 = linspace(-0.67,0.67,50)
 	y2 = func(x2,a,b)
 	rt_plot,rt = plt.subplots(1)
 	rt.plot(x,y,'ro',x2,y2,'-r')
@@ -107,42 +106,70 @@ def vanderpauw():
 		raw_data.append((float(d[1]),float(d[2])))
 	ln2 = log(2.)
 	resistivity = zeros(len(raw_data))
-	print 'Temperature and Resistivity results'
+	res_error = zeros(len(raw_data))
+	round_res = zeros((len(raw_data),2))
+	print "Van der Pauw resistivity measurements"
+	# equation to find f is taken from van der pauws paper
 	for i in range(len(raw_data)):
-		#print raw_data[i][0]
 		r_val = (raw_data[i][0]-raw_data[i][1])/ \
 				(raw_data[i][0]+raw_data[i][1])
 		f = 1 - (r_val**2)*(ln2/2.) - (r_val**4)*((ln2**2/4)-(ln2**3/12))
 		resistivity[i] = (pi*T/ln2) * \
 					(((raw_data[i][0]+raw_data[i][1])*scale)/(2*current)) * f
-		print temperature[i],resistivity[i]
+		res_error[i] = ((pi*T)/(ln2*2.*CURRENT))*(sqrt(2.)*0.010*SCALE)
+		round_res[i] = sig_fig(res_error[i],resistivity[i])
+		print "At "+str(temperature[i])+" resistivity value was\n"+ \
+			str(round_res[i][1])+" +/- "+str(round_res[i][0])
 	print '================================================='
+	# plot poperties
 	res_plot,res = plt.subplots(1)
 	res.plot(temperature,resistivity,'bo')
+	#res.errorbar(temperature,resistivity,yerr=res_error,linestyle='None')
 	res.set_title("Resistivity vs. Temperature")
 	res.set_xlabel("Temperature (K)")
 	res.set_ylabel("Resistivity ($\Omega \cdot m$)")
 	res_plot.show()
-	return temperature[:-2],resistivity[:-2]
+	return temperature[:-2],resistivity[:-2],res_error[:-2]
 
 # finds the carrier mobility and carrier density.
 # receives input from hall voltage
-def carriers(all_val,temp,resistivity):
-	#all_val = [tot_a,tot_a_sigma]
+def carriers(all_val,temp,resistivity,res_error):
+	#all_val = [tot_a,tot_a_sigma,bfield,total_voltages]
 	bf_n = zeros(len(all_val[0]))
 	bf_mob_d = zeros(len(all_val[0]))
 	for i in range(len(all_val[0])):
-		bf_n[i] = CURRENT/(-1.6e-19*all_val[0][i]*SCALE*T)
-		bf_mob_d[i] = (all_val[0][i]*SCALE*T) / (CURRENT*resistivity[i])
+		bf_n[i] = CURRENT/(Q*all_val[0][i]*SCALE*T)
+		bf_mob_d[i] = abs((all_val[0][i]*SCALE*T) / (CURRENT*resistivity[i]))
+	# error measurements
+	bf_n_error = zeros(len(bf_n))
+	bf_mob_error = zeros(len(bf_mob_d))
+	round_n = zeros((len(bf_n),2))
+	round_mob = zeros((len(bf_mob_d),2))
+	print "Carrier mobility/density data"
+	for i in range(len(bf_n)):
+		bf_n_error[i] = abs((CURRENT*all_val[1][i]*SCALE)/ \
+						(Q*T*(all_val[0][i]*SCALE)**2))
+		bf_mob_error[i] = (T/CURRENT)* \
+					sqrt(((all_val[1][i]*SCALE)/(resistivity[i]))**2+ \
+					((all_val[0][i]*SCALE*res_error[i])/(resistivity[i]**2))**2)
+		round_n[i] = sig_fig(bf_n_error[i],bf_n[i])
+		round_mob[i] = sig_fig(bf_mob_error[i],bf_mob_d[i])
+		print "Temperature      = "+str(temp[i])
+		print "Carrier density  = "+ \
+			str(round_n[i][1])+" +/- "+str(round_n[i][0])
+		print "Carrier mobility = "+ \
+			str(round_mob[i][1])+" +/- "+str(round_mob[i][0])
+		print "----------------------------------------------"
+	print "======================================================"
 	p0 = (0.1,0.001)
 	# find the best fit line for bf_n
-	param,pcov = curve_fit(func,temp,bf_n,(1e20,2.8e20))
+	param,pcov = curve_fit(func,temp,bf_n,p0=(1e20,2.8e20),sigma=bf_n_error)
 	bf_n_a,bf_n_b = param
 	bf_n_a_sigma,bf_n_b_sigma = sqrt(diag(pcov))
 	bf_nx = linspace(80,260,250)
 	bf_ny = func(bf_nx,bf_n_a,bf_n_b)
 	# find the best fit line for bf_mob
-	param,pcov = curve_fit(func,temp,bf_mob_d,p0)
+	param,pcov = curve_fit(func,temp,bf_mob_d,p0=(0.1,0.001),sigma=bf_mob_error)
 	bf_mob_a,bf_mob_b = param
 	bf_mob_a_sigma,bf_mob_b_sigma = sqrt(diag(pcov))
 	bf_moby = func(bf_nx,bf_mob_a,bf_mob_b)
@@ -217,7 +244,7 @@ def hall_voltage():
 			total_voltages[i].append((bf_voltage[i][j]+ae_voltage[i][j])/2.)
 	for i in range(len(bfield)):
 		# find best fit for average
-		param,pcov = curve_fit(func,bfield[i],total_voltages[i],p0)
+		param,pcov = curve_fit(func,bfield[i],total_voltages[i],p0,sigma=V_ERROR[i])
 		tot_a[i],tot_b[i] = param
 		tot_a_sigma[i],tot_b_sigma[i] = sqrt(diag(pcov))
 		# create best fit line using parameters
@@ -237,6 +264,7 @@ def hall_voltage():
 			"\nParameters: \na = "+str(round_tot_a[i][1])+" +/- "+ \
 			str(round_tot_a[i][0])+"\nb =  "+str(round_tot_b[i][1])+" +/- "+ \
 			str(round_tot_b[i][0])
+		print "-----------------------------------------"
 	print '=================================================='
 	# plot properties of the Average hall voltage plot
 	total_volt.set_title(r'Average Hall Voltage vs. $\vec B$')
@@ -247,7 +275,7 @@ def hall_voltage():
 	# configures the whitespace in the plot
 	total_volt_plot.subplots_adjust(right=0.75,top=0.92,left=0.09,bottom=0.08)
 	total_volt_plot.show()
-	return tot_a,tot_a_sigma
+	return tot_a,tot_a_sigma,bfield,total_voltages
 
 # This function serves to administer the flow of control from one function to
 # the next.
@@ -266,11 +294,15 @@ def main():
 		sys.exit()
 	magvscurrent()
 	room_temp()
-	temp,resistivity = vanderpauw()
+	temp,resistivity,res_error = vanderpauw()
 	all_val = hall_voltage()
-	moar_stuff = carriers(all_val,temp,resistivity)
+	moar_stuff = carriers(all_val,temp,resistivity,res_error)
 	raw_input()
 CURRENT = 1.e-6
 SCALE = 1.e-3
 T = 300.e-6
+Q = -1.60217662e-19
+V_ERROR = [0.002,0.005,0.005,0.010,0.020,0.020,0.010,0.005,0.005,0.005]#e-3 V
+#          80K    100K  120K  140K  160K  180K  200K  220K  240K  260K
+B_ERROR = 0.0032
 main()
