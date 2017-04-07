@@ -1,0 +1,75 @@
+Magnetic Filed vs Current Fit
+y = ax + b
+Parameters: 
+a = 0.0202 +/- 0.0003
+===============================================
+Room Temperature Hall Voltage Parameters:
+a = -0.0412 +/- 0.0005
+b = 0.6696 +/- 0.0002
+=================================================
+Temperature and Resistivity results
+79.88 1.40031825011
+100.0 1.38125405188
+120.04 1.36086654185
+140.04 1.35679108502
+160.04 1.3144239178
+180.04 1.21901248411
+200.01 1.12945257423
+220.1 1.053047383
+240.1 0.988656958737
+260.1 0.933959686188
+280.0 0.891232822095
+300.0 0.849012490057
+=================================================
+Hall Voltage / Magnetic field fits
+Best-Fit line for 080K
+Average y = ax + b
+Parameters: 
+a = -0.067 +/- 0.002
+b =  1.6784 +/- 0.0009
+Best-Fit line for 100K
+Average y = ax + b
+Parameters: 
+a = -0.068 +/- 0.006
+b =  1.637 +/- 0.003
+Best-Fit line for 120K
+Average y = ax + b
+Parameters: 
+a = -0.068 +/- 0.001
+b =  1.5716 +/- 0.0007
+Best-Fit line for 140K
+Average y = ax + b
+Parameters: 
+a = -0.074 +/- 0.001
+b =  1.5684 +/- 0.0005
+Best-Fit line for 160K
+Average y = ax + b
+Parameters: 
+a = -0.075 +/- 0.003
+b =  1.49 +/- 0.001
+Best-Fit line for 180K
+Average y = ax + b
+Parameters: 
+a = -0.06 +/- 0.002
+b =  1.385 +/- 0.001
+Best-Fit line for 200K
+Average y = ax + b
+Parameters: 
+a = -0.067 +/- 0.001
+b =  1.2277 +/- 0.0006
+Best-Fit line for 220K
+Average y = ax + b
+Parameters: 
+a = -0.055 +/- 0.003
+b =  1.14 +/- 0.001
+Best-Fit line for 240K
+Average y = ax + b
+Parameters: 
+a = -0.055 +/- 0.003
+b =  1.008 +/- 0.001
+Best-Fit line for 260K
+Average y = ax + b
+Parameters: 
+a = -0.053 +/- 0.002
+b =  0.9466 +/- 0.0009
+==================================================

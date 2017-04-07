@@ -14,39 +14,40 @@ def sig_fig(x,y):
 def func(x,a,b):
 	return a * x + b
 
+def func_0(x,a):
+	return a*x
+
 # function that makes a switch statement in essence and returns line
 # parameters for plotting
 def colors(i):
-	if i == 0: return 'ro'
-	elif i == 1: return 'bo'
-	elif i == 2: return 'go'
-	elif i == 3: return 'co'
-	elif i == 4: return 'mo'
-	elif i == 5: return 'yo'
-	elif i == 6: return 'ko'
-	elif i == 7: return 'rs'
-	elif i == 8: return 'bs'
-	elif i == 9: return 'gs'
-	else: return 'ks'
-
-def fit_colors(i):
-	if i == 0: return '-r'
-	elif i == 1: return '-b'
-	elif i == 2: return '-g'
-	elif i == 3: return '-c'
-	elif i == 4: return '-m'
-	elif i == 5: return '-y'
-	elif i == 6: return '-k'
-	elif i == 7: return '-.r'
-	elif i == 8: return '-.b'
-	elif i == 9: return '-.g'
-	else: return '-.k'
+	if i == 0: return (1,0,0)
+	elif i == 1: return (0,0,1)
+	elif i == 2: return (0.3,0.5,0.3)
+	elif i == 3: return (0.3,1,0.9)
+	elif i == 4: return (1,0.2,0.9)
+	elif i == 5: return (1,1,0)
+	elif i == 6: return (0.5,1,0)
+	elif i == 7: return (0.5,0,1)
+	elif i == 8: return (0.8,0.8,0.5)
+	elif i == 9: return (0.8,0.2,0.5)
+	else: return (0.5,0.5,0.5)
 
 def magvscurrent():
 	x = [0,5,10,15,20,25,30,35]
 	y = [0,0.1056,0.2125,0.3179,0.4265,0.5258,0.6058,0.6678]
+	param,pcov = curve_fit(func_0,x,y)
+	a = param
+	a_sigma = sqrt(pcov)
+	xx = linspace(0,35,50)
+	yy = func_0(xx,a)
+	round_a = sig_fig(a_sigma,a)
+	#round_b = sig_fig(b_sigma,b)
+	print "Magnetic Filed vs Current Fit\ny = ax + b\nParameters: \n"+ \
+		"a = "+str(round_a[1])+" +/- "+str(round_a[0])
+		#"\nb = "+str(round_b[1])+" +/- "+str(round_b[0])
+	print "==============================================="
 	mag_plot,mag = plt.subplots(1)
-	mag.plot(x,y,'ro')
+	mag.plot(x,y,'ro',xx,yy,'-r')
 	mag.set_title(r'$\vec B$ vs. Current')
 	mag.set_xlabel('Current (A)')
 	mag.set_ylabel('Magnetic Field (T)')
@@ -129,74 +130,33 @@ def vanderpauw():
 def carriers(all_val,temp,resistivity):
 	#all_val = [tot_a,tot_a_sigma]
 	bf_n = zeros(len(all_val[0]))
-	#ae_n = zeros(len(all_val[0]))
 	bf_mob_d = zeros(len(all_val[0]))
-	#ae_mob_d = zeros(len(all_val[0]))
-	#print len(bf_n),len(temp)
 	for i in range(len(all_val[0])):
 		bf_n[i] = CURRENT/(-1.6e-19*all_val[0][i]*SCALE*T)
-		#print all_val[0][i],all_val[2][i]
-		#ae_n[i] = CURRENT/(1.6e-19*all_val[2][i]*SCALE*T)
 		bf_mob_d[i] = (all_val[0][i]*SCALE*T) / (CURRENT*resistivity[i])
-		#ae_mob_d[i] = (all_val[2][i]*SCALE*T) / (CURRENT*resistivity[i])
-		#print temp[i],bf_mob_d[i]
-	#bf_car_plot,bf_car = plt.subplots(1)
-	#ae_car_plot,ae_car = plt.subplots(1)
-	#bf_mob_plot,bf_mob = plt.subplots(1)
-	#ae_mob_plot,ae_mob = plt.subplots(1)
 	p0 = (0.1,0.001)
-	#print 1
 	# find the best fit line for bf_n
 	param,pcov = curve_fit(func,temp,bf_n,(1e20,2.8e20))
 	bf_n_a,bf_n_b = param
 	bf_n_a_sigma,bf_n_b_sigma = sqrt(diag(pcov))
 	bf_nx = linspace(80,260,250)
 	bf_ny = func(bf_nx,bf_n_a,bf_n_b)
-	#print 2
-	# find the best fit line for ae_n
-	#param,pcov = curve_fit(func,temp,ae_n,(0.1,3e20))
-	#ae_n_a,ae_n_b = param
-	#ae_n_a_sigma,ae_n_b_sigma = sqrt(diag(pcov))
-	#ae_nx = linspace(80,260,250)
-	#ae_ny = func(ae_nx,ae_n_a,ae_n_b)
-	#print 3
 	# find the best fit line for bf_mob
 	param,pcov = curve_fit(func,temp,bf_mob_d,p0)
 	bf_mob_a,bf_mob_b = param
 	bf_mob_a_sigma,bf_mob_b_sigma = sqrt(diag(pcov))
 	bf_moby = func(bf_nx,bf_mob_a,bf_mob_b)
-	#print 4
-	#find the best fit line for ae_mob
-	#param,pcov = curve_fit(func,temp,ae_mob_d,p0)
-	#ae_mob_a,ae_mob_b = param
-	#ae_mob_a_sigma,ae_mob_b_sigma = sqrt(diag(pcov))
-	#ae_moby = func(ae_nx,ae_mob_a,ae_mob_b)
 	# plot absolutely everything
 	bf_fig,(bf_car,bf_mob) = plt.subplots(nrows = 2)
-	#ae_fig,(ae_car,ae_mob) = plt.subplots(nrows = 2)
 	bf_car.plot(temp,bf_n,'ro',bf_nx,bf_ny,'-r')
-	#ae_car.plot(temp,ae_n,'bx',ae_nx,ae_ny,'-b')
 	bf_car.set_title('Carrier density vs. Temperature')
 	bf_car.set_xlabel('Temperature (K)')
 	bf_car.set_ylabel('Carrier density ($m^{-3}$)')
-	#ae_car.set_title('Carrier density vs. Temperature\nConfiguration 3,4')
-	#ae_car.set_xlabel('Temperature (K)')
-	#ae_car.set_ylabel('Carrier density ($m^{-3}$)')
 	bf_mob.plot(temp,bf_mob_d,'ro',bf_nx,bf_moby,'-r')
-	#ae_mob.plot(temp,ae_mob_d,'bx',ae_nx,ae_moby,'-b')
 	bf_mob.set_title('Carrier Mobility vs. Temperature')
 	bf_mob.set_xlabel('Temperature (K)')
 	bf_mob.set_ylabel('Carrier Mobility ($\Omega \cdot C / m^{2}$)')
-	#ae_mob.set_title('Carrier Mobility vs. Temperature\nConfiguration 3,4')
-	#ae_mob.set_xlabel('Temperature (K)')
-	#ae_mob.set_ylabel('Carrier Mobility ($\Omega \cdot C / m^{2}$)')
-	#bf_car_plot.show()
-	#ae_car_plot.show()
-	#bf_mob_plot.show()
-	#ae_mob_plot.show()
-	#ae_fig.subplots_adjust(hspace = 0.5)
 	bf_fig.subplots_adjust(hspace = 0.5)
-	#ae_fig.show()
 	bf_fig.show()
 
 # This function will use all of the input files and extract the magnetic
@@ -232,22 +192,6 @@ def hall_voltage():
 			bf_voltage[j].append(float(d[1]))
 			ae_voltage[j].append(float(d[2]))
 	p0 = (1,1)
-	# bf?/ae? store the whole value
-	# where round_* stores only the rounded value for output
-	#bfa = 		zeros(len(bfield))
-	#bfa_sigma = 	zeros(len(bfield))
-	#round_bfa =	zeros((len(bfield),2))
-	#bfb = 		zeros(len(bfield))
-	#bfb_sigma = 	zeros(len(bfield))
-	#round_bfb = 	zeros((len(bfield),2))
-	#aea = 		zeros(len(bfield))
-	#aea_sigma = 	zeros(len(bfield))
-	#round_aea = 	zeros((len(bfield),2))
-	#aeb = 		zeros(len(bfield))
-	#aeb_sigma = 	zeros(len(bfield))
-	#round_aeb = 	zeros((len(bfield),2))
-	#bf_main, bf = plt.subplots(1)
-	#ae_main, ae = plt.subplots(1)
 	total_voltages = []
 	tot_a = zeros(len(bfield))
 	tot_a_sigma = zeros(len(bfield))
@@ -262,52 +206,30 @@ def hall_voltage():
 	# and later plot the average
 	for i in range(len(bfield)):
 		for j in range(len(bfield[0])/2):
-			#print ae_voltage[i][j]
 			temp = 0
 			temp = ae_voltage[i][-j-1]
 			ae_voltage[i][-j-1] = ae_voltage[i][j]
 			ae_voltage[i][j] = temp
-			#print ae_voltage[i][j]
 	print 'Hall Voltage / Magnetic field fits'
 	for i in range(len(bfield)):
 		total_voltages.append([])
 		for j in range(len(bfield[0])):
 			total_voltages[i].append((bf_voltage[i][j]+ae_voltage[i][j])/2.)
 	for i in range(len(bfield)):
-		# find best fit for bf config
-		#param,pcov = curve_fit(func,bfield[i],bf_voltage[i],p0)
-		#bfa[i],bfb[i] = param
-		#bfa_sigma[i],bfb_sigma[i] = sqrt(diag(pcov))
-		# find best fit for ae config
-		#param,pcov = curve_fit(func,bfield[i],ae_voltage[i],p0)
-		#aea[i],aeb[i] = param
-		#aea_sigma[i],aeb_sigma[i] = sqrt(diag(pcov))
 		# find best fit for average
 		param,pcov = curve_fit(func,bfield[i],total_voltages[i],p0)
 		tot_a[i],tot_b[i] = param
 		tot_a_sigma[i],tot_b_sigma[i] = sqrt(diag(pcov))
 		# create best fit line using parameters
-		#bfx = linspace(-0.6678,0.6678,500)
-		#bfy = func(bfx,bfa[i],bfb[i])
-		#aex = linspace(-0.6678,0.6678,500)
-		#aey = func(aex,aea[i],aeb[i])
 		totx = linspace(-0.6678,0.6678,500)
 		toty = func(totx,tot_a[i],tot_b[i])
 		# plot all of the data seperately according to temperature
 		# use colors function to define colors
-		#bf.plot(bfield[i],bf_voltage[i],colors(i),label=sys.argv[i+1][-4:])
-		#bf.plot(bfx,bfy,fit_colors(i),label=sys.argv[i+1]+' Fit')
-		#ae.plot(bfield[i],ae_voltage[i],colors(i),label=sys.argv[i+1])
-		#ae.plot(aex,aey,fit_colors(i),label=sys.argv[i+1]+' Best-Fit')
-		total_volt.plot(bfield[i],total_voltages[i],colors(i),
+		total_volt.plot(bfield[i],total_voltages[i],'o',color=colors(i),
 						label=sys.argv[i+1][-4:])
-		total_volt.plot(totx,toty,fit_colors(i),label=sys.argv[i+1][-4:]+ \
-						' Fit')
+		total_volt.plot(totx,toty,'-',color=colors(i),
+						label=sys.argv[i+1][-4:]+' Fit')
 		# feed parameters into sig_fig function to round to correct sig figs
-		#round_bfa[i] = sig_fig(bfa_sigma[i],bfa[i])
-		#round_bfb[i] = sig_fig(bfb_sigma[i],bfb[i])
-		#round_aea[i] = sig_fig(aea_sigma[i],aea[i])
-		#round_aeb[i] = sig_fig(aeb_sigma[i],aeb[i])
 		round_tot_a[i] = sig_fig(tot_a_sigma[i],tot_a[i])
 		round_tot_b[i] = sig_fig(tot_b_sigma[i],tot_b[i])
 		# print parameters
@@ -324,19 +246,6 @@ def hall_voltage():
 	total_volt.legend(bbox_to_anchor=(1.05,1), loc=2, borderaxespad=0.)
 	# configures the whitespace in the plot
 	total_volt_plot.subplots_adjust(right=0.75,top=0.92,left=0.09,bottom=0.08)
-	#bf.legend(bbox_to_anchor=(1.05,1), loc=2, borderaxespad=0.)
-	#bf.set_xlabel('Magnetic Field (T)')
-	#bf.set_ylabel('Hall Voltage (mV)')
-	#bf.set_title(r'$\vec B$ vs. $V_{Hall}$'+'\nConfiguration 1,2')
-	#bf_main.subplots_adjust(right=0.65,top=0.92,left=0.09,bottom=0.08)
-	#bf.set_xlim([-0.67,0.67])
-	#ae.legend(bbox_to_anchor=(1.05,1), loc=2, borderaxespad=0.)
-	#ae.set_xlabel('Magnetic Field (T)')
-	#ae.set_ylabel('Hall Voltage (mV)')
-	#ae.set_title(r'$\vec B$ vs. $V_{Hall}$'+'\nConfiguration 3,4')
-	#ae_main.subplots_adjust(right=0.65,top=0.92,left=0.09,bottom=0.08)
-	#bf_main.show()
-	#ae_main.show()
 	total_volt_plot.show()
 	return tot_a,tot_a_sigma
 
