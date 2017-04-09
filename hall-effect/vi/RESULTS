@@ -1,5 +1,5 @@
 Magnetic Filed vs Current Fit
-y = ax + b
+y = a*x
 Parameters: 
 a = 0.0202 +/- 0.0003
 ===============================================
@@ -7,19 +7,31 @@ Room Temperature Hall Voltage Parameters:
 a = -0.0412 +/- 0.0005
 b = 0.6696 +/- 0.0002
 =================================================
-Temperature and Resistivity results
-79.88 1.40031825011
-100.0 1.38125405188
-120.04 1.36086654185
-140.04 1.35679108502
-160.04 1.3144239178
-180.04 1.21901248411
-200.01 1.12945257423
-220.1 1.053047383
-240.1 0.988656958737
-260.1 0.933959686188
-280.0 0.891232822095
-300.0 0.849012490057
+Van der Pauw resistivity measurements
+At 79.88 resistivity value was
+1.4 +/- 0.01
+At 100.0 resistivity value was
+1.381 +/- 0.01
+At 120.04 resistivity value was
+1.361 +/- 0.01
+At 140.04 resistivity value was
+1.357 +/- 0.01
+At 160.04 resistivity value was
+1.314 +/- 0.01
+At 180.04 resistivity value was
+1.219 +/- 0.01
+At 200.01 resistivity value was
+1.129 +/- 0.01
+At 220.1 resistivity value was
+1.053 +/- 0.01
+At 240.1 resistivity value was
+0.989 +/- 0.01
+At 260.1 resistivity value was
+0.934 +/- 0.01
+At 280.0 resistivity value was
+0.891 +/- 0.01
+At 300.0 resistivity value was
+0.849 +/- 0.01
 =================================================
 Hall Voltage / Magnetic field fits
 Best-Fit line for 080K
@@ -27,49 +39,101 @@ Average y = ax + b
 Parameters: 
 a = -0.067 +/- 0.002
 b =  1.6784 +/- 0.0009
+-----------------------------------------
 Best-Fit line for 100K
 Average y = ax + b
 Parameters: 
 a = -0.068 +/- 0.006
 b =  1.637 +/- 0.003
+-----------------------------------------
 Best-Fit line for 120K
 Average y = ax + b
 Parameters: 
 a = -0.068 +/- 0.001
 b =  1.5716 +/- 0.0007
+-----------------------------------------
 Best-Fit line for 140K
 Average y = ax + b
 Parameters: 
 a = -0.074 +/- 0.001
 b =  1.5684 +/- 0.0005
+-----------------------------------------
 Best-Fit line for 160K
 Average y = ax + b
 Parameters: 
 a = -0.075 +/- 0.003
 b =  1.49 +/- 0.001
+-----------------------------------------
 Best-Fit line for 180K
 Average y = ax + b
 Parameters: 
 a = -0.06 +/- 0.002
 b =  1.385 +/- 0.001
+-----------------------------------------
 Best-Fit line for 200K
 Average y = ax + b
 Parameters: 
 a = -0.067 +/- 0.001
 b =  1.2277 +/- 0.0006
+-----------------------------------------
 Best-Fit line for 220K
 Average y = ax + b
 Parameters: 
 a = -0.055 +/- 0.003
 b =  1.14 +/- 0.001
+-----------------------------------------
 Best-Fit line for 240K
 Average y = ax + b
 Parameters: 
 a = -0.055 +/- 0.003
 b =  1.008 +/- 0.001
+-----------------------------------------
 Best-Fit line for 260K
 Average y = ax + b
 Parameters: 
 a = -0.053 +/- 0.002
 b =  0.9466 +/- 0.0009
+-----------------------------------------
 ==================================================
+Carrier mobility/density data
+Temperature      = 79.88
+Carrier density  = 3.08e+20 +/- 9e+18
+Carrier mobility = 0.0144 +/- 0.0005
+----------------------------------------------
+Temperature      = 100.0
+Carrier density  = 3.1e+20 +/- 3e+19
+Carrier mobility = 0.015 +/- 0.001
+----------------------------------------------
+Temperature      = 120.04
+Carrier density  = 3.06e+20 +/- 7e+18
+Carrier mobility = 0.015 +/- 0.0003
+----------------------------------------------
+Temperature      = 140.04
+Carrier density  = 2.83e+20 +/- 4e+18
+Carrier mobility = 0.0163 +/- 0.0003
+----------------------------------------------
+Temperature      = 160.04
+Carrier density  = 2.8e+20 +/- 1e+19
+Carrier mobility = 0.017 +/- 0.0007
+----------------------------------------------
+Temperature      = 180.04
+Carrier density  = 3.5e+20 +/- 1e+19
+Carrier mobility = 0.0147 +/- 0.0006
+----------------------------------------------
+Temperature      = 200.01
+Carrier density  = 3.12e+20 +/- 7e+18
+Carrier mobility = 0.0177 +/- 0.0004
+----------------------------------------------
+Temperature      = 220.1
+Carrier density  = 3.8e+20 +/- 2e+19
+Carrier mobility = 0.0157 +/- 0.0007
+----------------------------------------------
+Temperature      = 240.1
+Carrier density  = 3.8e+20 +/- 2e+19
+Carrier mobility = 0.0168 +/- 0.0009
+----------------------------------------------
+Temperature      = 260.1
+Carrier density  = 3.9e+20 +/- 2e+19
+Carrier mobility = 0.017 +/- 0.0007
+----------------------------------------------
+======================================================

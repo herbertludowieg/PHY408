@@ -115,9 +115,10 @@ def vanderpauw():
 				(raw_data[i][0]+raw_data[i][1])
 		f = 1 - (r_val**2)*(ln2/2.) - (r_val**4)*((ln2**2/4)-(ln2**3/12))
 		resistivity[i] = (pi*T/ln2) * \
-					(((raw_data[i][0]+raw_data[i][1])*scale)/(2*current)) * f
+					(((raw_data[i][0]+raw_data[i][1])*SCALE)/(2.*CURRENT)) * f
 		res_error[i] = ((pi*T)/(ln2*2.*CURRENT))*(sqrt(2.)*0.010*SCALE)
 		round_res[i] = sig_fig(res_error[i],resistivity[i])
+		print resistivity[i],res_error[i]
 		print "At "+str(temperature[i])+" resistivity value was\n"+ \
 			str(round_res[i][1])+" +/- "+str(round_res[i][0])
 	print '================================================='
