@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.1.31)  10 APR 2017 12:10
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.1.31)  10 APR 2017 16:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -631,23 +631,26 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 
 LaTeX Warning: Label `eqn:12' multiply defined.
 
+
+LaTeX Warning: Label `eqn:18' multiply defined.
+
 )
 \openout1 = `Hall-effect-report.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
@@ -687,7 +690,7 @@ Package caption Info: End \AtBeginDocument code.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 ABD: EverySelectfont initializing macros
-LaTeX Info: Redefining \selectfont on input line 18.
+LaTeX Info: Redefining \selectfont on input line 19.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -718,7 +721,7 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 \AtBeginShipoutBox=\box30
-Package hyperref Info: Link coloring OFF on input line 18.
+Package hyperref Info: Link coloring OFF on input line 19.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -728,21 +731,21 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count123
 )
-LaTeX Info: Redefining \ref on input line 18.
-LaTeX Info: Redefining \pageref on input line 18.
-LaTeX Info: Redefining \nameref on input line 18.
+LaTeX Info: Redefining \ref on input line 19.
+LaTeX Info: Redefining \pageref on input line 19.
+LaTeX Info: Redefining \nameref on input line 19.
 
 (./Hall-effect-report.out) (./Hall-effect-report.out)
 \@outlinefile=\write3
 \openout3 = `Hall-effect-report.out'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 50--50
+Underfull \hbox (badness 10000) in paragraph at lines 51--51
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 50--50
+Underfull \hbox (badness 10000) in paragraph at lines 51--51
 
  []
 
@@ -750,30 +753,30 @@ Underfull \hbox (badness 10000) in paragraph at lines 50--50
 Underfull \vbox (badness 6542) has occurred while \output is active []
 
 
-<shift-electrons.png, id=62, 803.0pt x 903.375pt>
+<shift-electrons.png, id=82, 803.0pt x 903.375pt>
 File: shift-electrons.png Graphic file (type png)
  <use shift-electrons.png>
-Package pdftex.def Info: shift-electrons.png used on input line 97.
+Package pdftex.def Info: shift-electrons.png used on input line 98.
 (pdftex.def)             Requested size: 216.08998pt x 216.08386pt.
 
-<contacts-dim.png, id=65, 539.01375pt x 324.21124pt>
+<contacts-dim.png, id=85, 539.01375pt x 324.21124pt>
 File: contacts-dim.png Graphic file (type png)
  <use contacts-dim.png>
-Package pdftex.def Info: contacts-dim.png used on input line 108.
+Package pdftex.def Info: contacts-dim.png used on input line 109.
 (pdftex.def)             Requested size: 216.09045pt x 129.97902pt.
 
 [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
 
 ] [2 <./shift-electrons.png> <./contacts-dim.png>]
-Underfull \hbox (badness 1286) in paragraph at lines 199--201
+Underfull \hbox (badness 1286) in paragraph at lines 200--202
 []\OT1/cmr/m/n/10 The sur-face of the sam-ple is singly con-
  []
 
-<f-function.png, id=117, 453.695pt x 354.32375pt>
+<f-function.png, id=137, 453.695pt x 354.32375pt>
 File: f-function.png Graphic file (type png)
  <use f-function.png>
-Package pdftex.def Info: f-function.png used on input line 218.
+Package pdftex.def Info: f-function.png used on input line 219.
 (pdftex.def)             Requested size: 469.75482pt x 252.95029pt.
 
 
@@ -784,7 +787,7 @@ See the amsmath package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.268 \end{align*}
+l.269 \end{align*}
                   
 ? 
 
@@ -795,19 +798,19 @@ See the amsmath package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.300 \end{align*}
+l.301 \end{align*}
                   
 ? 
-[3] <cryostat.png, id=158, 349.305pt x 340.27126pt>
+[3] <cryostat.png, id=178, 349.305pt x 340.27126pt>
 File: cryostat.png Graphic file (type png)
  <use cryostat.png>
-Package pdftex.def Info: cryostat.png used on input line 350.
+Package pdftex.def Info: cryostat.png used on input line 351.
 (pdftex.def)             Requested size: 216.09045pt x 210.50389pt.
 
-<sample-probe.png, id=161, 241.90375pt x 431.6125pt>
+<sample-probe.png, id=181, 241.90375pt x 431.6125pt>
 File: sample-probe.png Graphic file (type png)
  <use sample-probe.png>
-Package pdftex.def Info: sample-probe.png used on input line 357.
+Package pdftex.def Info: sample-probe.png used on input line 358.
 (pdftex.def)             Requested size: 108.405pt x 193.42035pt.
 
 
@@ -818,137 +821,399 @@ See the amsmath package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.374 \end{align*}
+l.375 \end{align*}
                   
 ? 
-<temperature-cont.png, id=165, 582.175pt x 238.8925pt>
+<temperature-cont.png, id=185, 582.175pt x 238.8925pt>
 File: temperature-cont.png Graphic file (type png)
 
 <use temperature-cont.png>
-Package pdftex.def Info: temperature-cont.png used on input line 378.
+Package pdftex.def Info: temperature-cont.png used on input line 379.
 (pdftex.def)             Requested size: 469.75502pt x 192.76552pt.
  [4 <./f-function.png>] [5 <./cryostat.png> <./sample-probe.png>]
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 456.
+(caption)                particular \caption on input line 457.
 See the caption package documentation for explanation.
 
 
-Underfull \hbox (badness 1997) in paragraph at lines 449--456
+Underfull \hbox (badness 1997) in paragraph at lines 450--457
  [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 456--456
+Underfull \hbox (badness 10000) in paragraph at lines 457--457
 []\OT1/cmr/m/n/10 Table 1: |[]Heater cur-rent val-ues at dif-fer-ent set
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 438--470
+Underfull \hbox (badness 10000) in paragraph at lines 439--471
 \OT1/cmr/m/n/10 The tem-per-a-ture con-troller uti-lizes a PID
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 438--470
+Underfull \hbox (badness 10000) in paragraph at lines 439--471
 \OT1/cmr/m/n/10 (Proportional-Integral-Derivative) feed-back
  []
 
-<lock-in.png, id=197, 586.19pt x 249.93375pt>
+<lock-in.png, id=217, 586.19pt x 249.93375pt>
 File: lock-in.png Graphic file (type png)
  <use lock-in.png>
-Package pdftex.def Info: lock-in.png used on input line 472.
+Package pdftex.def Info: lock-in.png used on input line 473.
 (pdftex.def)             Requested size: 469.75502pt x 200.28668pt.
- [6 <./temperature-cont.png>] <DC-sourc.png, id=213, 300.12125pt x 206.7725pt>
+ [6 <./temperature-cont.png>] <DC-sourc.png, id=233, 300.12125pt x 206.7725pt>
 File: DC-sourc.png Graphic file (type png)
 
 <use DC-sourc.png>
-Package pdftex.def Info: DC-sourc.png used on input line 507.
+Package pdftex.def Info: DC-sourc.png used on input line 508.
 (pdftex.def)             Requested size: 469.79466pt x 252.94987pt.
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 560.
+(caption)                particular \caption on input line 561.
 See the caption package documentation for explanation.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 560--560
+Underfull \hbox (badness 10000) in paragraph at lines 561--561
 []\OT1/cmr/m/n/10 Table 2: |[]Magnetic field strength as a func-tion of
  []
 
 [7 <./lock-in.png>]
+<magnetic-field-vs-current.png, id=252, 578.16pt x 433.62pt>
+File: magnetic-field-vs-current.png Graphic file (type png)
+
+<use magnetic-field-vs-current.png>
+Package pdftex.def Info: magnetic-field-vs-current.png used on input line 566.
+(pdftex.def)             Requested size: 220.65114pt x 165.48528pt.
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
+<four-contact.png, id=253, 556.0775pt x 295.1025pt>
+File: four-contact.png Graphic file (type png)
+ <use four-contact.png>
+Package pdftex.def Info: four-contact.png used on input line 571.
+(pdftex.def)             Requested size: 469.75502pt x 249.2983pt.
+
+<room-temp-config.png, id=256, 365.365pt x 130.4875pt>
+File: room-temp-config.png Graphic file (type png)
+
+<use room-temp-config.png>
+Package pdftex.def Info: room-temp-config.png used on input line 577.
+(pdftex.def)             Requested size: 216.09045pt x 77.1761pt.
+
+<res-temp-config.png, id=259, 296.10625pt x 167.62625pt>
+File: res-temp-config.png Graphic file (type png)
+
+<use res-temp-config.png>
+Package pdftex.def Info: res-temp-config.png used on input line 584.
+(pdftex.def)             Requested size: 216.09045pt x 122.33287pt.
+ <AC-4-contact.png, id=262, 622.325pt x 160.6pt>
+File: AC-4-contact.png Graphic file (type png)
+
+<use AC-4-contact.png>
+Package pdftex.def Info: AC-4-contact.png used on input line 591.
+(pdftex.def)             Requested size: 469.75502pt x 121.22896pt.
+
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 581.
+(caption)                particular \caption on input line 614.
 See the caption package documentation for explanation.
 
 
-Underfull \hbox (badness 1009) in paragraph at lines 573--581
+Underfull \hbox (badness 1009) in paragraph at lines 606--614
  [][] 
  []
 
 
-Underfull \hbox (badness 6252) in paragraph at lines 567--588
+Underfull \hbox (badness 6252) in paragraph at lines 600--621
 \OT1/cmr/m/n/10 The data that is got-ten is shown be-low.
  []
 
 
+Underfull \vbox (badness 2261) has occurred while \output is active []
+
+ [8 <./DC-sourc.png> <./magnetic-field-vs-current.png>] [9 <./four-contact.png>
+ <./room-temp-config.png> <./res-temp-config.png> <./AC-4-contact.png>]
+
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 609.
+(caption)                particular \caption on input line 643.
 See the caption package documentation for explanation.
 
 
-Underfull \hbox (badness 1019) in paragraph at lines 596--609
+Underfull \hbox (badness 1019) in paragraph at lines 630--643
  [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 609--609
+Underfull \hbox (badness 10000) in paragraph at lines 643--643
 []\OT1/cmr/m/n/10 Table 4: |[]Flow of cur-rent and mea-sured volt-age
  []
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 630.
+(caption)                particular \caption on input line 664.
 See the caption package documentation for explanation.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 630--630
+Underfull \hbox (badness 10000) in paragraph at lines 664--664
 []\OT1/cmr/m/n/10 Table 5: |[]Results of the re-sis-tiv-ity cal-cu-la-tions
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 630--630
+Underfull \hbox (badness 10000) in paragraph at lines 664--664
 \OT1/cmr/m/n/10 us-ing the van der Pauw method for the DC 4-
  []
 
 
-Underfull \hbox (badness 1038) in paragraph at lines 589--635
+Underfull \hbox (badness 1038) in paragraph at lines 622--669
 \OT1/cmr/m/n/10 From these val-ues the van der Pauw method
  []
 
-[8 <./DC-sourc.png>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 657.
- [9]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 657.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+<room-temperature-dc.png, id=282, 578.16pt x 433.62pt>
+File: room-temperature-dc.png Graphic file (type png)
+
+<use room-temperature-dc.png>
+Package pdftex.def Info: room-temperature-dc.png used on input line 672.
+(pdftex.def)             Requested size: 216.09045pt x 162.06454pt.
+
+<resistivity-vs-temp.png, id=283, 578.16pt x 433.62pt>
+File: resistivity-vs-temp.png Graphic file (type png)
+
+<use resistivity-vs-temp.png>
+Package pdftex.def Info: resistivity-vs-temp.png used on input line 680.
+(pdftex.def)             Requested size: 216.09045pt x 162.06454pt.
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 712.
+See the caption package documentation for explanation.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 712--712
+[]\OT1/cmr/m/n/10 Table 6: |[]Data from mea-sur-ing the Hall Volt-age
+ []
+
+[10]
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 753.
+See the caption package documentation for explanation.
+
+
+Underfull \hbox (badness 1400) in paragraph at lines 744--753
+ [][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 753--753
+[]\OT1/cmr/m/n/10 Table 7: |[]Data from the mea-sure-ment of the volt-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 753--753
+\OT1/cmr/m/n/10 age by pass-ing a AC source from the Lock-in
+ []
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 769.
+See the caption package documentation for explanation.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 769--769
+[]\OT1/cmr/m/n/10 Table 8: |[]Results from ap-ply-ing the van der Pauw
+ []
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 813.
+See the caption package documentation for explanation.
+
+
+Overfull \hbox (7.34926pt too wide) in paragraph at lines 793--813
+ [][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 813--813
+[]\OT1/cmr/m/n/10 Table 9: |[]Voltage data taken at var-i-ous tem-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 813--813
+\OT1/cmr/m/n/10 per-a-tures with an AC source from the Lock-in
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 813--813
+\OT1/cmr/m/n/10 am-pli-fier. Should be noted that the last two mea-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 813--813
+\OT1/cmr/m/n/10 sure-ments for 280K and 300K were taken on a
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 813--813
+\OT1/cmr/m/n/10 dif-fer-ent day so this may ac-count for the sharp
+ []
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 837.
+See the caption package documentation for explanation.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 837--837
+[]\OT1/cmr/m/n/10 Table 10: |[]Results of us-ing the van der Pauw
+ []
+
+[11 <./room-temperature-dc.png> <./resistivity-vs-temp.png>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+<hall-config.png, id=323, 638.385pt x 106.3975pt>
+File: hall-config.png Graphic file (type png)
+ <use hall-config.png>
+Package pdftex.def Info: hall-config.png used on input line 881.
+(pdftex.def)             Requested size: 281.85461pt x 36.1357pt.
+
+<average-hall-volt.png, id=326, 578.16pt x 500.1084pt>
+File: average-hall-volt.png Graphic file (type png)
+
+<use average-hall-volt.png>
+Package pdftex.def Info: average-hall-volt.png used on input line 888.
+(pdftex.def)             Requested size: 216.09045pt x 186.91444pt.
+
+<carrier-mobility-density.png, id=327, 578.16pt x 433.62pt>
+File: carrier-mobility-density.png Graphic file (type png)
+
+<use carrier-mobility-density.png>
+Package pdftex.def Info: carrier-mobility-density.png used on input line 895.
+(pdftex.def)             Requested size: 216.09045pt x 162.06454pt.
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 926.
+See the caption package documentation for explanation.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 926--926
+[]\OT1/cmr/m/n/10 Table 11: |[]Slopes and in-ter-cepts of the data in
+ []
+
+
+LaTeX Warning: Reference `eqn:17' on page 12 undefined on input line 930.
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 954.
+See the caption package documentation for explanation.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 954--954
+[]\OT1/cmr/m/n/10 Table 12: |[]Results of the car-rier den-sity and mo-
+ []
+
+[12]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [13 <./hall-config.png> <./average-hall-volt.png> <./carrier-mobility-density.
+png>]
+Underfull \hbox (badness 3343) in paragraph at lines 976--996
+ []\OT1/cmr/m/n/10 Temperature = 80 K 
+ []
+
+
+Underfull \hbox (badness 2970) in paragraph at lines 999--1019
+ []\OT1/cmr/m/n/10 Temperature = 100 K 
+ []
+
+
+Underfull \hbox (badness 2970) in paragraph at lines 1022--1042
+ []\OT1/cmr/m/n/10 Temperature = 120 K 
+ []
+
+
+Underfull \hbox (badness 2970) in paragraph at lines 1045--1065
+ []\OT1/cmr/m/n/10 Temperature = 140 K 
+ []
+
+
+Underfull \hbox (badness 2970) in paragraph at lines 1068--1088
+ []\OT1/cmr/m/n/10 Temperature = 160 K 
+ []
+
+
+Underfull \hbox (badness 2970) in paragraph at lines 1091--1111
+ []\OT1/cmr/m/n/10 Temperature = 180 K 
+ []
+
+
+Underfull \hbox (badness 2970) in paragraph at lines 1114--1134
+ []\OT1/cmr/m/n/10 Temperature = 200 K 
+ []
+
+
+Underfull \hbox (badness 2970) in paragraph at lines 1137--1157
+ []\OT1/cmr/m/n/10 Temperature = 220 K 
+ []
+
+
+Underfull \hbox (badness 2970) in paragraph at lines 1160--1180
+ []\OT1/cmr/m/n/10 Temperature = 240 K 
+ []
+
+
+Underfull \hbox (badness 2970) in paragraph at lines 1183--1203
+ []\OT1/cmr/m/n/10 Temperature = 260 K 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [14]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [15]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1236.
+
+[16
+
+]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1236.
  (./Hall-effect-report.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 657.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 657.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1236.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1236.
+
 Package rerunfilecheck Info: File `Hall-effect-report.out' has not changed.
-(rerunfilecheck)             Checksum: A51046C2B297BADE475EE89026DC0187;895.
+(rerunfilecheck)             Checksum: 14BAA4DA46399938181136202F39BB97;1225.
+
+
+LaTeX Warning: There were undefined references.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 657.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1236.
  ) 
 Here is how much of TeX's memory you used:
- 8089 strings out of 493029
- 120390 string characters out of 6136234
- 220529 words of memory out of 5000000
- 11453 multiletter control sequences out of 15000+600000
+ 8188 strings out of 493029
+ 122102 string characters out of 6136234
+ 255796 words of memory out of 5000000
+ 11517 multiletter control sequences out of 15000+600000
  11653 words of font info for 42 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  36i,17n,43p,525b,455s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -966,12 +1231,13 @@ mr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb>
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/sh
 are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/te
 xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texlive/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on Hall-effect-report.pdf (9 pages, 489931 bytes).
+exmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texlive/texmf-dist/font
+s/type1/public/amsfonts/cm/cmti10.pfb>
+Output written on Hall-effect-report.pdf (16 pages, 786814 bytes).
 PDF statistics:
- 325 PDF objects out of 1000 (max. 8388607)
- 274 compressed objects within 3 object streams
- 73 named destinations out of 1000 (max. 500000)
- 153 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 455 PDF objects out of 1000 (max. 8388607)
+ 370 compressed objects within 4 object streams
+ 98 named destinations out of 1000 (max. 500000)
+ 243 words of extra memory for PDF output out of 10000 (max. 10000000)
 
