@@ -8,10 +8,10 @@
 \usepackage{ragged2e}
 \usepackage{abstract}
 \usepackage{enumitem}
-%\usepackage{wrapfig}
 \usepackage{graphicx}
 \usepackage{hyperref}
 \renewcommand{\thesection}{\Roman{section}}
+\renewcommand{\thesubsection}{(\alph{subsection})}
 \setlength{\columnsep}{1cm}
 \setlength\parindent{5pt}
 \DeclareMathOperator{\arccosh}{arccosh}
@@ -24,7 +24,6 @@ Si doped wafer}}}
 \setlength{\droptitle}{-0.65in}
 \maketitle
 \begin{onecolabstract}
-%\begin{adjustwidth}{0.5in}{0.5in}
 \justify
 The Hall Effect is a phenomena of solid materials that has been in use since 
 the turn of the century. In this experiment we used the AC and DC hall effect 
@@ -46,7 +45,6 @@ $\pm$ 0.05$x10^{-2}$ at 80K, 1.5$x10^{-2}$ $\pm$ 0.1$x10^{-2}$ at 100K,
 0.04$x10^{-2}$ at 200K, 1.57$x10^{-2}$ $\pm$ 0.07$x10^{-2}$ at 220K, 
 1.68$x10^{-2}$ $\pm$ 0.09$x10^{-2}$ at 240K and 1.69$x10^{-2}$ $\pm$ 
 0.07$x10^{-2}$ at 260K.\\ \\
-%\end{adjustwidth}
 \end{onecolabstract}
 \end{@twocolumnfalse}
 ]
@@ -317,6 +315,353 @@ R_{xy} = \frac{R_H}{t}B
 \cite{ref:3}
 \label{eqn:12}
 \end{equation}
+Where, $R_H$ is the Hall constant which depends on the carrier density and the 
+charge of the carriers as shown.
+\begin{equation}
+R_{H} = \frac{1}{nq}
+\cite{ref:3}
+\label{eqn:13}
+\end{equation}
+Where, n is the number of carriers per unit volume and q is the charge of such 
+carriers. Since, n is a integer value the sign of the Hall constant solely 
+depends on the charge of the carriers. So, if the Hall constant is negative the 
+charge carriers of the sample will be electrons and in the case of a positive 
+value it will be holes (positive charge areas). In semiconductors this helps to 
+identify what type of doping is used. If the semiconductor is n-type there is 
+an excess of electrons where if it is p-type there is an excess of positively 
+charged holes. Must be careful to not say protons as they do not flow when 
+conducting electricity.
+\\
+By combining equations \ref{eqn:12} and \ref{eqn:12} we can make the following 
+relationship between the Hall constant and the magnetic field.
+\begin{equation}
+R_{H} = \frac{V_{Hall}}{B}\frac{t}{I}
+\cite{ref:3}
+\label{eqn:14}
+\end{equation}
+Where, we can also re-write the equation to make the relationship between the 
+magnetic field and the carrier density in a sample.
+\begin{equation}
+n = \frac{B}{V_{Hall}}\frac{I}{qt}
+\label{eqn:15}
+\end{equation}
+\begin{figure*}
+\begin{minipage}[t]{0.46\textwidth}
+\includegraphics[width=\linewidth]{cryostat.png}
+\caption{A general diagram of the cryostat that is to be used. There are three 
+chambers in the cryostat \cite{ref:3}.}
+\label{fig:4}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.46\textwidth}
+\includegraphics[width=1.5in]{sample-probe.png}
+\caption{Schematic of the sample probe \cite{ref:3}.}
+\label{fig:5}
+\end{minipage}
+\end{figure*}
+Carrier mobility is defined as the ability of a charge carrier to pass through 
+a sample material. The carrier mobility can be defined as the ratio between the 
+drift velocity and the applied electric field. Which by transforming into the 
+components of the electric field we can represent the carrier mobility as a 
+function of the carrier density or the Hall constant.
+\begin{equation}
+\begin{align*}
+\mu &= \frac{1}{\rho nq} \\
+    &= \frac{R_H}{\rho} \\
+    &= \frac{V_{Hall}}{B}\frac{t}{\rho q}
+\cite{ref:3}
+\label{eqn:16}
+\end{align*}
+\end{equation}
+\section{Experimental Set-Up}
+\begin{figure*}
+\includegraphics[width=\textwidth]{temperature-cont.png}
+\caption{Front panel of the temperature controller with the labeled components
+\cite{ref:3}.}
+\label{fig:6}
+\end{figure*}
+For this experiment a combination of equipment was used to make the 
+measurements including a cryostat which housed the sample probe containing the 
+sample, a temperature controller, a lock-in amplifier, a DC source, a vacuum 
+pump and an electromagnet.
+\subsection{Cryostat}
+Since, it is necessary to make low temperature measurements in this experiment 
+a three chamber cryostat is to be used. Where, the chambers are labeled on 
+figure \ref{fig:4}. The inner and outer chambers must be at a near vacuum 
+which can be 
+achieved with the provided vacuum pump. \textbf{NEVER add liquid nitrogen until 
+the air in the cryostat is evacuated}. Not doing so could result in the air 
+moisture condensing inside the cryostat when the liquid nitrogen is added. The 
+inner chamber should be vacummed twice once to remove most of the air in the 
+chamber and a second time by putting Helium gas in the chamber and proceeding 
+to them vacuum the Helium gas out of the chamber. This ensures that most if 
+not all of the air has been taken out of the chamber and only very dilute He 
+gas is left in the chamber. The outer chamber should be vacuumed for 5 minutes 
+as it is a much larger volume than the inner chamber. Should the air in the 
+cryostat freeze the sample or the entire cryostat could be damaged \cite{ref:3}.
+\\
+Once this is done the liquid nitrogen can be added into the cryostat by use of 
+the funnel. The cryostat has a max capacity of approximately 5 liters of 
+liquid. Be careful when puring the liquid nitrogen as it will sputter when it 
+comes into contact with the funnel. \textbf{Always wear the safety equipment 
+provided including: cryo-gloves, goggles and the lab coat} \cite{ref:3}.
+\subsection{Sample probe}
+The sample to be tested is mounted on a sample probe that will be placed in the 
+cryostat by the instructor and won't need to be taken out. If there is ever a 
+problem and it does need to be taken out of the cryostat the entire cryostat 
+must reach room temperature before doing anything as breaking the seal in the 
+inner chamber could damage the cryostat. The sample holder is shown on figure 
+\ref{fig:5}
+\\
+The sample holder is actually a small box that is found at the end of the 
+entire tube apparatus. On the sample holder the following components can be 
+found \cite{ref:3}.
+\begin{enumerate}[label=\alph*]
+\item The suspension tube, which slides in the cap to vary the height of the 
+specimen.
+\item A copper vessel around the specimen and heater, which helps to keep the 
+temperature unifor and reduces thermal fluctuations.
+\item A temperature sensitive diode (DT471) that is used to measure the 
+specimen temperature.
+\item A heater which balances the cooling by the cold exchange gas (helium) 
+that will surround the can and specimen, and helps control the rate of change 
+in temperature of the specimen.
+\item Sample holder which provides a flat mounting surface for the sample and 
+the temperature sensitive diode.
+\end{enumerate}
+The sample that is to be tested is a doped silicon wafer with a thickness of 
+300$\mu m$. It is mounted on the sample holder with the temperature sensitive 
+diode located behind the sample. Since, there is a relation between resistance 
+and temperature the temperature is found by the measured voltage across the 
+diode which is given a current in the $\mu A$ range \cite{ref:3}.
+\subsection{Temperature Controller}
+To control the temperature a Lakeshore 330 Autotuning temperature controller is 
+used. There are three LCD screens on the controller the top screen displays the 
+measured temperature of the diode, the bottom gives the temperature that is 
+set for the controller to maintain and the vertical screen gives the amount of 
+current that is passing through the diode as a percentage. The amount of 
+current passing through the sample is set by the heater value which can be: 
+Low, Medium or High. The amount of current that is passed through the diode at 
+each setting is given by the following table.
+\begin{minipage}{\linewidth}
+\label{tbl:1}
+\Centering
+\begin{tabular}{|c|c|}
+\hline
+Heater & Heater \\ Range & Current \\ \hline
+HIGH & 0 to 1 A  \\ \hline
+MEDIUM & 0 to 0.3 A \\ \hline
+LOW & 0 to 0.1 A \\ \hline
+\end{tabular}
+\captionof{table}{Heater current values at different set values \cite{ref:5}}
+\end{minipage}
+The temperature controller utilizes a PID (Proportional-Integral-Derivative) 
+feedback control loop to approach and maintain the temperature. The P, I, D 
+parameters can be found on the main face of the Temperature Controller on 
+figure \ref{fig:6}. But, it is only necessary to leave them in the default 
+values of 50, 25, 0 for the P, I, D respectively.
+\\
+The heater setting can be changed by pressing the Heater button and cycling 
+through the three differnt settings. The temperature change rate should not be 
+set higher than 10 K/min in order to preserve the temperature equilibrium in 
+the sample space. This can be checked and changed by holding the set point 
+button until the screen changes to the rate. Using the keypad the rate can be 
+set to whatever value is necessary.
+\subsection{Lock-in amplifier}
+\begin{figure*}
+\includegraphics[width=\textwidth]{lock-in.png}
+\caption{Front panel of the lock-in amplifier with the labeled components
+\cite{ref:3}.}
+\label{fig:7}
+\end{figure*}
+A Stanford Research Systems Model SR810 Lock-in amplifier is used in making the 
+AC measurements in this experiment. The general layout of the front panel is 
+shown on figure \ref{fig:7}. A lock-in amplifier is very useful in experiments 
+that involve a lot of noisy data as it can reduce the noise from the data 
+significantly and give a very clean signal. It can do so by multypling the 
+input signal by the frequency of the reference signal and integrating it with 
+respect to some time frame. The resulting DC signal has a frequency that is the 
+same as that of the reference signal. The lock-in amplifier is very sensitive 
+to different phases due to the orthogonality of sine and cosine functions 
+\cite{ref:3}.
+\\
+For this experiment there will be a $V_{rms}$ output of 1.000 V that will pass 
+through a 1 $M\Omega$ resistor to make a 1 $\mu A$ current signal. This signal 
+will come from the Sine Output to a box with the resistor with two outputs that 
+will connect to the wiring interface. The signal is received by the Signal 
+Inputs. This will be an AC signal that will be transformed into a DC signal 
+by the lock-in amplifier by the process described above. The following should 
+be set to take measurements as well:
+\begin{enumerate}[label=\alph*]
+\item Couple to AC
+\item Ground to Float
+\item Time Constant to 1 s (1x1 s) and 12 dB
+\item Display to R
+\end{enumerate}
+The sensitivity should be set to a value larger than that which you are trying 
+to measure. It is recommended to use a sensitivity of 10 mV. Remember to hit 
+the Phase button under AUTO on the right of the panel.
+\subsection{DC source}
+\begin{figure*}
+\begin{minipage}{\textwidth}
+\includegraphics[width=\textwidth,height=3.5in]{DC-sourc.png}
+\caption{Front panel of the DC \cite{ref:3}.}
+\label{fig:8}
+\end{minipage}
+\end{figure*}
+The DC source that is to be used is a Keithley 227 DC source. To perform the DC 
+Hall Voltage measurements it will need to be set to output a 1 mA current. The 
+knobs on the top of the device set the output current. Be mindful of where the 
+light is as it is the decimal point. To produce a 1 mA current set the 
+following to the said values \cite{ref:3}.
+\begin{enumerate}[label=\alph*]
+\item Set the units digit to 1 and all others to zero
+\item Set the rightmost knob to mA with 300 MAX COMP VOLT
+\end{enumerate}
+Be sure to measure if the output is exactly 1 mA with a multi-meter. The first 
+decimal knob may need to be played around with to get it as close to one as you 
+can as it tends to be a bit loose and hard to set to exactly zero.
+\subsection{Vacuum pumping system}
+A single mechanical pump is used to vacuum both sections of the cryostat. 
+Valves are provided on the respective spaces to give a good seal. When the pump 
+is to be removed from the vacumming valves, make sure to close the valves to 
+ensure that a vacuum is maintained at all times. If the pump is shut off 
+before the valves are closed some air may be able to leak back into the 
+vacuum spaces \cite{ref:3}.
+\subsection{Electromagnet}
+A water cooled electromagnet is used to produce the static magnetic field to 
+make the Hall Effect measurements. There is a power supply unit that can be 
+used to provide the current to the electromagnet. \textbf{Do not exceed 35 A 
+on the power supply as it can overheat the magnet and permanently damage it}. 
+To be able to measure two different magnetic field directions a bar is provided 
+at the top of the sample probe. Refer to the markings on this bar to see the 
+direction of the magnetic field with respect to the plane of the sample. 
+\textbf{Make sure that the bar is well aligned with the magnetic plates prior 
+to making measurements as we assume that the magnetic field is perfectly 
+perpendicular to the sample. Tiny deviations from this could result in 
+significant differences as the cross product in equation \ref{eqn:2} may not 
+be perfect}. The table below shows the field strength in Tesla as a function 
+of the electromagnet current.
+\begin{minipage}{\linewidth}
+\Centering
+\begin{tabular}{|c|c|}
+\hline
+Current (A) & Magnetic Field (T) \\\hline
+0 & 0 \\ \hline
+5 & 0.1056 \\ \hline
+10 & 0.2125 \\ \hline
+15 & 0.3179 \\ \hline
+20 & 0.4265 \\ \hline
+25 & 0.5258 \\ \hline
+30 & 0.6058 \\ \hline
+35 & 0.6678 \\ \hline
+\end{tabular}
+\captionof{table}{Magnetic field strength as a function of current. Measured 
+experimentally \cite{ref:3}.}
+\label{tbl:2}
+\end{minipage}
+\section{Results and Discussion}
+All of the longitudal directions are labeled with the same lettering as that in 
+figure \ref{fig:2}b.
+\subsection{DC 2-contact resistance}
+In this part of the experiment we measured the resistance of the sample using 
+an ohm-meter for the four possible longitudal directions.
+\\
+The data that is gotten is shown below.
+\begin{minipage}{\linewidth}
+\Centering
+\begin{tabular}{|c|c|}
+\hline
+Direction & Resistance ($k\Omega$) \\ \hline
+AB & 4.77 \\ \hline
+BC & 2.57 \\ \hline
+CD & 6.62 \\ \hline
+EF & 7.02 \\ \hline
+\end{tabular}
+\captionof{table}{Data for part (i)}
+\label{tbl:3}
+\end{minipage}
+From this data it is not possible to calculate the resistivity as we have a 
+the resistance of the sample through those points and according to equation 
+\ref{eqn:6} we need to know the other dimensions of the sample, for which, we 
+did not.
+\subsection{DC 4-contact resistance}
+In this portion of the experiment we measured the voltage from passing current 
+through two adjacent points and measuring the voltage through the other two. 
+The data for it is shown on the table below where the direction of the current 
+flow is important as it is we are the DC source. The current value was set to 
+be 0.99 mA.
+\begin{minipage}{\linewidth}
+\Centering
+\begin{tabular}{|c|c|}
+\hline
+Direction & Absolute \\ From $\to\,$ to & Voltage (mV) \\ \hline
+A $\to\,$ B & 1.169 \\ \hline
+B $\to\,$ A & 1.179 \\ \hline
+B $\to\,$ C & 0.3037 \\ \hline
+C $\to\,$ B & 0.2955 \\ \hline
+C $\to\,$ D & 1.069 \\ \hline
+D $\to\,$ C & 0.839 \\ \hline
+D $\to\,$ A & 0.3003 \\ \hline
+A $\to\,$ D & 0.2821 \\ \hline
+\end{tabular}
+\captionof{table}{Flow of current and measured voltage for DC 4-contact 
+resistance.}
+\label{tbl:4}
+\end{minipage}
+From these values the van der Pauw method can be applied to calculate the 
+resistivity of the sample. Since the value of the measured voltage is expected 
+to be the same in both directions (ie. from A to B and B to A), the average of 
+the two values was taken and used in the calculations. The van der Pauw 
+resistivity was calculated using equations \ref{eqn:7} and \ref{eqn:9} using 
+C++. The results are shown in the following table where the current direction 
+is no longer important.
+\begin{minipage}{\linewidth}
+\Centering
+\begin{tabular}{|c|c|}
+\hline
+Direction & Resistivity ($\Omega m$) \\ \hline
+AB & 0.877 $\pm$ 0.004 \\ \hline
+BC & 0.774 $\pm$ 0.004 \\ \hline
+CD & 0.764 $\pm$ 0.004 \\ \hline
+DA & 0.867 $\pm$ 0.004 \\ \hline
+\end{tabular}
+\captionof{table}{Results of the resistivity calculations using the van der 
+Pauw method for the DC 4-contact resistance.}
+\label{tbl:5}
+\end{minipage}
+For the error analysis a constant error of 0.010 mV was assumed for all of the 
+measurements and the error in the f value was ignored.
+\subsection{DC Hall Effect measurement - determining carrier type}
+\begin{figure*}
+\begin{minipage}[t]{0.46\textwidth}
+\includegraphics[width=\linewidth]{room-temperature-dc.png}
+\caption{DC Room temperature Hall Voltage measurements as a function of 
+magnetic field. A linear fit line is provided in the table with a slope of 
+-0.0412 $\pm$ 0.0005 and a y intercept of 0.6696 $\pm$ 0.0002.}
+\label{fig:9}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.46\textwidth}
+\includegraphics[width=\linewidth]{average-hall-volt.png}
+\caption{Plot of average Hall Voltages as a function of magnetic field. Refer 
+to the legend to navigate through the different temperature values.}
+\label{fig:10}
+\end{minipage}
+\end{figure*}
+For this part of the experiment the carrier type was determing by analyzing the 
+slope of the line of data that was taken at different magnetic field values 
+taken at room temperature. A current value of 1.00 mA was passed through the 
+sample. The data is shown below.
+\begin{minipage}{\linewidth}
+\Centering
+\begin{tabular}{|c|c|}
+\hline
+Magnetic Field (T) & $V_{Hall}$ (V) \\ \hline
+-0.6678 & 0.698 \\ \hline
+-0.6058 & 0.695 \\ \hline
+-0.5258 & 0.691 \\ \hline
+-0.4265 & 0.687 \\ \hline
 
 \begin{thebibliography}{9}
 \bibitem{ref:1}
@@ -328,8 +673,10 @@ https://en.wikipedia.org/wiki/\\Van\_der\_Pauw\_method
 \bibitem{ref:3}
 UB 2015 Lab Manual. Hall Effect
 \bibitem{ref:4}
-van der Pauw, L. J. (1958). A method of measuring specific resistivity and 
+Van der Pauw, L. J. (1958). A method of measuring specific resistivity and 
 Hall Effect of discs of arbitrary shape. \emph{Philips Research reports, 13}, 
 1-9.
+\bibitem{ref:5}
+LakeShore (2000). User's Manual Model 330 Autotuning Temperature Controller.
 \end{thebibliography}
 \end{document}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.1.31)  9 APR 2017 15:41
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.1.31)  10 APR 2017 12:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -629,7 +629,7 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 (./Hall-effect-report.aux
 
-LaTeX Warning: Label `eqn:4' multiply defined.
+LaTeX Warning: Label `eqn:12' multiply defined.
 
 )
 \openout1 = `Hall-effect-report.aux'.
@@ -737,12 +737,12 @@ LaTeX Info: Redefining \nameref on input line 18.
 \openout3 = `Hall-effect-report.out'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 52--52
+Underfull \hbox (badness 10000) in paragraph at lines 50--50
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 52--52
+Underfull \hbox (badness 10000) in paragraph at lines 50--50
 
  []
 
@@ -750,30 +750,30 @@ Underfull \hbox (badness 10000) in paragraph at lines 52--52
 Underfull \vbox (badness 6542) has occurred while \output is active []
 
 
-<shift-electrons.png, id=14, 803.0pt x 903.375pt>
+<shift-electrons.png, id=62, 803.0pt x 903.375pt>
 File: shift-electrons.png Graphic file (type png)
  <use shift-electrons.png>
-Package pdftex.def Info: shift-electrons.png used on input line 99.
+Package pdftex.def Info: shift-electrons.png used on input line 97.
 (pdftex.def)             Requested size: 216.08998pt x 216.08386pt.
 
-<contacts-dim.png, id=17, 539.01375pt x 324.21124pt>
+<contacts-dim.png, id=65, 539.01375pt x 324.21124pt>
 File: contacts-dim.png Graphic file (type png)
  <use contacts-dim.png>
-Package pdftex.def Info: contacts-dim.png used on input line 110.
+Package pdftex.def Info: contacts-dim.png used on input line 108.
 (pdftex.def)             Requested size: 216.09045pt x 129.97902pt.
 
 [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
 
 ] [2 <./shift-electrons.png> <./contacts-dim.png>]
-Underfull \hbox (badness 1286) in paragraph at lines 201--203
+Underfull \hbox (badness 1286) in paragraph at lines 199--201
 []\OT1/cmr/m/n/10 The sur-face of the sam-ple is singly con-
  []
 
-<f-function.png, id=69, 453.695pt x 354.32375pt>
+<f-function.png, id=117, 453.695pt x 354.32375pt>
 File: f-function.png Graphic file (type png)
  <use f-function.png>
-Package pdftex.def Info: f-function.png used on input line 220.
+Package pdftex.def Info: f-function.png used on input line 218.
 (pdftex.def)             Requested size: 469.75482pt x 252.95029pt.
 
 
@@ -784,11 +784,31 @@ See the amsmath package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.270 \end{align*}
+l.268 \end{align*}
                   
 ? 
 
-LaTeX Warning: Reference `eqn:10' on page 3 undefined on input line 294.
+! Package amsmath Error: Erroneous nesting of equation structures;
+(amsmath)                trying to recover with `aligned'.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.300 \end{align*}
+                  
+? 
+[3] <cryostat.png, id=158, 349.305pt x 340.27126pt>
+File: cryostat.png Graphic file (type png)
+ <use cryostat.png>
+Package pdftex.def Info: cryostat.png used on input line 350.
+(pdftex.def)             Requested size: 216.09045pt x 210.50389pt.
+
+<sample-probe.png, id=161, 241.90375pt x 431.6125pt>
+File: sample-probe.png Graphic file (type png)
+ <use sample-probe.png>
+Package pdftex.def Info: sample-probe.png used on input line 357.
+(pdftex.def)             Requested size: 108.405pt x 193.42035pt.
 
 
 ! Package amsmath Error: Erroneous nesting of equation structures;
@@ -798,38 +818,140 @@ See the amsmath package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.302 \end{align*}
+l.374 \end{align*}
                   
 ? 
-[3]
+<temperature-cont.png, id=165, 582.175pt x 238.8925pt>
+File: temperature-cont.png Graphic file (type png)
 
-LaTeX Warning: Reference `eqn:11' on page 4 undefined on input line 304.
+<use temperature-cont.png>
+Package pdftex.def Info: temperature-cont.png used on input line 378.
+(pdftex.def)             Requested size: 469.75502pt x 192.76552pt.
+ [4 <./f-function.png>] [5 <./cryostat.png> <./sample-probe.png>]
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 335.
-[4 <./f-function.png>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 335.
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 456.
+See the caption package documentation for explanation.
+
+
+Underfull \hbox (badness 1997) in paragraph at lines 449--456
+ [][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 456--456
+[]\OT1/cmr/m/n/10 Table 1: |[]Heater cur-rent val-ues at dif-fer-ent set
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 438--470
+\OT1/cmr/m/n/10 The tem-per-a-ture con-troller uti-lizes a PID
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 438--470
+\OT1/cmr/m/n/10 (Proportional-Integral-Derivative) feed-back
+ []
+
+<lock-in.png, id=197, 586.19pt x 249.93375pt>
+File: lock-in.png Graphic file (type png)
+ <use lock-in.png>
+Package pdftex.def Info: lock-in.png used on input line 472.
+(pdftex.def)             Requested size: 469.75502pt x 200.28668pt.
+ [6 <./temperature-cont.png>] <DC-sourc.png, id=213, 300.12125pt x 206.7725pt>
+File: DC-sourc.png Graphic file (type png)
+
+<use DC-sourc.png>
+Package pdftex.def Info: DC-sourc.png used on input line 507.
+(pdftex.def)             Requested size: 469.79466pt x 252.94987pt.
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 560.
+See the caption package documentation for explanation.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 560--560
+[]\OT1/cmr/m/n/10 Table 2: |[]Magnetic field strength as a func-tion of
+ []
+
+[7 <./lock-in.png>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 581.
+See the caption package documentation for explanation.
+
+
+Underfull \hbox (badness 1009) in paragraph at lines 573--581
+ [][] 
+ []
+
+
+Underfull \hbox (badness 6252) in paragraph at lines 567--588
+\OT1/cmr/m/n/10 The data that is got-ten is shown be-low.
+ []
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 609.
+See the caption package documentation for explanation.
+
+
+Underfull \hbox (badness 1019) in paragraph at lines 596--609
+ [][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 609--609
+[]\OT1/cmr/m/n/10 Table 4: |[]Flow of cur-rent and mea-sured volt-age
+ []
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 630.
+See the caption package documentation for explanation.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 630--630
+[]\OT1/cmr/m/n/10 Table 5: |[]Results of the re-sis-tiv-ity cal-cu-la-tions
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 630--630
+\OT1/cmr/m/n/10 us-ing the van der Pauw method for the DC 4-
+ []
+
+
+Underfull \hbox (badness 1038) in paragraph at lines 589--635
+\OT1/cmr/m/n/10 From these val-ues the van der Pauw method
+ []
+
+[8 <./DC-sourc.png>]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 657.
+ [9]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 657.
  (./Hall-effect-report.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 335.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 335.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 657.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 657.
 Package rerunfilecheck Info: File `Hall-effect-report.out' has not changed.
-(rerunfilecheck)             Checksum: C5F1FD71EBDBE2B65A3E505536534479;88.
-
-
-LaTeX Warning: There were undefined references.
+(rerunfilecheck)             Checksum: A51046C2B297BADE475EE89026DC0187;895.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 335.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 657.
  ) 
 Here is how much of TeX's memory you used:
- 7992 strings out of 493029
- 119190 string characters out of 6136234
- 219366 words of memory out of 5000000
- 11403 multiletter control sequences out of 15000+600000
- 11346 words of font info for 41 fonts, out of 8000000 for 9000
+ 8089 strings out of 493029
+ 120390 string characters out of 6136234
+ 220529 words of memory out of 5000000
+ 11453 multiletter control sequences out of 15000+600000
+ 11653 words of font info for 42 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 36i,17n,43p,525b,362s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 36i,17n,43p,525b,455s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texli
@@ -846,10 +968,10 @@ are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/te
 xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/t
 exmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texlive/texmf-di
 st/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on Hall-effect-report.pdf (4 pages, 277075 bytes).
+Output written on Hall-effect-report.pdf (9 pages, 489931 bytes).
 PDF statistics:
- 177 PDF objects out of 1000 (max. 8388607)
- 144 compressed objects within 2 object streams
- 31 named destinations out of 1000 (max. 500000)
- 32 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 325 PDF objects out of 1000 (max. 8388607)
+ 274 compressed objects within 3 object streams
+ 73 named destinations out of 1000 (max. 500000)
+ 153 words of extra memory for PDF output out of 10000 (max. 10000000)
 

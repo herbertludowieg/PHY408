@@ -1,0 +1,44 @@
+============================
+R_AB,CD = 1.174
+R_BC,AD = 0.2996
+Voltage scale = 1
+PI*t/ln2 = 0.00135971
+Resistivity = 0.87688
+Res Error = 0.00420771
+f value = 0.866523
+R_AB,CD/R_BC,AD = 3.91856
+other stuff: 1.01195
+Current = 0.00099
+============================
+R_AB,CD = 0.2996
+R_BC,AD = 0.954
+Voltage scale = 1
+PI*t/ln2 = 0.00135971
+Resistivity = 0.773667
+Res Error = 0.00436395
+f value = 0.8987
+R_AB,CD/R_BC,AD = 0.314046
+other stuff: 0.860874
+Current = 0.00099
+============================
+R_AB,CD = 0.954
+R_BC,AD = 0.2912
+Voltage scale = 1
+PI*t/ln2 = 0.00135971
+Resistivity = 0.7648
+Res Error = 0.00434304
+f value = 0.894392
+R_AB,CD/R_BC,AD = 3.2761
+other stuff: 0.855105
+Current = 0.00099
+============================
+R_AB,CD = 0.2912
+R_BC,AD = 1.174
+Voltage scale = 1
+PI*t/ln2 = 0.00135971
+Resistivity = 0.867346
+Res Error = 0.00418582
+f value = 0.862015
+R_AB,CD/R_BC,AD = 0.248041
+other stuff: 1.00618
+Current = 0.00099

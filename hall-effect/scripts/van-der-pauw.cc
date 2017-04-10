@@ -42,18 +42,20 @@ bool VanDerPauw::input (std::istream & in) {
   }
 }
 double VanDerPauw::find_resistivity(double v1, double v2){
-  double resistivity,f,r_val,ln2=std::log(2.0),other_f;
+  double resistivity,f,r_val,ln2=std::log(2.0),other_f,res_error;
   r_val = ((v1-v2)/(v1+v2));
   f = 1-std::pow(r_val,2)*(ln2/2.0)-std::pow(r_val,4)*
            ((std::pow(ln2,2)/4.0)-(std::pow(ln2,3)/12.0));
   resistivity = ((PI*t)/(ln2))*(((v1+v2)*scale_)/(2.0*current_))*f;
   other_f = v1/v2;
+  res_error = ((PI*t)/(ln2))*((std::sqrt(2.)*(0.005)*scale_)/(2.0*current_))*f;
   std::cout<<"============================"
            <<"\nR_AB,CD = "<<v1
            <<"\nR_BC,AD = "<<v2
            <<"\nVoltage scale = "<<scale_
            <<"\nPI*t/ln2 = "<<PI*t/ln2
            <<"\nResistivity = "<<resistivity
+           <<"\nRes Error = "<<res_error
            <<"\nf value = "<<f
            <<"\nR_AB,CD/R_BC,AD = "<<other_f
            <<"\nother stuff: "<<((PI*t)/(ln2))*((v1+v2)/(2.0*current_))

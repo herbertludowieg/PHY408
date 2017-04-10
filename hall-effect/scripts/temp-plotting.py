@@ -80,7 +80,7 @@ def room_temp():
 	rt.plot(x,y,'ro',x2,y2,'-r')
 	rt.set_title(r'Room Temperature Hall Voltage vs. $\vec B$')
 	rt.set_xlabel('Magnetic Field (T)')
-	rt.set_ylabel('Hall Voltage (mV)')
+	rt.set_ylabel('Hall Voltage (V)')
 	rt_plot.show()
 
 # function that will take the data from the second to last input file
