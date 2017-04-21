@@ -27,12 +27,16 @@ bool VanDerPauw::input (std::istream & in) {
   } else if (line[0]=='V' && counter_>1) {
     std::getline(in,line);
     voltages_.push_back(std::atof(line.c_str()));
-  } else if (line!=""){
+  } else /*if (line!=""){
     std::cout << "ERROR missing current/scale/V# tag.\n"
               << "Make sure proper tag format is being used.\n"
               << "To view format type executable name without args."
               << std::endl;
-    return false;
+    */
+    {std::cout<<line<<std::endl;
+    std::getline(in,line,(char) 09h);
+    std::cout<<line<<std::endl;
+    //return true;
   }
   if (line=="") {
     return false;
