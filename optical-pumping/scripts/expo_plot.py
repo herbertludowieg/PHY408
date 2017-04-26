@@ -6,10 +6,10 @@ import numpy as np
 from _sig_fig import *
 
 def light_func(x,a,b,k):
-  return a*np.exp(-k*(x-4e16))+b
+  return a*np.exp(-k*(x-6e16))+b
 
 def dens_func(x,a,k):
-  return a*np.exp(k*(x-87))
+  return a*np.exp(k*(x-100))
 
 # Finds exponential fit to a*e^(-k*(x-z))+b
 def exponential_2(x,y,p0,func,sigma=0):
@@ -23,15 +23,18 @@ def exponential_2(x,y,p0,func,sigma=0):
   print "a = "+str(p0[0])
   print "k = "+str(p0[1])
   print "Calculated parameters with curve_fit function:"
-  print "Format (a,b,k)"
+  print "Format (a,k)"
   print param[0],param[1]
   print "Covariance matrix from curve_fit function:"
   print pcov
   a,k = param
   sigma_a,sigma_k = np.sqrt(abs(np.diag(pcov)))
   print "Sigma values:"
-  print "Format (a,b,k)"
+  print "Format (a,k)"
   print sigma_a,sigma_k
+  print "Percentages:"
+  print "Format (a,k)"
+  print sigma_a/a*100,sigma_k/k*100
   print "==========END FIT DATA=========================="
   round_a = sig_fig(sigma_a,a)
   round_k = sig_fig(sigma_k,k)
@@ -60,6 +63,9 @@ def exponential_3(x,y,p0,func,sigma=0):
   print "Sigma values:"
   print "Format (a,b,k)"
   print sigma_a,sigma_b,sigma_k
+  print "Percentages:"
+  print "Format (a,b,k)"
+  print sigma_a/a*100,sigma_b/b*100,sigma_k/k*100
   print "==========END FIT DATA=========================="
   round_a = sig_fig(sigma_a,a)
   round_b = sig_fig(sigma_b,b)
@@ -76,12 +82,19 @@ def temperature_vs_density(density):
   xx = np.linspace(x[0],x[-1],100)
   n,m,l = 1e18,8.5e-2,7e15
   yy = dens_func(xx,n,m)
+  print "*************************************************"
+  print "Fit for density as a function of temperature"
   #a,b,k,round_a,round_b,round_k = exponential_3(x,y,(n,l,m),dens_func)
   a,k,round_a,round_k = exponential_2(x,y,(n,m),dens_func)
   yyy = dens_func(xx,a,k)
+  print "\nFit parameters with uncertainties:"
+  print "a = "+str(round_a[1])+" +/- "+str(round_a[0])
+  print "k = "+str(round_k[1])+" +/- "+str(round_k[0])
+  print "z = 100"
+  print "*************************************************"
   ax,bx = plt.subplots(1)
   bx.plot(x,y,'ro')
-  bx.plot(xx,yy,'b-')
+  #bx.plot(xx,yy,'b-')
   bx.plot(xx,yyy,'r-')
   ax.show()
 
@@ -115,7 +128,6 @@ def density_vs_light(density):
   round_a = np.zeros(2) 
   round_b = np.zeros(2)
   round_k = np.zeros(2)
-  round_z = np.zeros(2)
   x = np.zeros(len(data))
   y = np.zeros(len(data))
   for i in range(len(data)):
@@ -132,7 +144,7 @@ def density_vs_light(density):
   print "a = "+str(round_a[1])+" +/- "+str(round_a[0])
   print "b = "+str(round_b[1])+" +/- "+str(round_b[0])
   print "k = "+str(round_k[1])+" +/- "+str(round_k[0])
-  print "z = 4e16"
+  print "z = 6e16"
   print "*************************************************"
   yyy = light_func(xx,a,b,k)
   ax,bx = plt.subplots(1)
