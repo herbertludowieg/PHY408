@@ -8,8 +8,35 @@ from _sig_fig import *
 def light_func(x,a,b,k):
   return a*np.exp(-k*(x-4e16))+b
 
-def dens_func(x,a,b,k):
-  return a*np.exp(k*(x-87))+b
+def dens_func(x,a,k):
+  return a*np.exp(k*(x-87))
+
+# Finds exponential fit to a*e^(-k*(x-z))+b
+def exponential_2(x,y,p0,func,sigma=0):
+  #print x,y,p0
+  if sigma == 0:
+    param,pcov = curve_fit(func,x,y,p0)
+  else:
+    param,pcov = curve_fit(func,x,y,p0,sigma=sigma)
+  print "==========BEGIN FIT DATA========================"
+  print "Initial guess parameters:"
+  print "a = "+str(p0[0])
+  print "k = "+str(p0[1])
+  print "Calculated parameters with curve_fit function:"
+  print "Format (a,b,k)"
+  print param[0],param[1]
+  print "Covariance matrix from curve_fit function:"
+  print pcov
+  a,k = param
+  sigma_a,sigma_k = np.sqrt(abs(np.diag(pcov)))
+  print "Sigma values:"
+  print "Format (a,b,k)"
+  print sigma_a,sigma_k
+  print "==========END FIT DATA=========================="
+  round_a = sig_fig(sigma_a,a)
+  round_k = sig_fig(sigma_k,k)
+  #round_z = sig_fig(sigma_z,z)
+  return a,k,round_a,round_k
 
 # Finds exponential fit to a*e^(-k*(x-z))+b
 def exponential_3(x,y,p0,func,sigma=0):
@@ -48,9 +75,10 @@ def temperature_vs_density(density):
     y[i] = density[i][1]
   xx = np.linspace(x[0],x[-1],100)
   n,m,l = 1e18,8.5e-2,7e15
-  yy = dens_func(xx,n,l,m)
-  a,b,k,round_a,round_b,round_k = exponential_3(x,y,(n,l,m),dens_func)
-  yyy = dens_func(xx,a,b,k)
+  yy = dens_func(xx,n,m)
+  #a,b,k,round_a,round_b,round_k = exponential_3(x,y,(n,l,m),dens_func)
+  a,k,round_a,round_k = exponential_2(x,y,(n,m),dens_func)
+  yyy = dens_func(xx,a,k)
   ax,bx = plt.subplots(1)
   bx.plot(x,y,'ro')
   bx.plot(xx,yy,'b-')
