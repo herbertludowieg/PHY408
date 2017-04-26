@@ -1,0 +1,15 @@
+#Data given the UB PHY 408 lab manual
+#for the density of rubidium atoms as
+#a function of temperature.
+17.0;290;3.3e15
+27.0;300;1.1e16
+37.0;310;2.9e16
+47.0;320;7.5e16
+57.0;330;1.8e17
+67.0;340;4.3e17
+77.0;350;8.3e17
+87.0;360;1.5e18
+97.0;370;3.7e18
+107.0;380;6.3e18
+117.0;390;1.2e19
+127.0;400;2.4e19

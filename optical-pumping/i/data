@@ -1,0 +1,12 @@
+#Data collected in lab that shows the relationship
+#of temperature and the light intensity represented by
+#voltages of the measuring device.
+#Will need an exponential fit of the data.
+27.0;10.727
+37.0;8.819
+47.0;6.875
+57.0;4.473
+67.0;2.602
+77.0;1.496
+87.0;1.035
+97.0;0.866
