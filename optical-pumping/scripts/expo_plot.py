@@ -6,7 +6,7 @@ import numpy as np
 from _sig_fig import *
 
 def light_func(x,a,b,k):
-  return a*np.exp(-k*(x-6e16))+b
+  return a*np.exp(-k*(x-2e16))+b
 
 def dens_func(x,a,k):
   return a*np.exp(k*(x-100))
@@ -71,7 +71,7 @@ def exponential_3(x,y,p0,func,sigma=0):
   round_b = sig_fig(sigma_b,b)
   round_k = sig_fig(sigma_k,k)
   #round_z = sig_fig(sigma_z,z)
-  return a,b,k,round_a,round_b,round_k
+  return a,b,k,sigma_a,sigma_b,sigma_k,round_a,round_b,round_k
 
 def temperature_vs_density(density):
   x = np.zeros(len(density))
@@ -96,6 +96,14 @@ def temperature_vs_density(density):
   bx.plot(x,y,'ro')
   #bx.plot(xx,yy,'b-')
   bx.plot(xx,yyy,'r-')
+  bx.text(10,1.75e19, \
+          "Best-Fit Equation:\n$Y = A*e^{k*(x-100)}$\nA = "+ \
+          str(round_a[1])+" +/- "+str(round_a[0])+"\nk = "+ \
+          str(round_k[1])+" +/- "+str(round_k[0]), \
+          color='black',bbox=dict(facecolor='none',edgecolor='black'))
+  bx.set_xlabel("Temperature ($^oC$)")
+  bx.set_ylabel("Density ($m^{-3})")
+  bx.set_title("Temperature vs. Density")
   ax.show()
 
 def density_vs_light(density):
@@ -128,6 +136,7 @@ def density_vs_light(density):
   round_a = np.zeros(2) 
   round_b = np.zeros(2)
   round_k = np.zeros(2)
+  sigma = np.zeros(3)
   x = np.zeros(len(data))
   y = np.zeros(len(data))
   for i in range(len(data)):
@@ -139,22 +148,34 @@ def density_vs_light(density):
   #print yy
   print "*************************************************"
   print "Fit for light intensity as a function of density"
-  a,b,k,round_a,round_b,round_k = exponential_3(x,y,(10,1,6e-18),light_func,0.002)
+  a,b,k,sigma[0],sigma[1],sigma[2],round_a,round_b,round_k = \
+                                exponential_3(x,y,(10,1,6e-18),light_func,0.002)
+  xsarea = k/L
+  sigma_xsarea = sigma[2]/L
+  round_xsarea = sig_fig(sigma_xsarea,xsarea)
   print "\nFit parameters with uncertainties:"
   print "a = "+str(round_a[1])+" +/- "+str(round_a[0])
   print "b = "+str(round_b[1])+" +/- "+str(round_b[0])
   print "k = "+str(round_k[1])+" +/- "+str(round_k[0])
-  print "z = 6e16"
+  print "z = 2e16"
+  print "\nCross sectional area:"
+  print "sigma = "+str(round_xsarea[1])+" +/- "+str(round_xsarea[0])
   print "*************************************************"
   yyy = light_func(xx,a,b,k)
   ax,bx = plt.subplots(1)
   bx.plot(x,y,'ro',label="Data")
   bx.plot(xx,yyy,'r-',label='Fit')
-  bx.plot(xx,yy,'b-',label='Guess Fit')
+  #bx.plot(xx,yy,'b-',label='Guess Fit')
   bx.set_xlabel("Density ($m^{-3}$)")
   bx.set_ylabel("Light Intensity ($V$)")
   bx.set_title("Density vs. Light Intensity")
-  bx.legend()
+  #bx.legend()
+  bx.text(2.7e18,8.0,\
+         "Best-Fit Equation:\n$Y = A*e^{-k*(x-2e16)}+B$\nA = "+ \
+         str(round_a[1])+" +/- "+str(round_a[0])+"\nB = "+ \
+         str(round_b[1])+" +/- "+str(round_b[0])+"\nk = "+ \
+         str(round_k[1])+" +/- "+str(round_k[0]), \
+         color='black',bbox=dict(facecolor='none',edgecolor='black'))
   #bx.set_ylim([0,12])
   #bx.set_xlim([4.0e18])
   ax.show()
@@ -178,5 +199,5 @@ def main():
   density_vs_light(density)
   temperature_vs_density(density)
   raw_input()
-
+L = 0.033
 main()
