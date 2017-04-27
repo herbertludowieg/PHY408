@@ -179,7 +179,23 @@ def density_vs_light(density):
   #bx.set_ylim([0,12])
   #bx.set_xlim([4.0e18])
   ax.show()
-  
+
+def magnetic_field(N,I,R):
+  return (8*mu0*N*I)/(R*np.sqrt(125))*10e-3
+def current_vs_field(magnets):
+  x = np.linspace(0,10,100)
+  y_vert = magnetic_field(magnets['Vertical'][1],x,magnets['Vertical'][0])
+  y_horiz = magnetic_field(magnets['Horizontal'][1],x,magnets['Horizontal'][0]) 
+  y_sweep = magnetic_field(magnets['Sweep'][1],x,magnets['Sweep'][0])
+  ax,bx = plt.subplots(1)
+  bx.plot(x,y_vert,'r-',label='Verical Coils')
+  bx.plot(x,y_horiz,'b-',label='Horizontal Coils')
+  bx.plot(x,y_sweep,'c-',label='Sweep Coils')
+  bx.legend()
+  bx.set_xlabel("Current ($A$)")
+  bx.set_ylabel("Magnetic Field ($mT$)")
+  bx.set_title("Cuurent vs. Magnetic field")
+  ax.show()
 
 def main():
   dens_file = open("density-vs-temp.dat",'r')
@@ -196,8 +212,40 @@ def main():
     density.append([])
     density[i].append(x[i])
     density[i].append(y[i])
-  density_vs_light(density)
-  temperature_vs_density(density)
-  raw_input()
+  magnets = {}
+  mag_file = open("magnet-prop.dat",'r')
+  for i in mag_file.readlines():
+    if i[0] == '#':
+      continue
+    d = i.split(';')
+    magnets[d[0]] = [float(d[1]),float(d[2]),float(d[3]),float(d[4])]
+  loop = 1
+  while (loop):
+    print "/////////////////////////////////////////////////////"
+    print "Which would you like to print?"
+    print "Enter the name in parentheses for the specific plot."
+    print "density versus light intensity? (den v light)"
+    print "temperature versus density? (temp v den)"
+    print "current versus magnetic field? (curr v field)"
+    print "all? (all)"
+    print "Enter quit or hit enter key to exit the program."
+    which = raw_input("Enter name here:\n")
+    if which == 'all':
+      density_vs_light(density)
+      temperature_vs_density(density)
+      current_vs_field(magnets)
+    elif which == "den v light":
+      density_vs_light(density)
+    elif which == "temp v den":
+      temperature_vs_density(density)
+    elif which == "curr v field":
+      current_vs_field(magnets)
+    elif which == "quit" or which == "":
+      break
+    else:
+      print "\nERROR Can not parse command."
+      print "Please try again.\n"
+
 L = 0.033
+mu0 = 1.2566370614e-6
 main()
