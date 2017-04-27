@@ -1,0 +1,7 @@
+#This file includes all of the given parameters for the helmholtz
+# coils that are used in the experiment.
+#Magnet;Radius;Turns/Side;Field/Amp;Maximum Field
+#      ; (cm) ;          ;(Te-4/A) ;  (Te-4)    
+Vertical;11.735;20;1.5;1.5
+Horizontal;15.79;154;8.8;22.0
+Sweep;16.39;11;0.60;0.60
