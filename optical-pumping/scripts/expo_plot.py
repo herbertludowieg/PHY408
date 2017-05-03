@@ -11,6 +11,9 @@ def light_func(x,a,b,k):
 def dens_func(x,a,k):
   return a*np.exp(k*(x-100))
 
+def period_func(x,a,b,k):
+  return a*np.exp(-k*(x-1))+b
+
 # Finds exponential fit to a*e^(-k*(x-z))+b
 def exponential_2(x,y,p0,func,sigma=0):
   #print x,y,p0
@@ -73,6 +76,73 @@ def exponential_3(x,y,p0,func,sigma=0):
   #round_z = sig_fig(sigma_z,z)
   return a,b,k,sigma_a,sigma_b,sigma_k,round_a,round_b,round_k
 
+def ringing_vs_rfamp():
+  period_fn = open("../data-iv/period-data",'r')
+  rf_fn = open("../data-iv/rf-amplitudes",'r')
+  rb87 = []
+  rb85 = []
+  rf = []
+  bool_rb87 = 0
+  bool_rb85 = 0
+  for i in period_fn.readlines():
+    #print i[:4]
+    if i[:4] == "Rb87":
+      bool_rb87 = 1
+      bool_rb85 = 0
+      continue
+    elif i[:4] == "Rb85":
+      bool_rb85 = 1
+      bool_rb87 = 0
+      continue
+    #print bool_rb87
+    if bool_rb87:
+      rb87.append(float(i)*1e6)
+    elif bool_rb85:
+      rb85.append(float(i)*1e6)
+  #print rb87,rb85
+  for i in rf_fn.readlines():
+    rf.append(float(i))
+  print "*************************************************"
+  print "Fit for Rb 85 period of ringing as a function of\nRF Amplitude"
+  round_a_85 = np.zeros(2)
+  round_k_85 = np.zeros(2)
+  round_b_85 = np.zeros(2)
+  a_85,b_85,k_85,n,m,l,round_a_85,round_b_85,round_k_85 = \
+                                exponential_3(rf,rb85,(900,300,1),period_func)
+  print "a = "+str(round_a_85[1])+" +/- "+str(round_a_85[0])
+  print "b = "+str(round_b_85[1])+" +/- "+str(round_b_85[0])
+  print "k = "+str(round_k_85[1])+" +/- "+str(round_k_85[0])
+  print "z = 1.0"
+  print "*************************************************"
+  print "*************************************************"
+  print "Fit for Rb 87 period of ringing as a function of\nRF Amplitude"
+  round_a_87 = np.zeros(2)
+  round_k_87 = np.zeros(2)
+  round_b_87 = np.zeros(2)
+  a_87,b_87,k_87,n,m,l,round_a_87,round_b_87,round_k_87 = \
+                                exponential_3(rf,rb87,(550,200,1),period_func)
+  print "a = "+str(round_a_87[1])+" +/- "+str(round_a_87[0])
+  print "b = "+str(round_b_87[1])+" +/- "+str(round_b_87[0])
+  print "k = "+str(round_k_87[1])+" +/- "+str(round_k_87[0])
+  print "z = 1.0"
+  print "*************************************************"
+
+  xx = np.linspace(rf[0],rf[-1],1000)
+  #y_85 = period_func(xx,900,1,300)
+  #y_87 = period_func(xx,550,1,200)
+  y_85 = period_func(xx,a_85,b_85,k_85)
+  y_87 = period_func(xx,a_87,b_87,k_87)
+  ax,bx = plt.subplots(1)
+  bx.plot(rf,rb85,'ro',label="Rb 85")
+  bx.plot(xx,y_85,'r-',label="Fit Rb 85")
+  bx.plot(rf,rb87,'bo',label="Rb 87")
+  bx.plot(xx,y_87,'b-',label="Fit Rb 87")
+  bx.legend()
+  bx.set_title("Period of ringing vs. RF Amplitude")
+  bx.set_xlabel("RF Amplitude ($V$)")
+  bx.set_ylabel("Period of ringing ($\mu s$)")
+  ax.show()
+
 def temperature_vs_density(density):
   x = np.zeros(len(density))
   y = np.zeros(len(density))
@@ -102,7 +172,7 @@ def temperature_vs_density(density):
           str(round_k[1])+" +/- "+str(round_k[0]), \
           color='black',bbox=dict(facecolor='none',edgecolor='black'))
   bx.set_xlabel("Temperature ($^oC$)")
-  bx.set_ylabel("Density ($m^{-3})")
+  bx.set_ylabel("Density ($m^{-3}$)")
   bx.set_title("Temperature vs. Density")
   ax.show()
 
@@ -181,17 +251,18 @@ def density_vs_light(density):
   ax.show()
 
 def magnetic_field(N,I,R):
-  return (8*mu0*N*I)/(R*np.sqrt(125))*10e-3
+  return (8*mu0*N*I)/(R*np.sqrt(125))*1e3
+
 def current_vs_field(magnets):
-  x = np.linspace(0,10,100)
+  x = np.linspace(0,3,100)
   y_vert = magnetic_field(magnets['Vertical'][1],x,magnets['Vertical'][0])
   y_horiz = magnetic_field(magnets['Horizontal'][1],x,magnets['Horizontal'][0]) 
   y_sweep = magnetic_field(magnets['Sweep'][1],x,magnets['Sweep'][0])
   ax,bx = plt.subplots(1)
-  bx.plot(x,y_vert,'r-',label='Verical Coils')
+  bx.plot(x,y_vert,'r-',label='Vertical Coils')
   bx.plot(x,y_horiz,'b-',label='Horizontal Coils')
   bx.plot(x,y_sweep,'c-',label='Sweep Coils')
-  bx.legend()
+  bx.legend(loc='upper left')
   bx.set_xlabel("Current ($A$)")
   bx.set_ylabel("Magnetic Field ($mT$)")
   bx.set_title("Cuurent vs. Magnetic field")
@@ -218,7 +289,7 @@ def main():
     if i[0] == '#':
       continue
     d = i.split(';')
-    magnets[d[0]] = [float(d[1]),float(d[2]),float(d[3]),float(d[4])]
+    magnets[d[0]] = [float(d[1])*1e-2,float(d[2]),float(d[3]),float(d[4])]
   loop = 1
   while (loop):
     print "/////////////////////////////////////////////////////"
@@ -227,6 +298,7 @@ def main():
     print "density versus light intensity? (den v light)"
     print "temperature versus density? (temp v den)"
     print "current versus magnetic field? (curr v field)"
+    print "period of ringing versus rf amplitude? (per v rf)"
     print "all? (all)"
     print "Enter quit or hit enter key to exit the program."
     which = raw_input("Enter name here:\n")
@@ -234,12 +306,15 @@ def main():
       density_vs_light(density)
       temperature_vs_density(density)
       current_vs_field(magnets)
+      ringing_vs_rfamp()
     elif which == "den v light":
       density_vs_light(density)
     elif which == "temp v den":
       temperature_vs_density(density)
     elif which == "curr v field":
       current_vs_field(magnets)
+    elif which == "per v rf":
+      ringing_vs_rfamp()
     elif which == "quit" or which == "":
       break
     else:
