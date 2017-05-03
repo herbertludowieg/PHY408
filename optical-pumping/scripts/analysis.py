@@ -14,6 +14,12 @@ def dens_func(x,a,k):
 def period_func(x,a,b,k):
   return a*np.exp(-k*(x-1))+b
 
+def magnetic_field(N,I,R):
+  return (8*mu0*N*I)/(R*np.sqrt(125))
+
+def g_fact_func(x,a):
+  return a*x
+
 # Finds exponential fit to a*e^(-k*(x-z))+b
 def exponential_2(x,y,p0,func,sigma=0):
   #print x,y,p0
@@ -75,6 +81,95 @@ def exponential_3(x,y,p0,func,sigma=0):
   round_k = sig_fig(sigma_k,k)
   #round_z = sig_fig(sigma_z,z)
   return a,b,k,sigma_a,sigma_b,sigma_k,round_a,round_b,round_k
+
+def g_factor(magnets):
+  fn = open("../ii/res-data",'r')
+  freq = []
+  rb85_raw = []
+  rb87_raw = []
+  freq_scale = 1
+  sweep_scale = 1
+  horiz_scale = 1
+  for i in fn.readlines():
+    if i[0] == '#':
+      continue
+    elif i[:4] == "freq":
+      d = i.split()
+      freq_scale = float(d[-1])
+      continue
+    elif i[:5] == "sweep":
+      d = i.split()
+      sweep_scale = float(d[-1])
+      continue
+    elif i[:5] == "horiz":
+      d = i.split()
+      horiz_scale = float(d[-1])
+      continue
+    d = i.split(';')
+    freq.append(float(d[0]))
+    rb85_raw.append([float(d[3]),float(d[4])])
+    rb87_raw.append([float(d[1]),float(d[2])])
+  res = [1,0.5]
+  rb85_currents = np.zeros((len(rb85_raw),2))
+  rb87_currents = np.zeros((len(rb87_raw),2))
+  rb85_magfield = np.zeros((len(rb85_raw),2))
+  rb87_magfield = np.zeros((len(rb87_raw),2))
+  rb85_totfield = np.zeros(len(rb85_raw))
+  rb87_totfield = np.zeros(len(rb87_raw))
+  scaling = 1e6
+  for i in range(len(rb85_raw)):
+    rb85_currents[i][0] = rb85_raw[i][0]/res[0]
+    rb85_currents[i][1] = rb85_raw[i][1]/res[1]
+    rb87_currents[i][0] = rb87_raw[i][0]/res[0]
+    rb87_currents[i][1] = rb87_raw[i][1]/res[1]
+    rb85_magfield[i][0] = \
+                      magnetic_field(magnets['Sweep'][1],rb85_currents[i][0], \
+                                     magnets['Sweep'][0])*scaling
+    rb85_magfield[i][1] = \
+                 magnetic_field(magnets['Horizontal'][1],rb85_currents[i][1], \
+                                magnets['Horizontal'][0])*scaling
+    rb87_magfield[i][0] = \
+                      magnetic_field(magnets['Sweep'][1],rb87_currents[i][0], \
+                                     magnets['Sweep'][0])*scaling
+    rb87_magfield[i][1] = \
+                 magnetic_field(magnets['Horizontal'][1],rb87_currents[i][1], \
+                                magnets['Horizontal'][0])*scaling
+    rb85_totfield[i] = rb85_magfield[i][0] + rb85_magfield[i][1]
+    rb87_totfield[i] = rb87_magfield[i][0] + rb87_magfield[i][1]
+  print "-----------------------------------------------------------------------------"
+  print "Part ii tabulated results in Latex format for Rb85"
+  print r"\hline"
+  print r"\multicolumn{9}{c}{Rb\textsuperscript{85}} \\ \hline"
+  print r"{} & \multicolumn{3}{c}{Sweep field coil} & "
+  print r"\multicolumn{3}{c}{Horizontal field coil} && Combined \\ \hline"
+  print r"Frequency (kHz) & Voltage (V) & Current (A) & Field ($\mu T$) & Voltage (V) "
+  print r"& Current (A) & Field ($\mu T$) && Field ($\mu T$) \\ \hline"
+  for i in range(len(rb85_raw)):
+    print str(freq[i])+" & "+str(rb85_raw[i][0])+" & "+ \
+          str(round(rb85_currents[i][0],4))+" & "+ \
+          str(round(rb85_magfield[i][0],4))+" & "+ \
+          str(rb85_raw[i][1])+" & "+ \
+          str(round(rb85_currents[i][1],4))+" & "+ \
+          str(round(rb85_magfield[i][1],4))+" && "+ \
+          str(round(rb85_totfield[i],4))+r" \\ \hline"
+  print "-----------------------------------------------------------------------------"
+  print "Part ii tabulated results in Latex format for Rb87"
+  print r"\hline"
+  print r"\multicolumn{9}{c}{Rb\textsuperscript{87}} \\ \hline"
+  print r"{} & \multicolumn{3}{c}{Sweep field coil} & "
+  print r"\multicolumn{3}{c}{Horizontal field coil} && Combined \\ \hline"
+  print r"Frequency (kHz) & Voltage (V) & Current (A) & Field ($\mu T$) & Voltage (V) "
+  print r"& Current (A) & Field ($\mu T$) && Field ($\mu T$) \\ \hline"
+  for i in range(len(rb87_raw)):
+    print str(freq[i])+" & "+str(rb87_raw[i][0])+" & "+ \
+          str(round(rb87_currents[i][0],4))+" & "+ \
+          str(round(rb87_magfield[i][0],4))+" & "+ \
+          str(rb87_raw[i][1])+" & "+ \
+          str(round(rb87_currents[i][1],4))+" & "+ \
+          str(round(rb87_magfield[i][1],4))+" && "+ \
+          str(round(rb87_totfield[i],4))+r" \\ \hline"
+  print "-----------------------------------------------------------------------------"
+  param,pcov = curve_fit(g_fact_func,rb85_totfield
 
 def ringing_vs_rfamp():
   period_fn = open("../data-iv/period-data",'r')
@@ -250,18 +345,15 @@ def density_vs_light(density):
   #bx.set_xlim([4.0e18])
   ax.show()
 
-def magnetic_field(N,I,R):
-  return (8*mu0*N*I)/(R*np.sqrt(125))*1e3
-
 def current_vs_field(magnets):
   x = np.linspace(0,3,100)
   y_vert = magnetic_field(magnets['Vertical'][1],x,magnets['Vertical'][0])
   y_horiz = magnetic_field(magnets['Horizontal'][1],x,magnets['Horizontal'][0]) 
   y_sweep = magnetic_field(magnets['Sweep'][1],x,magnets['Sweep'][0])
   ax,bx = plt.subplots(1)
-  bx.plot(x,y_vert,'r-',label='Vertical Coils')
-  bx.plot(x,y_horiz,'b-',label='Horizontal Coils')
-  bx.plot(x,y_sweep,'c-',label='Sweep Coils')
+  bx.plot(x,y_vert*1e3,'r-',label='Vertical Coils')
+  bx.plot(x,y_horiz*1e3,'b-',label='Horizontal Coils')
+  bx.plot(x,y_sweep*1e3,'c-',label='Sweep Coils')
   bx.legend(loc='upper left')
   bx.set_xlabel("Current ($A$)")
   bx.set_ylabel("Magnetic Field ($mT$)")
@@ -289,7 +381,9 @@ def main():
     if i[0] == '#':
       continue
     d = i.split(';')
-    magnets[d[0]] = [float(d[1])*1e-2,float(d[2]),float(d[3]),float(d[4])]
+    magnets[d[0]] = [float(d[1])*1.0e-2,float(d[2]),float(d[3]),float(d[4])]
+  print magnets
+  g_factor(magnets)
   loop = 1
   while (loop):
     print "/////////////////////////////////////////////////////"
@@ -322,5 +416,7 @@ def main():
       print "Please try again.\n"
 
 L = 0.033
-mu0 = 1.2566370614e-6
+MU0 = 1.2566370614e-6
+H = 6.626070040e-34
+MUB = 9.274009994e-24
 main()
