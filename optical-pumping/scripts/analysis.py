@@ -15,7 +15,7 @@ def period_func(x,a,b,k):
   return a*np.exp(-k*(x-1))+b
 
 def magnetic_field(N,I,R):
-  return (8*mu0*N*I)/(R*np.sqrt(125))
+  return (8*MU0*N*I)/(R*np.sqrt(125))
 
 def g_fact_func(x,a):
   return a*x
@@ -117,6 +117,10 @@ def g_factor(magnets):
   rb85_totfield = np.zeros(len(rb85_raw))
   rb87_totfield = np.zeros(len(rb87_raw))
   scaling = 1e6
+  sigma_B = (magnetic_field(magnets['Sweep'][1],0.002,magnets['Sweep'][0])+ \
+     magnetic_field(magnets['Horizontal'][1],0.004,magnets['Horizontal'][0]))* \
+     scaling
+  print sigma_B
   for i in range(len(rb85_raw)):
     rb85_currents[i][0] = rb85_raw[i][0]/res[0]
     rb85_currents[i][1] = rb85_raw[i][1]/res[1]
@@ -169,7 +173,24 @@ def g_factor(magnets):
           str(round(rb87_magfield[i][1],4))+" && "+ \
           str(round(rb87_totfield[i],4))+r" \\ \hline"
   print "-----------------------------------------------------------------------------"
-  param,pcov = curve_fit(g_fact_func,rb85_totfield
+  param,pcov = curve_fit(g_fact_func,freq,rb85_totfield,(1),sigma=sigma_B)
+  a_85 = 1/param
+  sigma_a_85 = np.sqrt(pcov)/param**2
+  round_a_85 = sig_fig(sigma_a_85,a_85)
+  param,pcov = curve_fit(g_fact_func,freq,rb87_totfield,(1),sigma=sigma_B)
+  a_87 = 1/param
+  sigma_a_87 = np.sqrt(pcov)/param**2
+  round_a_87 = sig_fig(sigma_a_87,a_87)
+  xx = np.linspace(rb85_totfield[0],rb85_totfield,50)
+  y85 = g_fact_func(xx,a_85)
+  y87 = g_fact_func(xx,a_87)
+  ax,bx = plt.subplots(1)
+  bx.plot(rb85_totfield,freq,'ro',label='$Rb^{85}$')
+  bx.plot(xx,y85,'r-',label='Fit $Rb^{85}$')
+  bx.plot(rb87_totfield,freq,'bo',label='$Rb^{87}$')
+  bx.plot(xx,y87,'r-',label='Fit $Rb^{87}$')
+  bx.legend()
+  ax.show()
 
 def ringing_vs_rfamp():
   period_fn = open("../data-iv/period-data",'r')
