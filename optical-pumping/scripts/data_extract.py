@@ -2,6 +2,13 @@
 import numpy as np
 import sys
 
+# This script is to be used in conjunction with the data that is taken
+# the optical lab experiment which can be found in the data-iv directories
+# This script will identify the peaks in a data set by splicing the 
+# data into regions where a positive maxima is contained due to oscilatory
+# nature of the data and then find the local maxima and then find
+# the average period of the data oscilations.
+
 def main():
   fn = open(sys.argv[1])
   start = 0
@@ -43,7 +50,7 @@ def main():
     if len(time[i]) < 10:
       continue
     #print time[i]
-    for j in range(int(len(time[i])*0.45),int(len(time[i])*0.55)):
+    for j in range(2,len(time[i])-2):
       if signal[i][j] >= signal[i][j-1] and signal[i][j] > signal[i][j-2]:
         if signal[i][j] >= signal[i][j+1] and signal[i][j] >= signal[i][j+2]:
            #and signal[i][j] > signal[i][j+3]:
@@ -54,17 +61,17 @@ def main():
         continue
       j = 1
       while ( j < len(max_sig)):
-        print time[i][0],time[i][-1],max_sig[j][0],max_sig[j-1][0]
+        #print time[i][0],time[i][-1],max_sig[j][0],max_sig[j-1][0]
         if max_sig[j][0] < time[i][-1] and max_sig[j][0] > time[i][0]:
-          print 1
+          #print 1
           if max_sig[j-1][0] < time[i][-1] and max_sig[j-1][0] > time[i][0]:
-            print 2
+            #print 2
             if max_sig[j][1] <= max_sig[j-1][1]:
               max_sig.remove(max_sig[j])
             else:
               max_sig.remove(max_sig[j-1])
         j += 1
-  print max_sig #len(max_sig)
+  #print max_sig #len(max_sig)
   freq = 0.
   ave = 0.
   for i in range(len(max_sig)-1):
