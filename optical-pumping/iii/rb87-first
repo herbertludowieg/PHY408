@@ -1,0 +1,11 @@
+#Data taken from the measurement of the first
+#quadratic zeeman effect.
+amplitude = 500e-3
+volts = 1
+horizontal = 0.9872
+freq = 5.95e6
+#Peak number;Voltage;Amplitude
+1;0.1095;1.2
+2;0.1337;1.6
+3;0.1580;2.5
+4;0.1821;3.4

@@ -17,8 +17,8 @@ def period_func(x,a,b,k):
 def magnetic_field(N,I,R):
   return (8*MU0*N*I)/(R*np.sqrt(125))
 
-def g_fact_func(x,a,b):
-  return (a*x*MUB/H)+b
+def g_fact_func(x,a):
+  return (a*x)
 
 # Finds exponential fit to a*e^(-k*(x-z))+b
 def exponential_2(x,y,p0,func,sigma=0):
@@ -83,6 +83,7 @@ def exponential_3(x,y,p0,func,sigma=0):
   return a,b,k,sigma_a,sigma_b,sigma_k,round_a,round_b,round_k
 
 def g_factor(magnets):
+  # read file
   fn = open("../ii/res-data",'r')
   freq = []
   rb85_raw = []
@@ -116,11 +117,12 @@ def g_factor(magnets):
   rb87_magfield = np.zeros((len(rb87_raw),2))
   rb85_totfield = np.zeros(len(rb85_raw))
   rb87_totfield = np.zeros(len(rb87_raw))
-  scaling = 1e6
+  scaling = MAG_SCALE
   sigma_B = (magnetic_field(magnets['Sweep'][1],0.002,magnets['Sweep'][0])+ \
      magnetic_field(magnets['Horizontal'][1],0.004,magnets['Horizontal'][0]))* \
      scaling
-
+  
+  # calculations for magnetic field
   for i in range(len(rb85_raw)):
     rb85_currents[i][0] = rb85_raw[i][0]/res[0]
     rb85_currents[i][1] = rb85_raw[i][1]/res[1]
@@ -140,6 +142,8 @@ def g_factor(magnets):
                                 magnets['Horizontal'][0])*scaling
     rb85_totfield[i] = rb85_magfield[i][0] + rb85_magfield[i][1] - ZERO_FIELD
     rb87_totfield[i] = rb87_magfield[i][0] + rb87_magfield[i][1] - ZERO_FIELD
+
+  # data output formatting
   show_data = raw_input("Show data for part ii? (y or n) ")
   if show_data == 'y':
     print sigma_B
@@ -176,44 +180,117 @@ def g_factor(magnets):
             str(round(rb87_magfield[i][1],4))+" && "+ \
             str(round(rb87_totfield[i],4))+r" \\ \hline"
     print "-----------------------------------------------------------------------------"
-  param,pcov = curve_fit(g_fact_func,rb85_totfield,freq,(1,1))
-  a_85,b_85 = param
-  sigma_a_85,sigma_b_85 = np.sqrt(np.diag(pcov))
+
+  # line fitting
+  param,pcov = curve_fit(g_fact_func,rb85_totfield,freq,(1))
+  a_85 = param[0]
+  sigma_a_85 = np.sqrt(np.diag(pcov))
   round_a_85 = sig_fig(sigma_a_85,a_85)
-  round_b_85 = sig_fig(sigma_b_85,b_85)
-  param,pcov = curve_fit(g_fact_func,rb87_totfield,freq,(1,1))
-  a_87,b_87 = param
-  sigma_a_87,sigma_b_87 = np.sqrt(np.diag(pcov))
+  param,pcov = curve_fit(g_fact_func,rb87_totfield,freq,(1))
+  a_87 = param[0]
+  sigma_a_87 = np.sqrt(np.diag(pcov))
   round_a_87 = sig_fig(sigma_a_87,a_87)
-  round_b_87 = sig_fig(sigma_b_87,b_87)
   x85 = np.linspace(rb85_totfield[0],rb85_totfield[-1],50)
-  #xx = np.linspace(freq[0],freq[-1],50)
-  y85 = g_fact_func(x85,a_85,b_85)
+  y85 = g_fact_func(x85,a_85)
   x87 = np.linspace(rb87_totfield[0],rb87_totfield[-1],50)
-  y87 = g_fact_func(x87,a_87,b_87) 
+  y87 = g_fact_func(x87,a_87)
+
+  # g-factor calculations
+  gscale = (scaling*freq_scale)
+  g85 = (a_85 * gscale) * (H/MUB)
+  sigma_g85 = (sigma_a_85 * gscale) * (H/MUB)
+  round_g85 = sig_fig(sigma_g85,g85)
+  g87 = (a_87 * gscale) * (H/MUB)
+  sigma_g87 = (sigma_a_87 * gscale) * (H/MUB)
+  round_g87 = sig_fig(sigma_g87,g87)
+
+  # output formatting
   print "*********************************************************"
   print "Fit for the g-factor"
   print "Rb85"
   print "a = "+str(round_a_85[1])+" +/- "+str(round_a_85[0])
-  print "b = "+str(round_b_85[1])+" +/- "+str(round_b_85[0])
-  print "x-intercept = "+str((-b_85*H)/(a_85*MUB))
-  print "g-factor = "+str(a_85*scaling)
+  print "g-factor = "+str(round_g85[1])+" +/- "+str(round_g85[0])
   print "\nRb87"
   print "a = "+str(round_a_87[1])+" +/- "+str(round_a_87[0])
-  print "b = "+str(round_b_87[1])+" +/- "+str(round_b_87[0])
-  print "x-intercept = "+str((-b_87*H)/(a_85*MUB))
-  print "g-factor = "+str(a_87*scaling)
+  print "g-factor = "+str(round_g87[1])+" +/- "+str(round_g87[0])
   print "*********************************************************"
+
+  # plot properties
   ax,bx = plt.subplots(1)
   bx.plot(rb85_totfield,freq,'ro',label='$Rb^{85}$')
   bx.plot(x85,y85,'r-',label='Fit $Rb^{85}$')
   bx.plot(rb87_totfield,freq,'bo',label='$Rb^{87}$')
   bx.plot(x87,y87,'b-',label='Fit $Rb^{87}$')
+  bx.set_xlabel("Magnetic field ($\mu T$)")
+  bx.set_ylabel("Frequency ($kHz$)")
+  bx.set_title("Magnetic Field vs. Frequency")
   bx.legend(loc='upper left')
   ax.show()
 
+def open_quad(fn):
+  x = []
+  for i in fn.readlines():
+    d = i.split()
+    if i[0] == '#':
+      continue
+    elif d[0] == "amplitude":
+      amp_scale = float(d[-1])
+      continue
+    elif d[0] == "volts":
+      volt_scale = float(d[-1])
+      continue
+    elif d[0] == "horizontal":
+      hor_curr = float(d[-1])
+      continue
+    elif d[0] == "freq":
+      frequency = float(d[-1])
+      continue
+    d = i.split(';')
+    x.append([float(d[1]),float(d[2])])
+  return amp_scale,volt_scale,hor_curr,frequency,x
+
+def plot_quad(raw,magnets,title):
+  x = np.zeros(len(raw[-1]))
+  y = np.zeros(len(raw[-1]))
+  const_field =  \
+    magnetic_field(magnets['Horizontal'][1],raw[2],magnets['Horizontal'][0])* \
+      MAG_SCALE
+  #print const_field
+  for i in range(len(raw[-1])):
+    x[i] = \
+      (magnetic_field(magnets['Sweep'][1],raw[-1][i][0],magnets['Sweep'][0]) * \
+       MAG_SCALE) + const_field - ZERO_FIELD
+    #print (magnetic_field(magnets['Sweep'][1],raw[-1][i][0],magnets['Sweep'][0]) * MAG_SCALE)
+    y[i] = raw[-1][i][1] * raw[0]
+  ax,bx = plt.subplots(1)
+  bx.bar(x,y,0.1)
+  bx.set_xlabel("Magnetic Field ($\mu T$)")
+  bx.set_ylabel("Amplitude (V)")
+  bx.set_title(title)
+  #bx.set_xticks(x)
+  ax.show()
+
 def quad_zeeman(magnets):
- print "something" 
+  # rb87-first
+  fn = open("../iii/rb87-first",'r')
+  rb87_1_raw = open_quad(fn)
+  plot_quad(rb87_1_raw,magnets,"$Rb^{87}$ Quadratic Zeeman Effect at low RF power")
+  
+  # rb87-double
+  fn = open("../iii/rb87-double",'r')
+  rb87_2_raw = open_quad(fn)
+  plot_quad(rb87_2_raw,magnets,"$Rb^{87}$ Quadratic Zeeman Effect at high RF power")
+
+  # rb85-first
+  fn = open("../iii/rb85-first",'r')
+  rb85_1_raw = open_quad(fn)
+  plot_quad(rb85_1_raw,magnets,"$Rb^{85}$ Quadratic Zeeman Effect at low RF power")
+  
+  # rb85-double
+  fn = open("../iii/rb85-double",'r')
+  rb85_2_raw = open_quad(fn)
+  plot_quad(rb85_2_raw,magnets,"$Rb^{85}$ Quadratic Zeeman Effect at high RF power")
+  
 
 def ringing_vs_rfamp():
   period_fn = open("../data-iv/period-data",'r')
@@ -246,7 +323,7 @@ def ringing_vs_rfamp():
   round_a_85 = np.zeros(2)
   round_k_85 = np.zeros(2)
   round_b_85 = np.zeros(2)
-  a_85,b_85,k_85,n,m,l,round_a_85,round_b_85,round_k_85 = \
+  a_85,b_85,k_85,n,sigma_b_85,l,round_a_85,round_b_85,round_k_85 = \
                                 exponential_3(rf,rb85,(900,300,1),period_func)
   print "a = "+str(round_a_85[1])+" +/- "+str(round_a_85[0])
   print "b = "+str(round_b_85[1])+" +/- "+str(round_b_85[0])
@@ -258,12 +335,22 @@ def ringing_vs_rfamp():
   round_a_87 = np.zeros(2)
   round_k_87 = np.zeros(2)
   round_b_87 = np.zeros(2)
-  a_87,b_87,k_87,n,m,l,round_a_87,round_b_87,round_k_87 = \
+  a_87,b_87,k_87,n,sigma_b_87,l,round_a_87,round_b_87,round_k_87 = \
                                 exponential_3(rf,rb87,(550,200,1),period_func)
   print "a = "+str(round_a_87[1])+" +/- "+str(round_a_87[0])
   print "b = "+str(round_b_87[1])+" +/- "+str(round_b_87[0])
   print "k = "+str(round_k_87[1])+" +/- "+str(round_k_87[0])
   print "z = 1.0"
+  print "-------------------------------------------------"
+  g = b_85/b_87
+  sigma_g = np.sqrt((sigma_b_85/b_87)**2+(b_85*sigma_b_87/b_87**2)**2)
+  round_g = sig_fig(sigma_g,g)
+  gdata = 0
+  for i in range(len(rb85)):
+    gdata += rb85[i] / rb87[i]
+  gdata = gdata / len(rb85)
+  print "g-factor = "+str(round_g[1])+" +/- "+str(round_g[0])
+  print "g-factor from data average = "+str(gdata)
   print "*************************************************"
 
   xx = np.linspace(rf[0],rf[-1],1000)
@@ -277,7 +364,7 @@ def ringing_vs_rfamp():
   bx.plot(rf,rb87,'bo',label="Rb 87")
   bx.plot(xx,y_87,'b-',label="Fit Rb 87")
   bx.legend()
-  bx.set_title("Period of ringing vs. RF Amplitude")
+  bx.set_title("RF Amplitude vs. Period of Ringing")
   bx.set_xlabel("RF Amplitude ($V$)")
   bx.set_ylabel("Period of ringing ($\mu s$)")
   ax.show()
@@ -427,7 +514,8 @@ def main():
     d = i.split(';')
     magnets[d[0]] = [float(d[1])*1.0e-2,float(d[2]),float(d[3]),float(d[4])]
   global ZERO_FIELD
-  ZERO_FIELD = magnetic_field(magnets['Sweep'][1],0.168,magnets['Sweep'][0])*1e6
+  ZERO_FIELD = magnetic_field(magnets['Sweep'][1],0.168,magnets['Sweep'][0])* \
+               MAG_SCALE
   loop = 1
   while (loop):
     print "/////////////////////////////////////////////////////"
@@ -438,6 +526,7 @@ def main():
     print "current versus magnetic field? (curr v field)"
     print "period of ringing versus rf amplitude? (per v rf)"
     print "g- factor calculations? (g-factor)"
+    print "quadratic zeeman effect? (quad zeeman)"
     print "all? (all)"
     print "Enter quit or hit enter key to exit the program."
     which = raw_input("Enter name here:\n")
@@ -447,6 +536,7 @@ def main():
       current_vs_field(magnets)
       ringing_vs_rfamp()
       g_factor(magnets)
+      quad_zeeman(magnets)
     elif which == "den v light":
       density_vs_light(density)
     elif which == "temp v den":
@@ -457,6 +547,8 @@ def main():
       ringing_vs_rfamp()
     elif which == "g-factor":
       g_factor(magnets)
+    elif which == "quad zeeman":
+      quad_zeeman(magnets)
     elif which == "quit" or which == "":
       break
     else:
@@ -468,4 +560,5 @@ MU0 = 1.2566370614e-6
 H = 6.626070040e-34
 MUB = 9.274009994e-24
 ZERO_FIELD = 0
+MAG_SCALE = 1e6
 main()

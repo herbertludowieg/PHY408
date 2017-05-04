@@ -1,0 +1,13 @@
+#Data taken for the measurement of the
+#first quantum transition of Rb85
+amplitude = 200e-3
+volts = 1
+horizontal = 0.9872
+freq = 4.1e6
+#Peak number;Voltage;Amplitude
+1;0.5060;1.4
+2;0.5460;2.2
+3;0.5839;3.0
+4;0.6228;3.8
+5;0.6604;4.0
+6;0.7002;4.2

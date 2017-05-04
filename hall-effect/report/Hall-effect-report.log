@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.1.31)  10 APR 2017 16:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.1.31)  4 MAY 2017 12:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -627,14 +627,7 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \Hy@SectionHShift=\skip69
 )
-(./Hall-effect-report.aux
-
-LaTeX Warning: Label `eqn:12' multiply defined.
-
-
-LaTeX Warning: Label `eqn:18' multiply defined.
-
-)
+(./Hall-effect-report.aux)
 \openout1 = `Hall-effect-report.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 19.
@@ -750,16 +743,28 @@ Underfull \hbox (badness 10000) in paragraph at lines 51--51
  []
 
 
+LaTeX Warning: Citation `ref:1' on page 1 undefined on input line 60.
+
+
+LaTeX Warning: Citation `ref:1' on page 1 undefined on input line 65.
+
+
 Underfull \vbox (badness 6542) has occurred while \output is active []
 
 
-<shift-electrons.png, id=82, 803.0pt x 903.375pt>
+<shift-electrons.png, id=12, 803.0pt x 903.375pt>
 File: shift-electrons.png Graphic file (type png)
  <use shift-electrons.png>
 Package pdftex.def Info: shift-electrons.png used on input line 98.
 (pdftex.def)             Requested size: 216.08998pt x 216.08386pt.
 
-<contacts-dim.png, id=85, 539.01375pt x 324.21124pt>
+
+LaTeX Warning: Citation `ref:2' on page 1 undefined on input line 104.
+
+
+LaTeX Warning: Citation `ref:2' on page 1 undefined on input line 104.
+
+<contacts-dim.png, id=13, 539.01375pt x 324.21124pt>
 File: contacts-dim.png Graphic file (type png)
  <use contacts-dim.png>
 Package pdftex.def Info: contacts-dim.png used on input line 109.
@@ -768,16 +773,69 @@ Package pdftex.def Info: contacts-dim.png used on input line 109.
 [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
 
-] [2 <./shift-electrons.png> <./contacts-dim.png>]
+]
+
+LaTeX Warning: Citation `ref:1' on page 2 undefined on input line 151.
+
+
+LaTeX Warning: Citation `ref:3' on page 2 undefined on input line 167.
+
+
+LaTeX Warning: Citation `ref:3' on page 2 undefined on input line 175.
+
+[2 <./shift-electrons.png> <./contacts-dim.png>]
+
+LaTeX Warning: Citation `ref:3' on page 3 undefined on input line 183.
+
+
+LaTeX Warning: Citation `ref:3' on page 3 undefined on input line 188.
+
+
+LaTeX Warning: Citation `ref:4' on page 3 undefined on input line 195.
+
+
 Underfull \hbox (badness 1286) in paragraph at lines 200--202
 []\OT1/cmr/m/n/10 The sur-face of the sam-ple is singly con-
  []
 
-<f-function.png, id=137, 453.695pt x 354.32375pt>
+
+LaTeX Warning: Citation `ref:3' on page 3 undefined on input line 205.
+
+
+LaTeX Warning: Citation `ref:3' on page 3 undefined on input line 208.
+
+
+LaTeX Warning: Citation `ref:4' on page 3 undefined on input line 215.
+
+<f-function.png, id=54, 453.695pt x 354.32375pt>
 File: f-function.png Graphic file (type png)
  <use f-function.png>
 Package pdftex.def Info: f-function.png used on input line 219.
 (pdftex.def)             Requested size: 469.75482pt x 252.95029pt.
+
+
+LaTeX Warning: Reference `eqn:6' on page 3 undefined on input line 220.
+
+
+LaTeX Warning: Citation `ref:3' on page 3 undefined on input line 220.
+
+
+LaTeX Warning: Reference `eqn:6' on page 3 undefined on input line 220.
+
+
+LaTeX Warning: Citation `ref:3' on page 3 undefined on input line 220.
+
+
+LaTeX Warning: Reference `fig:3' on page 3 undefined on input line 228.
+
+
+LaTeX Warning: Citation `ref:4' on page 3 undefined on input line 232.
+
+
+LaTeX Warning: Citation `ref:4' on page 3 undefined on input line 244.
+
+
+LaTeX Warning: Citation `ref:4' on page 3 undefined on input line 244.
 
 
 ! Package amsmath Error: Erroneous nesting of equation structures;
@@ -791,6 +849,12 @@ l.269 \end{align*}
                   
 ? 
 
+LaTeX Warning: Citation `ref:3' on page 3 undefined on input line 289.
+
+
+LaTeX Warning: Reference `eqn:10' on page 3 undefined on input line 293.
+
+
 ! Package amsmath Error: Erroneous nesting of equation structures;
 (amsmath)                trying to recover with `aligned'.
 
@@ -801,17 +865,54 @@ Type  H <return>  for immediate help.
 l.301 \end{align*}
                   
 ? 
-[3] <cryostat.png, id=178, 349.305pt x 340.27126pt>
+
+LaTeX Warning: Citation `ref:3' on page 3 undefined on input line 301.
+
+[3]
+
+LaTeX Warning: Reference `eqn:11' on page 4 undefined on input line 303.
+
+
+LaTeX Warning: Citation `ref:3' on page 4 undefined on input line 310.
+
+
+LaTeX Warning: Citation `ref:3' on page 4 undefined on input line 316.
+
+
+LaTeX Warning: Citation `ref:3' on page 4 undefined on input line 323.
+
+
+LaTeX Warning: Reference `eqn:12' on page 4 undefined on input line 336.
+
+
+LaTeX Warning: Reference `eqn:12' on page 4 undefined on input line 336.
+
+
+LaTeX Warning: Citation `ref:3' on page 4 undefined on input line 340.
+
+<cryostat.png, id=75, 349.305pt x 340.27126pt>
 File: cryostat.png Graphic file (type png)
  <use cryostat.png>
 Package pdftex.def Info: cryostat.png used on input line 351.
 (pdftex.def)             Requested size: 216.09045pt x 210.50389pt.
 
-<sample-probe.png, id=181, 241.90375pt x 431.6125pt>
+
+LaTeX Warning: Citation `ref:3' on page 4 undefined on input line 353.
+
+
+LaTeX Warning: Citation `ref:3' on page 4 undefined on input line 353.
+
+<sample-probe.png, id=76, 241.90375pt x 431.6125pt>
 File: sample-probe.png Graphic file (type png)
  <use sample-probe.png>
 Package pdftex.def Info: sample-probe.png used on input line 358.
 (pdftex.def)             Requested size: 108.405pt x 193.42035pt.
+
+
+LaTeX Warning: Citation `ref:3' on page 4 undefined on input line 359.
+
+
+LaTeX Warning: Citation `ref:3' on page 4 undefined on input line 359.
 
 
 ! Package amsmath Error: Erroneous nesting of equation structures;
@@ -824,13 +925,42 @@ Type  H <return>  for immediate help.
 l.375 \end{align*}
                   
 ? 
-<temperature-cont.png, id=185, 582.175pt x 238.8925pt>
+
+LaTeX Warning: Citation `ref:3' on page 4 undefined on input line 375.
+
+<temperature-cont.png, id=77, 582.175pt x 238.8925pt>
 File: temperature-cont.png Graphic file (type png)
 
 <use temperature-cont.png>
 Package pdftex.def Info: temperature-cont.png used on input line 379.
 (pdftex.def)             Requested size: 469.75502pt x 192.76552pt.
- [4 <./f-function.png>] [5 <./cryostat.png> <./sample-probe.png>]
+
+
+LaTeX Warning: Citation `ref:3' on page 4 undefined on input line 381.
+
+
+LaTeX Warning: Citation `ref:3' on page 4 undefined on input line 381.
+
+[4 <./f-function.png>]
+
+LaTeX Warning: Reference `fig:4' on page 5 undefined on input line 391.
+
+
+LaTeX Warning: Citation `ref:3' on page 5 undefined on input line 402.
+
+
+LaTeX Warning: Citation `ref:3' on page 5 undefined on input line 408.
+
+
+LaTeX Warning: Reference `fig:5' on page 5 undefined on input line 415.
+
+
+LaTeX Warning: Citation `ref:3' on page 5 undefined on input line 419.
+
+[5 <./cryostat.png> <./sample-probe.png>]
+
+LaTeX Warning: Citation `ref:3' on page 6 undefined on input line 437.
+
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
 (caption)                particular \caption on input line 457.
@@ -842,9 +972,18 @@ Underfull \hbox (badness 1997) in paragraph at lines 450--457
  []
 
 
+LaTeX Warning: Citation `ref:5' on page 6 undefined on input line 457.
+
+
+LaTeX Warning: Citation `ref:5' on page 6 undefined on input line 457.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 457--457
 []\OT1/cmr/m/n/10 Table 1: |[]Heater cur-rent val-ues at dif-fer-ent set
  []
+
+
+LaTeX Warning: Reference `fig:6' on page 6 undefined on input line 462.
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 439--471
@@ -856,12 +995,25 @@ Underfull \hbox (badness 10000) in paragraph at lines 439--471
 \OT1/cmr/m/n/10 (Proportional-Integral-Derivative) feed-back
  []
 
-<lock-in.png, id=217, 586.19pt x 249.93375pt>
+<lock-in.png, id=100, 586.19pt x 249.93375pt>
 File: lock-in.png Graphic file (type png)
  <use lock-in.png>
 Package pdftex.def Info: lock-in.png used on input line 473.
 (pdftex.def)             Requested size: 469.75502pt x 200.28668pt.
- [6 <./temperature-cont.png>] <DC-sourc.png, id=233, 300.12125pt x 206.7725pt>
+
+
+LaTeX Warning: Citation `ref:3' on page 6 undefined on input line 475.
+
+
+LaTeX Warning: Citation `ref:3' on page 6 undefined on input line 475.
+
+
+LaTeX Warning: Reference `fig:7' on page 6 undefined on input line 480.
+
+
+LaTeX Warning: Citation `ref:3' on page 6 undefined on input line 487.
+
+[6 <./temperature-cont.png>] <DC-sourc.png, id=112, 300.12125pt x 206.7725pt>
 File: DC-sourc.png Graphic file (type png)
 
 <use DC-sourc.png>
@@ -869,9 +1021,27 @@ Package pdftex.def Info: DC-sourc.png used on input line 508.
 (pdftex.def)             Requested size: 469.79466pt x 252.94987pt.
 
 
+LaTeX Warning: Citation `ref:3' on page 7 undefined on input line 509.
+
+
+LaTeX Warning: Citation `ref:3' on page 7 undefined on input line 509.
+
+
+LaTeX Warning: Citation `ref:3' on page 7 undefined on input line 517.
+
+
+LaTeX Warning: Citation `ref:3' on page 7 undefined on input line 531.
+
+
 Package caption Warning: The option `hypcap=true' will be ignored for this
 (caption)                particular \caption on input line 561.
 See the caption package documentation for explanation.
+
+
+LaTeX Warning: Citation `ref:3' on page 7 undefined on input line 561.
+
+
+LaTeX Warning: Citation `ref:3' on page 7 undefined on input line 561.
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 561--561
@@ -879,7 +1049,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 561--561
  []
 
 [7 <./lock-in.png>]
-<magnetic-field-vs-current.png, id=252, 578.16pt x 433.62pt>
+<magnetic-field-vs-current.png, id=129, 578.16pt x 433.62pt>
 File: magnetic-field-vs-current.png Graphic file (type png)
 
 <use magnetic-field-vs-current.png>
@@ -889,31 +1059,58 @@ Package pdftex.def Info: magnetic-field-vs-current.png used on input line 566.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
-<four-contact.png, id=253, 556.0775pt x 295.1025pt>
+<four-contact.png, id=130, 556.0775pt x 295.1025pt>
 File: four-contact.png Graphic file (type png)
  <use four-contact.png>
 Package pdftex.def Info: four-contact.png used on input line 571.
 (pdftex.def)             Requested size: 469.75502pt x 249.2983pt.
 
-<room-temp-config.png, id=256, 365.365pt x 130.4875pt>
+
+LaTeX Warning: Citation `ref:3' on page 8 undefined on input line 572.
+
+
+LaTeX Warning: Citation `ref:3' on page 8 undefined on input line 572.
+
+<room-temp-config.png, id=131, 365.365pt x 130.4875pt>
 File: room-temp-config.png Graphic file (type png)
 
 <use room-temp-config.png>
 Package pdftex.def Info: room-temp-config.png used on input line 577.
 (pdftex.def)             Requested size: 216.09045pt x 77.1761pt.
 
-<res-temp-config.png, id=259, 296.10625pt x 167.62625pt>
+
+LaTeX Warning: Citation `ref:3' on page 8 undefined on input line 579.
+
+
+LaTeX Warning: Citation `ref:3' on page 8 undefined on input line 579.
+
+<res-temp-config.png, id=132, 296.10625pt x 167.62625pt>
 File: res-temp-config.png Graphic file (type png)
 
 <use res-temp-config.png>
 Package pdftex.def Info: res-temp-config.png used on input line 584.
 (pdftex.def)             Requested size: 216.09045pt x 122.33287pt.
- <AC-4-contact.png, id=262, 622.325pt x 160.6pt>
-File: AC-4-contact.png Graphic file (type png)
 
-<use AC-4-contact.png>
+
+LaTeX Warning: Citation `ref:3' on page 8 undefined on input line 586.
+
+
+LaTeX Warning: Citation `ref:3' on page 8 undefined on input line 586.
+
+<AC-4-contact.png, id=133, 622.325pt x 160.6pt>
+File: AC-4-contact.png Graphic file (type png)
+ <use AC-4-contact.png>
 Package pdftex.def Info: AC-4-contact.png used on input line 591.
 (pdftex.def)             Requested size: 469.75502pt x 121.22896pt.
+
+
+LaTeX Warning: Citation `ref:3' on page 8 undefined on input line 593.
+
+
+LaTeX Warning: Citation `ref:3' on page 8 undefined on input line 593.
+
+
+LaTeX Warning: Reference `fig:9' on page 8 undefined on input line 598.
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
@@ -926,6 +1123,9 @@ Underfull \hbox (badness 1009) in paragraph at lines 606--614
  []
 
 
+LaTeX Warning: Reference `eqn:6' on page 8 undefined on input line 619.
+
+
 Underfull \hbox (badness 6252) in paragraph at lines 600--621
 \OT1/cmr/m/n/10 The data that is got-ten is shown be-low.
  []
@@ -935,6 +1135,9 @@ Underfull \vbox (badness 2261) has occurred while \output is active []
 
  [8 <./DC-sourc.png> <./magnetic-field-vs-current.png>] [9 <./four-contact.png>
  <./room-temp-config.png> <./res-temp-config.png> <./AC-4-contact.png>]
+
+LaTeX Warning: Reference `fig:9' on page 10 undefined on input line 624.
+
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
 (caption)                particular \caption on input line 643.
@@ -949,6 +1152,12 @@ Underfull \hbox (badness 1019) in paragraph at lines 630--643
 Underfull \hbox (badness 10000) in paragraph at lines 643--643
 []\OT1/cmr/m/n/10 Table 4: |[]Flow of cur-rent and mea-sured volt-age
  []
+
+
+LaTeX Warning: Reference `eqn:7' on page 10 undefined on input line 650.
+
+
+LaTeX Warning: Reference `eqn:9' on page 10 undefined on input line 650.
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
@@ -974,19 +1183,22 @@ Underfull \hbox (badness 1038) in paragraph at lines 622--669
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
-<room-temperature-dc.png, id=282, 578.16pt x 433.62pt>
+<room-temperature-dc.png, id=149, 578.16pt x 433.62pt>
 File: room-temperature-dc.png Graphic file (type png)
 
 <use room-temperature-dc.png>
 Package pdftex.def Info: room-temperature-dc.png used on input line 672.
 (pdftex.def)             Requested size: 216.09045pt x 162.06454pt.
 
-<resistivity-vs-temp.png, id=283, 578.16pt x 433.62pt>
+<resistivity-vs-temp.png, id=150, 578.16pt x 433.62pt>
 File: resistivity-vs-temp.png Graphic file (type png)
 
 <use resistivity-vs-temp.png>
 Package pdftex.def Info: resistivity-vs-temp.png used on input line 680.
 (pdftex.def)             Requested size: 216.09045pt x 162.06454pt.
+
+
+LaTeX Warning: Reference `fig:10' on page 10 undefined on input line 689.
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
@@ -998,7 +1210,34 @@ Underfull \hbox (badness 10000) in paragraph at lines 712--712
 []\OT1/cmr/m/n/10 Table 6: |[]Data from mea-sur-ing the Hall Volt-age
  []
 
+
+LaTeX Warning: Reference `tbl:6' on page 10 undefined on input line 715.
+
+
+LaTeX Warning: Reference `fig:13' on page 10 undefined on input line 716.
+
+
+LaTeX Warning: Reference `eqn:15' on page 10 undefined on input line 720.
+
+
+LaTeX Warning: Reference `eqn:16' on page 10 undefined on input line 721.
+
+
+LaTeX Warning: Reference `eqn:15' on page 10 undefined on input line 723.
+
+
+LaTeX Warning: Reference `fig:13' on page 10 undefined on input line 725.
+
+
+LaTeX Warning: Reference `eqn:15' on page 10 undefined on input line 726.
+
 [10]
+
+LaTeX Warning: Reference `tbl:6' on page 11 undefined on input line 732.
+
+
+LaTeX Warning: Reference `fig:12' on page 11 undefined on input line 740.
+
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
 (caption)                particular \caption on input line 753.
@@ -1020,14 +1259,32 @@ Underfull \hbox (badness 10000) in paragraph at lines 753--753
  []
 
 
+LaTeX Warning: Reference `tbl:7' on page 11 undefined on input line 756.
+
+
 Package caption Warning: The option `hypcap=true' will be ignored for this
 (caption)                particular \caption on input line 769.
 See the caption package documentation for explanation.
 
 
+LaTeX Warning: Reference `tbl:7' on page 11 undefined on input line 769.
+
+
+LaTeX Warning: Reference `tbl:7' on page 11 undefined on input line 769.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 769--769
 []\OT1/cmr/m/n/10 Table 8: |[]Results from ap-ply-ing the van der Pauw
  []
+
+
+LaTeX Warning: Reference `tbl:5' on page 11 undefined on input line 775.
+
+
+LaTeX Warning: Reference `tbl:8' on page 11 undefined on input line 775.
+
+
+LaTeX Warning: Reference `fig:11' on page 11 undefined on input line 788.
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
@@ -1070,28 +1327,46 @@ Package caption Warning: The option `hypcap=true' will be ignored for this
 See the caption package documentation for explanation.
 
 
+LaTeX Warning: Reference `tbl:9' on page 11 undefined on input line 837.
+
+
+LaTeX Warning: Reference `tbl:9' on page 11 undefined on input line 837.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 837--837
 []\OT1/cmr/m/n/10 Table 10: |[]Results of us-ing the van der Pauw
  []
+
+
+LaTeX Warning: Reference `tbl:10' on page 11 undefined on input line 843.
+
+
+LaTeX Warning: Reference `fig:14' on page 11 undefined on input line 843.
 
 [11 <./room-temperature-dc.png> <./resistivity-vs-temp.png>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
-<hall-config.png, id=323, 638.385pt x 106.3975pt>
+<hall-config.png, id=173, 638.385pt x 106.3975pt>
 File: hall-config.png Graphic file (type png)
  <use hall-config.png>
 Package pdftex.def Info: hall-config.png used on input line 881.
 (pdftex.def)             Requested size: 281.85461pt x 36.1357pt.
 
-<average-hall-volt.png, id=326, 578.16pt x 500.1084pt>
+
+LaTeX Warning: Citation `ref:3' on page 12 undefined on input line 883.
+
+
+LaTeX Warning: Citation `ref:3' on page 12 undefined on input line 883.
+
+<average-hall-volt.png, id=174, 578.16pt x 500.1084pt>
 File: average-hall-volt.png Graphic file (type png)
 
 <use average-hall-volt.png>
 Package pdftex.def Info: average-hall-volt.png used on input line 888.
 (pdftex.def)             Requested size: 216.09045pt x 186.91444pt.
 
-<carrier-mobility-density.png, id=327, 578.16pt x 433.62pt>
+<carrier-mobility-density.png, id=175, 578.16pt x 433.62pt>
 File: carrier-mobility-density.png Graphic file (type png)
 
 <use carrier-mobility-density.png>
@@ -1099,14 +1374,35 @@ Package pdftex.def Info: carrier-mobility-density.png used on input line 895.
 (pdftex.def)             Requested size: 216.09045pt x 162.06454pt.
 
 
+LaTeX Warning: Reference `fig:16' on page 12 undefined on input line 898.
+
+
+LaTeX Warning: Reference `fig:16' on page 12 undefined on input line 898.
+
+
+LaTeX Warning: Reference `fig:16' on page 12 undefined on input line 905.
+
+
+LaTeX Warning: Reference `fig:15' on page 12 undefined on input line 907.
+
+
 Package caption Warning: The option `hypcap=true' will be ignored for this
 (caption)                particular \caption on input line 926.
 See the caption package documentation for explanation.
 
 
+LaTeX Warning: Reference `fig:16' on page 12 undefined on input line 926.
+
+
+LaTeX Warning: Reference `fig:16' on page 12 undefined on input line 926.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 926--926
 []\OT1/cmr/m/n/10 Table 11: |[]Slopes and in-ter-cepts of the data in
  []
+
+
+LaTeX Warning: Reference `eqn:16' on page 12 undefined on input line 930.
 
 
 LaTeX Warning: Reference `eqn:17' on page 12 undefined on input line 930.
@@ -1117,9 +1413,24 @@ Package caption Warning: The option `hypcap=true' will be ignored for this
 See the caption package documentation for explanation.
 
 
+LaTeX Warning: Reference `tbl:11' on page 12 undefined on input line 954.
+
+
+LaTeX Warning: Reference `tbl:11' on page 12 undefined on input line 954.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 954--954
 []\OT1/cmr/m/n/10 Table 12: |[]Results of the car-rier den-sity and mo-
  []
+
+
+LaTeX Warning: Reference `tbl:12' on page 12 undefined on input line 957.
+
+
+LaTeX Warning: Reference `fig:17' on page 12 undefined on input line 957.
+
+
+LaTeX Warning: Reference `fig:14' on page 12 undefined on input line 963.
 
 [12]
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -1187,10 +1498,13 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [14]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [15]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1236.
 
-[16
+
+LaTeX Warning: Citation `ref:6' on page 15 undefined on input line 1216.
+
+[15]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1236.
+ [16
 
 ]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 1236.
@@ -1198,25 +1512,31 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 1236.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1236.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1236.
 
-Package rerunfilecheck Info: File `Hall-effect-report.out' has not changed.
-(rerunfilecheck)             Checksum: 14BAA4DA46399938181136202F39BB97;1225.
 
+
+Package rerunfilecheck Warning: File `Hall-effect-report.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `Hall-effect-report.out':
+(rerunfilecheck)             Before: C5F1FD71EBDBE2B65A3E505536534479;88
+(rerunfilecheck)             After:  14BAA4DA46399938181136202F39BB97;1225.
 
 LaTeX Warning: There were undefined references.
 
 
-LaTeX Warning: There were multiply-defined labels.
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1236.
  ) 
 Here is how much of TeX's memory you used:
- 8188 strings out of 493029
- 122102 string characters out of 6136234
- 255796 words of memory out of 5000000
- 11517 multiletter control sequences out of 15000+600000
+ 8171 strings out of 493029
+ 121845 string characters out of 6136234
+ 251982 words of memory out of 5000000
+ 11500 multiletter control sequences out of 15000+600000
  11653 words of font info for 42 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 36i,17n,43p,525b,455s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 36i,17n,40p,525b,455s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texli
@@ -1234,10 +1554,10 @@ xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/t
 exmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-di
 st/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texlive/texmf-dist/font
 s/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on Hall-effect-report.pdf (16 pages, 786814 bytes).
+Output written on Hall-effect-report.pdf (16 pages, 783752 bytes).
 PDF statistics:
- 455 PDF objects out of 1000 (max. 8388607)
- 370 compressed objects within 4 object streams
+ 298 PDF objects out of 1000 (max. 8388607)
+ 235 compressed objects within 3 object streams
  98 named destinations out of 1000 (max. 500000)
- 243 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 107 words of extra memory for PDF output out of 10000 (max. 10000000)
 

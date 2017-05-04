@@ -1,0 +1,14 @@
+#Data taken from the measurement of the 
+#double quantum transition of Rb87
+amplitude = 500e-3
+volts = 1
+horizontal = 0.9872
+freq = 5.95e6
+#Peak number;Voltage;Amplitude
+1;0.1096;1.5
+2;0.1222;1.5
+3;0.1347;1.8
+4;0.1464;1.4
+5;0.1594;2.6
+6;0.1710;2.8
+7;0.1828;3.6
