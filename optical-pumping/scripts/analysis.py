@@ -17,8 +17,8 @@ def period_func(x,a,b,k):
 def magnetic_field(N,I,R):
   return (8*MU0*N*I)/(R*np.sqrt(125))
 
-def g_fact_func(x,a):
-  return a*x
+def g_fact_func(x,a,b):
+  return a*x+b
 
 # Finds exponential fit to a*e^(-k*(x-z))+b
 def exponential_2(x,y,p0,func,sigma=0):
@@ -120,7 +120,7 @@ def g_factor(magnets):
   sigma_B = (magnetic_field(magnets['Sweep'][1],0.002,magnets['Sweep'][0])+ \
      magnetic_field(magnets['Horizontal'][1],0.004,magnets['Horizontal'][0]))* \
      scaling
-  print sigma_B
+
   for i in range(len(rb85_raw)):
     rb85_currents[i][0] = rb85_raw[i][0]/res[0]
     rb85_currents[i][1] = rb85_raw[i][1]/res[1]
@@ -138,59 +138,80 @@ def g_factor(magnets):
     rb87_magfield[i][1] = \
                  magnetic_field(magnets['Horizontal'][1],rb87_currents[i][1], \
                                 magnets['Horizontal'][0])*scaling
-    rb85_totfield[i] = rb85_magfield[i][0] + rb85_magfield[i][1]
-    rb87_totfield[i] = rb87_magfield[i][0] + rb87_magfield[i][1]
-  print "-----------------------------------------------------------------------------"
-  print "Part ii tabulated results in Latex format for Rb85"
-  print r"\hline"
-  print r"\multicolumn{9}{c}{Rb\textsuperscript{85}} \\ \hline"
-  print r"{} & \multicolumn{3}{c}{Sweep field coil} & "
-  print r"\multicolumn{3}{c}{Horizontal field coil} && Combined \\ \hline"
-  print r"Frequency (kHz) & Voltage (V) & Current (A) & Field ($\mu T$) & Voltage (V) "
-  print r"& Current (A) & Field ($\mu T$) && Field ($\mu T$) \\ \hline"
-  for i in range(len(rb85_raw)):
-    print str(freq[i])+" & "+str(rb85_raw[i][0])+" & "+ \
-          str(round(rb85_currents[i][0],4))+" & "+ \
-          str(round(rb85_magfield[i][0],4))+" & "+ \
-          str(rb85_raw[i][1])+" & "+ \
-          str(round(rb85_currents[i][1],4))+" & "+ \
-          str(round(rb85_magfield[i][1],4))+" && "+ \
-          str(round(rb85_totfield[i],4))+r" \\ \hline"
-  print "-----------------------------------------------------------------------------"
-  print "Part ii tabulated results in Latex format for Rb87"
-  print r"\hline"
-  print r"\multicolumn{9}{c}{Rb\textsuperscript{87}} \\ \hline"
-  print r"{} & \multicolumn{3}{c}{Sweep field coil} & "
-  print r"\multicolumn{3}{c}{Horizontal field coil} && Combined \\ \hline"
-  print r"Frequency (kHz) & Voltage (V) & Current (A) & Field ($\mu T$) & Voltage (V) "
-  print r"& Current (A) & Field ($\mu T$) && Field ($\mu T$) \\ \hline"
-  for i in range(len(rb87_raw)):
-    print str(freq[i])+" & "+str(rb87_raw[i][0])+" & "+ \
-          str(round(rb87_currents[i][0],4))+" & "+ \
-          str(round(rb87_magfield[i][0],4))+" & "+ \
-          str(rb87_raw[i][1])+" & "+ \
-          str(round(rb87_currents[i][1],4))+" & "+ \
-          str(round(rb87_magfield[i][1],4))+" && "+ \
-          str(round(rb87_totfield[i],4))+r" \\ \hline"
-  print "-----------------------------------------------------------------------------"
-  param,pcov = curve_fit(g_fact_func,freq,rb85_totfield,(1),sigma=sigma_B)
-  a_85 = 1/param
-  sigma_a_85 = np.sqrt(pcov)/param**2
+    rb85_totfield[i] = rb85_magfield[i][0] + rb85_magfield[i][1] - ZERO_FIELD
+    rb87_totfield[i] = rb87_magfield[i][0] + rb87_magfield[i][1] - ZERO_FIELD
+  show_data = raw_input("Show data for part ii? (y or n) ")
+  if show_data == 'y':
+    print sigma_B
+    print "-----------------------------------------------------------------------------"
+    print "Part ii tabulated results in Latex format for Rb85"
+    print r"\hline"
+    print r"\multicolumn{9}{c}{Rb\textsuperscript{85}} \\ \hline"
+    print r"{} & \multicolumn{3}{c}{Sweep field coil} & "
+    print r"\multicolumn{3}{c}{Horizontal field coil} && Combined \\ \hline"
+    print r"Frequency (kHz) & Voltage (V) & Current (A) & Field ($\mu T$) & Voltage (V) "
+    print r"& Current (A) & Field ($\mu T$) && Field ($\mu T$) \\ \hline"
+    for i in range(len(rb85_raw)):
+      print str(freq[i])+" & "+str(rb85_raw[i][0])+" & "+ \
+            str(round(rb85_currents[i][0],4))+" & "+ \
+            str(round(rb85_magfield[i][0],4))+" & "+ \
+            str(rb85_raw[i][1])+" & "+ \
+            str(round(rb85_currents[i][1],4))+" & "+ \
+            str(round(rb85_magfield[i][1],4))+" && "+ \
+            str(round(rb85_totfield[i],4))+r" \\ \hline"
+    print "-----------------------------------------------------------------------------"
+    print "Part ii tabulated results in Latex format for Rb87"
+    print r"\hline"
+    print r"\multicolumn{9}{c}{Rb\textsuperscript{87}} \\ \hline"
+    print r"{} & \multicolumn{3}{c}{Sweep field coil} & "
+    print r"\multicolumn{3}{c}{Horizontal field coil} && Combined \\ \hline"
+    print r"Frequency (kHz) & Voltage (V) & Current (A) & Field ($\mu T$) & Voltage (V) "
+    print r"& Current (A) & Field ($\mu T$) && Field ($\mu T$) \\ \hline"
+    for i in range(len(rb87_raw)):
+      print str(freq[i])+" & "+str(rb87_raw[i][0])+" & "+ \
+            str(round(rb87_currents[i][0],4))+" & "+ \
+            str(round(rb87_magfield[i][0],4))+" & "+ \
+            str(rb87_raw[i][1])+" & "+ \
+            str(round(rb87_currents[i][1],4))+" & "+ \
+            str(round(rb87_magfield[i][1],4))+" && "+ \
+            str(round(rb87_totfield[i],4))+r" \\ \hline"
+    print "-----------------------------------------------------------------------------"
+  param,pcov = curve_fit(g_fact_func,rb85_totfield,freq,(1,1))
+  a_85,b_85 = param
+  sigma_a_85,sigma_b_85 = np.sqrt(np.diag(pcov))
   round_a_85 = sig_fig(sigma_a_85,a_85)
-  param,pcov = curve_fit(g_fact_func,freq,rb87_totfield,(1),sigma=sigma_B)
-  a_87 = 1/param
-  sigma_a_87 = np.sqrt(pcov)/param**2
+  round_b_85 = sig_fig(sigma_b_85,b_85)
+  param,pcov = curve_fit(g_fact_func,rb87_totfield,freq,(1,1))
+  a_87,b_87 = param
+  sigma_a_87,sigma_b_87 = np.sqrt(np.diag(pcov))
   round_a_87 = sig_fig(sigma_a_87,a_87)
-  xx = np.linspace(rb85_totfield[0],rb85_totfield,50)
-  y85 = g_fact_func(xx,a_85)
-  y87 = g_fact_func(xx,a_87)
+  round_b_87 = sig_fig(sigma_b_87,b_87)
+  x85 = np.linspace(rb85_totfield[0],rb85_totfield[-1],50)
+  #xx = np.linspace(freq[0],freq[-1],50)
+  y85 = g_fact_func(x85,a_85,b_85)
+  x87 = np.linspace(rb87_totfield[0],rb87_totfield[-1],50)
+  y87 = g_fact_func(x87,a_87,b_87)
+  print "*********************************************************"
+  print "Fit for the g-factor"
+  print "Rb85"
+  print "a = "+str(round_a_85[1])+" +/- "+str(round_a_85[0])
+  print "b = "+str(round_b_85[1])+" +/- "+str(round_b_85[0])
+  print "x-intercept = "+str(-b_85/a_85)
+  print "\nRb87"
+  print "a = "+str(round_a_87[1])+" +/- "+str(round_a_87[0])
+  print "b = "+str(round_b_87[1])+" +/- "+str(round_b_87[0])
+  print "x-intercept = "+str(-b_87/a_85)
+  print "*********************************************************"
   ax,bx = plt.subplots(1)
   bx.plot(rb85_totfield,freq,'ro',label='$Rb^{85}$')
-  bx.plot(xx,y85,'r-',label='Fit $Rb^{85}$')
+  bx.plot(x85,y85,'r-',label='Fit $Rb^{85}$')
   bx.plot(rb87_totfield,freq,'bo',label='$Rb^{87}$')
-  bx.plot(xx,y87,'r-',label='Fit $Rb^{87}$')
-  bx.legend()
+  bx.plot(x87,y87,'b-',label='Fit $Rb^{87}$')
+  bx.legend(loc='upper left')
   ax.show()
+
+def quad_zeeman(magnets):
+  
 
 def ringing_vs_rfamp():
   period_fn = open("../data-iv/period-data",'r')
@@ -403,8 +424,8 @@ def main():
       continue
     d = i.split(';')
     magnets[d[0]] = [float(d[1])*1.0e-2,float(d[2]),float(d[3]),float(d[4])]
-  print magnets
-  g_factor(magnets)
+  global ZERO_FIELD
+  ZERO_FIELD = magnetic_field(magnets['Sweep'][1],0.168,magnets['Sweep'][0])*1e6
   loop = 1
   while (loop):
     print "/////////////////////////////////////////////////////"
@@ -414,6 +435,7 @@ def main():
     print "temperature versus density? (temp v den)"
     print "current versus magnetic field? (curr v field)"
     print "period of ringing versus rf amplitude? (per v rf)"
+    print "g- factor calculations? (g-factor)"
     print "all? (all)"
     print "Enter quit or hit enter key to exit the program."
     which = raw_input("Enter name here:\n")
@@ -422,6 +444,7 @@ def main():
       temperature_vs_density(density)
       current_vs_field(magnets)
       ringing_vs_rfamp()
+      g_factor(magnets)
     elif which == "den v light":
       density_vs_light(density)
     elif which == "temp v den":
@@ -430,6 +453,8 @@ def main():
       current_vs_field(magnets)
     elif which == "per v rf":
       ringing_vs_rfamp()
+    elif which == "g-factor":
+      g_factor(magnets)
     elif which == "quit" or which == "":
       break
     else:
@@ -440,4 +465,5 @@ L = 0.033
 MU0 = 1.2566370614e-6
 H = 6.626070040e-34
 MUB = 9.274009994e-24
+ZERO_FIELD = 0
 main()
