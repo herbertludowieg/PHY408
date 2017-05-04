@@ -147,7 +147,7 @@ def g_factor(magnets):
   show_data = raw_input("Show data for part ii? (y or n) ")
   if show_data == 'y':
     print sigma_B
-    print "-----------------------------------------------------------------------------"
+    print "\n\n-----------------------------------------------------------------------------"
     print "Part ii tabulated results in Latex format for Rb85"
     print r"\hline"
     print r"\multicolumn{9}{c}{Rb\textsuperscript{85}} \\ \hline"
@@ -163,7 +163,7 @@ def g_factor(magnets):
             str(round(rb85_currents[i][1],4))+" & "+ \
             str(round(rb85_magfield[i][1],4))+" && "+ \
             str(round(rb85_totfield[i],4))+r" \\ \hline"
-    print "-----------------------------------------------------------------------------"
+    print "\n\n-----------------------------------------------------------------------------"
     print "Part ii tabulated results in Latex format for Rb87"
     print r"\hline"
     print r"\multicolumn{9}{c}{Rb\textsuperscript{87}} \\ \hline"
@@ -179,7 +179,7 @@ def g_factor(magnets):
             str(round(rb87_currents[i][1],4))+" & "+ \
             str(round(rb87_magfield[i][1],4))+" && "+ \
             str(round(rb87_totfield[i],4))+r" \\ \hline"
-    print "-----------------------------------------------------------------------------"
+    print "-----------------------------------------------------------------------------\n\n"
 
   # line fitting
   param,pcov = curve_fit(g_fact_func,rb85_totfield,freq,(1))
@@ -204,16 +204,33 @@ def g_factor(magnets):
   sigma_g87 = (sigma_a_87 * gscale) * (H/MUB)
   round_g87 = sig_fig(sigma_g87,g87)
 
+  # spin calculations
+  J = 0.5
+  gj = 2.00232
+  A85 = 2*g85
+  B85 = 2*(g85+J*(2*g85-gj))
+  C85 = -2*J*(J+1)*(gj-g85)
+  i85 = [(-B85 + np.sqrt(B85**2 - 4*A85*C85)) / (2*A85), \
+         (-B85 - np.sqrt(B85**2 - 4*A85*C85)) / (2*A85)]
+  
+  A87 = 2*g87
+  B87 = 2*(g87+J*(2*g87-gj))
+  C87 = -2*J*(J+1)*(gj-g87)
+  i87 = [(-B87 + np.sqrt(B87**2 - 4*A87*C87)) / (2*A87), \
+         (-B87 - np.sqrt(B87**2 - 4*A87*C87)) / (2*A87)]
+  
   # output formatting
-  print "*********************************************************"
+  print "\n****************BEGIN***********************************"
   print "Fit for the g-factor"
   print "Rb85"
   print "a = "+str(round_a_85[1])+" +/- "+str(round_a_85[0])
   print "g-factor = "+str(round_g85[1])+" +/- "+str(round_g85[0])
+  print "Nuclear spin = "+str(i85)
   print "\nRb87"
   print "a = "+str(round_a_87[1])+" +/- "+str(round_a_87[0])
   print "g-factor = "+str(round_g87[1])+" +/- "+str(round_g87[0])
-  print "*********************************************************"
+  print "Nuclear Spin = "+str(i87)
+  print "******************END************************************\n"
 
   # plot properties
   ax,bx = plt.subplots(1)
@@ -318,7 +335,7 @@ def ringing_vs_rfamp():
   #print rb87,rb85
   for i in rf_fn.readlines():
     rf.append(float(i))
-  print "*************************************************"
+  print "\n**************BEGIN******************************"
   print "Fit for Rb 85 period of ringing as a function of\nRF Amplitude"
   round_a_85 = np.zeros(2)
   round_k_85 = np.zeros(2)
@@ -329,8 +346,8 @@ def ringing_vs_rfamp():
   print "b = "+str(round_b_85[1])+" +/- "+str(round_b_85[0])
   print "k = "+str(round_k_85[1])+" +/- "+str(round_k_85[0])
   print "z = 1.0"
-  print "*************************************************"
-  print "*************************************************"
+  print "**************END********************************\n"
+  print "\n**************BEGIN******************************"
   print "Fit for Rb 87 period of ringing as a function of\nRF Amplitude"
   round_a_87 = np.zeros(2)
   round_k_87 = np.zeros(2)
@@ -341,7 +358,7 @@ def ringing_vs_rfamp():
   print "b = "+str(round_b_87[1])+" +/- "+str(round_b_87[0])
   print "k = "+str(round_k_87[1])+" +/- "+str(round_k_87[0])
   print "z = 1.0"
-  print "-------------------------------------------------"
+  print "\n-------------------------------------------------"
   g = b_85/b_87
   sigma_g = np.sqrt((sigma_b_85/b_87)**2+(b_85*sigma_b_87/b_87**2)**2)
   round_g = sig_fig(sigma_g,g)
@@ -351,7 +368,7 @@ def ringing_vs_rfamp():
   gdata = gdata / len(rb85)
   print "g-factor = "+str(round_g[1])+" +/- "+str(round_g[0])
   print "g-factor from data average = "+str(gdata)
-  print "*************************************************"
+  print "**************END********************************\n"
 
   xx = np.linspace(rf[0],rf[-1],1000)
   #y_85 = period_func(xx,900,1,300)
@@ -378,7 +395,7 @@ def temperature_vs_density(density):
   xx = np.linspace(x[0],x[-1],100)
   n,m,l = 1e18,8.5e-2,7e15
   yy = dens_func(xx,n,m)
-  print "*************************************************"
+  print "\n*************BEGIN*******************************"
   print "Fit for density as a function of temperature"
   #a,b,k,round_a,round_b,round_k = exponential_3(x,y,(n,l,m),dens_func)
   a,k,round_a,round_k = exponential_2(x,y,(n,m),dens_func)
@@ -387,7 +404,7 @@ def temperature_vs_density(density):
   print "a = "+str(round_a[1])+" +/- "+str(round_a[0])
   print "k = "+str(round_k[1])+" +/- "+str(round_k[0])
   print "z = 100"
-  print "*************************************************"
+  print "***************END*******************************\n"
   ax,bx = plt.subplots(1)
   bx.plot(x,y,'ro')
   #bx.plot(xx,yy,'b-')
@@ -442,7 +459,7 @@ def density_vs_light(density):
   yy = light_func(xx,10,1,6e-18)
   #yy = func(xx,12.8356290,1.25988601,6.08534284e-18,-4.93643723e16)
   #print yy
-  print "*************************************************"
+  print "\n**************BEGIN******************************"
   print "Fit for light intensity as a function of density"
   a,b,k,sigma[0],sigma[1],sigma[2],round_a,round_b,round_k = \
                                 exponential_3(x,y,(10,1,6e-18),light_func,0.002)
@@ -456,7 +473,7 @@ def density_vs_light(density):
   print "z = 2e16"
   print "\nCross sectional area:"
   print "sigma = "+str(round_xsarea[1])+" +/- "+str(round_xsarea[0])
-  print "*************************************************"
+  print "****************END******************************\n"
   yyy = light_func(xx,a,b,k)
   ax,bx = plt.subplots(1)
   bx.plot(x,y,'ro',label="Data")
@@ -518,7 +535,7 @@ def main():
                MAG_SCALE
   loop = 1
   while (loop):
-    print "/////////////////////////////////////////////////////"
+    print "\n\n/////////////////////////////////////////////////////"
     print "Which would you like to print?"
     print "Enter the name in parentheses for the specific plot."
     print "density versus light intensity? (den v light)"
@@ -528,7 +545,7 @@ def main():
     print "g- factor calculations? (g-factor)"
     print "quadratic zeeman effect? (quad zeeman)"
     print "all? (all)"
-    print "Enter quit or hit enter key to exit the program."
+    print "Enter quit or hit enter key to exit the program.\n"
     which = raw_input("Enter name here:\n")
     if which == 'all':
       density_vs_light(density)
@@ -552,8 +569,8 @@ def main():
     elif which == "quit" or which == "":
       break
     else:
-      print "\nERROR Can not parse command."
-      print "Please try again.\n"
+      print "\n\nERROR Can not parse command."
+      print "Please try again.\n\n"
 
 L = 0.033
 MU0 = 1.2566370614e-6
