@@ -11,8 +11,8 @@ def light_func(x,a,b,k):
 def dens_func(x,a,k):
   return a*np.exp(k*(x-100))
 
-def period_func(x,a,b,k):
-  return a*np.exp(-k*(x-1))+b
+def period_func(x,a,b):
+  return (a / x) + b
 
 def magnetic_field(N,I,R):
   return (8*MU0*N*I)/(R*np.sqrt(125))
@@ -207,17 +207,16 @@ def g_factor(magnets):
   # spin calculations
   J = 0.5
   gj = 2.00232
+
   A85 = 2*g85
   B85 = 2*(g85+J*(2*g85-gj))
   C85 = -2*J*(J+1)*(gj-g85)
-  i85 = [(-B85 + np.sqrt(B85**2 - 4*A85*C85)) / (2*A85), \
-         (-B85 - np.sqrt(B85**2 - 4*A85*C85)) / (2*A85)]
+  i85 = (-B85 + np.sqrt(B85**2 - 4*A85*C85)) / (2*A85)
   
   A87 = 2*g87
   B87 = 2*(g87+J*(2*g87-gj))
   C87 = -2*J*(J+1)*(gj-g87)
-  i87 = [(-B87 + np.sqrt(B87**2 - 4*A87*C87)) / (2*A87), \
-         (-B87 - np.sqrt(B87**2 - 4*A87*C87)) / (2*A87)]
+  i87 = (-B87 + np.sqrt(B87**2 - 4*A87*C87)) / (2*A87)
   
   # output formatting
   print "\n****************BEGIN***********************************"
@@ -337,44 +336,50 @@ def ringing_vs_rfamp():
     rf.append(float(i))
   print "\n**************BEGIN******************************"
   print "Fit for Rb 85 period of ringing as a function of\nRF Amplitude"
-  round_a_85 = np.zeros(2)
-  round_k_85 = np.zeros(2)
-  round_b_85 = np.zeros(2)
-  a_85,b_85,k_85,n,sigma_b_85,l,round_a_85,round_b_85,round_k_85 = \
-                                exponential_3(rf,rb85,(900,300,1),period_func)
+  param,pcov = curve_fit(period_func,rf,rb85,(1100,70))
+  a_85,b_85 = param
+  sigma_a_85,sigma_b_85 = np.sqrt(np.diag(pcov))
+  round_a_85 = sig_fig(sigma_a_85,a_85)
+  round_b_85 = sig_fig(sigma_b_85,b_85)
+
+  param,pcov = curve_fit(period_func,rf,rb87,(700,38))
+  a_87,b_87 = param
+  sigma_a_87,sigma_b_87 = np.sqrt(np.diag(pcov))
+  round_a_87 = sig_fig(sigma_a_87,a_87)
+  round_b_87 = sig_fig(sigma_b_87,b_87)
+
+  #round_a_85 = np.zeros(2)
+  #round_k_85 = np.zeros(2)
+  #round_b_85 = np.zeros(2)
+  #a_85,b_85,k_85,n,sigma_b_85,l,round_a_85,round_b_85,round_k_85 = \
+  #                              exponential_3(rf,rb85,(900,300,1),period_func)
+  print a_85,b_85,sigma_b_85 
   print "a = "+str(round_a_85[1])+" +/- "+str(round_a_85[0])
   print "b = "+str(round_b_85[1])+" +/- "+str(round_b_85[0])
-  print "k = "+str(round_k_85[1])+" +/- "+str(round_k_85[0])
-  print "z = 1.0"
   print "**************END********************************\n"
+
   print "\n**************BEGIN******************************"
   print "Fit for Rb 87 period of ringing as a function of\nRF Amplitude"
-  round_a_87 = np.zeros(2)
-  round_k_87 = np.zeros(2)
-  round_b_87 = np.zeros(2)
-  a_87,b_87,k_87,n,sigma_b_87,l,round_a_87,round_b_87,round_k_87 = \
-                                exponential_3(rf,rb87,(550,200,1),period_func)
+  print a_87,b_87
   print "a = "+str(round_a_87[1])+" +/- "+str(round_a_87[0])
   print "b = "+str(round_b_87[1])+" +/- "+str(round_b_87[0])
-  print "k = "+str(round_k_87[1])+" +/- "+str(round_k_87[0])
-  print "z = 1.0"
   print "\n-------------------------------------------------"
-  g = b_85/b_87
-  sigma_g = np.sqrt((sigma_b_85/b_87)**2+(b_85*sigma_b_87/b_87**2)**2)
+  g = a_85/a_87
+  sigma_g = np.sqrt((sigma_a_85/a_87)**2+(a_85*sigma_a_87/a_87**2)**2)
   round_g = sig_fig(sigma_g,g)
-  gdata = 0
-  for i in range(len(rb85)):
-    gdata += rb85[i] / rb87[i]
-  gdata = gdata / len(rb85)
+  #gdata = 0
+  #for i in range(len(rb85)):
+  #  gdata += rb85[i] / rb87[i]
+  #gdata = gdata / len(rb85)
   print "g-factor = "+str(round_g[1])+" +/- "+str(round_g[0])
-  print "g-factor from data average = "+str(gdata)
+  #print "g-factor from data average = "+str(gdata)
   print "**************END********************************\n"
 
   xx = np.linspace(rf[0],rf[-1],1000)
   #y_85 = period_func(xx,900,1,300)
   #y_87 = period_func(xx,550,1,200)
-  y_85 = period_func(xx,a_85,b_85,k_85)
-  y_87 = period_func(xx,a_87,b_87,k_87)
+  y_85 = period_func(xx,a_85,b_85)
+  y_87 = period_func(xx,a_87,b_87)
   ax,bx = plt.subplots(1)
   bx.plot(rf,rb85,'ro',label="Rb 85")
   bx.plot(xx,y_85,'r-',label="Fit Rb 85")
