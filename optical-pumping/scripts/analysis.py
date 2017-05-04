@@ -18,7 +18,7 @@ def magnetic_field(N,I,R):
   return (8*MU0*N*I)/(R*np.sqrt(125))
 
 def g_fact_func(x,a,b):
-  return a*x+b
+  return (a*x*MUB/H)+b
 
 # Finds exponential fit to a*e^(-k*(x-z))+b
 def exponential_2(x,y,p0,func,sigma=0):
@@ -190,17 +190,19 @@ def g_factor(magnets):
   #xx = np.linspace(freq[0],freq[-1],50)
   y85 = g_fact_func(x85,a_85,b_85)
   x87 = np.linspace(rb87_totfield[0],rb87_totfield[-1],50)
-  y87 = g_fact_func(x87,a_87,b_87)
+  y87 = g_fact_func(x87,a_87,b_87) 
   print "*********************************************************"
   print "Fit for the g-factor"
   print "Rb85"
   print "a = "+str(round_a_85[1])+" +/- "+str(round_a_85[0])
   print "b = "+str(round_b_85[1])+" +/- "+str(round_b_85[0])
-  print "x-intercept = "+str(-b_85/a_85)
+  print "x-intercept = "+str((-b_85*H)/(a_85*MUB))
+  print "g-factor = "+str(a_85*scaling)
   print "\nRb87"
   print "a = "+str(round_a_87[1])+" +/- "+str(round_a_87[0])
   print "b = "+str(round_b_87[1])+" +/- "+str(round_b_87[0])
-  print "x-intercept = "+str(-b_87/a_85)
+  print "x-intercept = "+str((-b_87*H)/(a_85*MUB))
+  print "g-factor = "+str(a_87*scaling)
   print "*********************************************************"
   ax,bx = plt.subplots(1)
   bx.plot(rb85_totfield,freq,'ro',label='$Rb^{85}$')
@@ -211,7 +213,7 @@ def g_factor(magnets):
   ax.show()
 
 def quad_zeeman(magnets):
-  
+ print "something" 
 
 def ringing_vs_rfamp():
   period_fn = open("../data-iv/period-data",'r')
