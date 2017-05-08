@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.1.31)  8 MAY 2017 01:04
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.1.31)  8 MAY 2017 08:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -737,105 +737,101 @@ Underfull \hbox (badness 10000) in paragraph at lines 40--40
 
  []
 
+<pictures/hyperfine-splitting.png, id=21, 237.88875pt x 183.68625pt>
+File: pictures/hyperfine-splitting.png Graphic file (type png)
+
+<use pictures/hyperfine-splitting.png>
+Package pdftex.def Info: pictures/hyperfine-splitting.png used on input line 75
+.
+(pdftex.def)             Requested size: 211.38832pt x 163.23077pt.
+
+<pictures/hyperfine-vectors.png, id=24, 95.35625pt x 111.41624pt>
+File: pictures/hyperfine-vectors.png Graphic file (type png)
+
+<use pictures/hyperfine-vectors.png>
+Package pdftex.def Info: pictures/hyperfine-vectors.png used on input line 82.
+(pdftex.def)             Requested size: 63.41713pt x 74.09767pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
-<pictures/electron-angular-momentum.png, id=17, 151.56625pt x 161.60374pt>
+<pictures/electron-angular-momentum.png, id=27, 151.56625pt x 161.60374pt>
 File: pictures/electron-angular-momentum.png Graphic file (type png)
 
 <use pictures/electron-angular-momentum.png>
 Package pdftex.def Info: pictures/electron-angular-momentum.png used on input l
-ine 83.
+ine 97.
 (pdftex.def)             Requested size: 66.19601pt x 70.58063pt.
 
 
 Package caption Warning: \captionsetup{type*=...} or \captionof
-(caption)                outside box or environment on input line 84.
+(caption)                outside box or environment on input line 98.
 See the caption package documentation for explanation.
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 85.
+(caption)                particular \caption on input line 99.
 See the caption package documentation for explanation.
 
 [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
 
  <./pictures/electron-angular-momentum.png>]
-<pictures/energy-levels.png, id=45, 213.79875pt x 294.09875pt>
+<pictures/energy-levels.png, id=55, 213.79875pt x 294.09875pt>
 File: pictures/energy-levels.png Graphic file (type png)
 
 <use pictures/energy-levels.png>
-Package pdftex.def Info: pictures/energy-levels.png used on input line 121.
+Package pdftex.def Info: pictures/energy-levels.png used on input line 135.
 (pdftex.def)             Requested size: 110.32556pt x 151.76096pt.
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 122.
+(caption)                particular \caption on input line 136.
 See the caption package documentation for explanation.
 
-<pictures/hyperfine-splitting.png, id=51, 237.88875pt x 183.68625pt>
-File: pictures/hyperfine-splitting.png Graphic file (type png)
-
-<use pictures/hyperfine-splitting.png>
-Package pdftex.def Info: pictures/hyperfine-splitting.png used on input line 15
-4.
-(pdftex.def)             Requested size: 216.09045pt x 166.86322pt.
-
-<pictures/hyperfine-vectors.png, id=54, 95.35625pt x 111.41624pt>
-File: pictures/hyperfine-vectors.png Graphic file (type png)
-
-<use pictures/hyperfine-vectors.png>
-Package pdftex.def Info: pictures/hyperfine-vectors.png used on input line 160.
-
-(pdftex.def)             Requested size: 64.82779pt x 75.74843pt.
-
-
-LaTeX Warning: Reference `fig:4' on page 2 undefined on input line 184.
-
-
-Underfull \hbox (badness 1533) in paragraph at lines 192--192
-[]\OT1/cmr/bx/n/10 Interaction of an
+[2 <./pictures/hyperfine-splitting.png> <./pictures/hyperfine-vectors.png> <./p
+ictures/energy-levels.png>]
+Underfull \hbox (badness 1226) in paragraph at lines 194--194
+[]\OT1/cmr/bx/n/12 Interaction of an al-kali atom
  []
 
-[2 <./pictures/energy-levels.png>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 231.
- [3
+<pictures/zeeman-splitting.png, id=77, 426.59375pt x 302.12875pt>
+File: pictures/zeeman-splitting.png Graphic file (type png)
 
- <./pictures/hyperfine-splitting.png> <./pictures/hyperfine-vectors.png>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 231.
+<use pictures/zeeman-splitting.png>
+Package pdftex.def Info: pictures/zeeman-splitting.png used on input line 197.
+(pdftex.def)             Requested size: 211.38832pt x 149.71323pt.
+
+<pictures/zeeman-vectors.png, id=80, 130.4875pt x 167.62625pt>
+File: pictures/zeeman-vectors.png Graphic file (type png)
+
+<use pictures/zeeman-vectors.png>
+Package pdftex.def Info: pictures/zeeman-vectors.png used on input line 204.
+(pdftex.def)             Requested size: 63.41713pt x 81.46744pt.
+ [3]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 317.
+ [4
+
+ <./pictures/zeeman-splitting.png> <./pictures/zeeman-vectors.png>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 317.
  (./OPTICAL-PUMPING-HL.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 231.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 231.
-
-
-Package rerunfilecheck Warning: File `OPTICAL-PUMPING-HL.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `OPTICAL-PUMPING-HL.out':
-(rerunfilecheck)             Before: D36203A0E27F5F46F24C2893BF8B6309;162
-(rerunfilecheck)             After:  8B53B1157EA221EFD9FBD39959C98B22;272.
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 231.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 317.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 317.
+Package rerunfilecheck Info: File `OPTICAL-PUMPING-HL.out' has not changed.
+(rerunfilecheck)             Checksum: CB99BADB678301F7C4683B6C6C6489F6;262.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 317.
  ) 
 Here is how much of TeX's memory you used:
- 7975 strings out of 493029
- 119298 string characters out of 6136234
- 217150 words of memory out of 5000000
- 11393 multiletter control sequences out of 15000+600000
- 11653 words of font info for 42 fonts, out of 8000000 for 9000
+ 7998 strings out of 493029
+ 119723 string characters out of 6136234
+ 219012 words of memory out of 5000000
+ 11408 multiletter control sequences out of 15000+600000
+ 11345 words of font info for 41 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 36i,8n,44p,251b,368s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texli
+ 36i,9n,44p,255b,373s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texli
 ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/tex
 mf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dis
 t/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts
@@ -848,10 +844,10 @@ usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/sh
 are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/tex
 live/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texlive/te
 xmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on OPTICAL-PUMPING-HL.pdf (3 pages, 199492 bytes).
+Output written on OPTICAL-PUMPING-HL.pdf (4 pages, 211004 bytes).
 PDF statistics:
- 142 PDF objects out of 1000 (max. 8388607)
- 111 compressed objects within 2 object streams
- 22 named destinations out of 1000 (max. 500000)
- 45 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 172 PDF objects out of 1000 (max. 8388607)
+ 136 compressed objects within 2 object streams
+ 29 named destinations out of 1000 (max. 500000)
+ 63 words of extra memory for PDF output out of 10000 (max. 10000000)
 
