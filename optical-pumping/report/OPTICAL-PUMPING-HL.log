@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.1.31)  8 MAY 2017 08:46
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.1.31)  8 MAY 2017 20:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -737,7 +737,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 40--40
 
  []
 
-<pictures/hyperfine-splitting.png, id=21, 237.88875pt x 183.68625pt>
+<pictures/hyperfine-splitting.png, id=29, 237.88875pt x 183.68625pt>
 File: pictures/hyperfine-splitting.png Graphic file (type png)
 
 <use pictures/hyperfine-splitting.png>
@@ -745,7 +745,7 @@ Package pdftex.def Info: pictures/hyperfine-splitting.png used on input line 75
 .
 (pdftex.def)             Requested size: 211.38832pt x 163.23077pt.
 
-<pictures/hyperfine-vectors.png, id=24, 95.35625pt x 111.41624pt>
+<pictures/hyperfine-vectors.png, id=32, 95.35625pt x 111.41624pt>
 File: pictures/hyperfine-vectors.png Graphic file (type png)
 
 <use pictures/hyperfine-vectors.png>
@@ -755,7 +755,7 @@ Package pdftex.def Info: pictures/hyperfine-vectors.png used on input line 82.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
-<pictures/electron-angular-momentum.png, id=27, 151.56625pt x 161.60374pt>
+<pictures/electron-angular-momentum.png, id=35, 151.56625pt x 161.60374pt>
 File: pictures/electron-angular-momentum.png Graphic file (type png)
 
 <use pictures/electron-angular-momentum.png>
@@ -777,7 +777,7 @@ See the caption package documentation for explanation.
 
 
  <./pictures/electron-angular-momentum.png>]
-<pictures/energy-levels.png, id=55, 213.79875pt x 294.09875pt>
+<pictures/energy-levels.png, id=63, 213.79875pt x 294.09875pt>
 File: pictures/energy-levels.png Graphic file (type png)
 
 <use pictures/energy-levels.png>
@@ -795,59 +795,98 @@ Underfull \hbox (badness 1226) in paragraph at lines 194--194
 []\OT1/cmr/bx/n/12 Interaction of an al-kali atom
  []
 
-<pictures/zeeman-splitting.png, id=77, 426.59375pt x 302.12875pt>
+<pictures/zeeman-splitting.png, id=85, 426.59375pt x 302.12875pt>
 File: pictures/zeeman-splitting.png Graphic file (type png)
 
 <use pictures/zeeman-splitting.png>
 Package pdftex.def Info: pictures/zeeman-splitting.png used on input line 197.
 (pdftex.def)             Requested size: 211.38832pt x 149.71323pt.
 
-<pictures/zeeman-vectors.png, id=80, 130.4875pt x 167.62625pt>
+<pictures/zeeman-vectors.png, id=88, 130.4875pt x 167.62625pt>
 File: pictures/zeeman-vectors.png Graphic file (type png)
 
 <use pictures/zeeman-vectors.png>
 Package pdftex.def Info: pictures/zeeman-vectors.png used on input line 204.
 (pdftex.def)             Requested size: 63.41713pt x 81.46744pt.
  [3]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 317.
- [4
+<pictures/breit-rabi.png, id=118, 618.31pt x 557.08125pt>
+File: pictures/breit-rabi.png Graphic file (type png)
 
- <./pictures/zeeman-splitting.png> <./pictures/zeeman-vectors.png>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 317.
+<use pictures/breit-rabi.png>
+Package pdftex.def Info: pictures/breit-rabi.png used on input line 315.
+(pdftex.def)             Requested size: 469.75502pt x 423.25015pt.
+
+<pictures/all-vectors.png, id=123, 626.34pt x 182.6825pt>
+File: pictures/all-vectors.png Graphic file (type png)
+
+<use pictures/all-vectors.png>
+Package pdftex.def Info: pictures/all-vectors.png used on input line 339.
+(pdftex.def)             Requested size: 469.75502pt x 137.01709pt.
+
+Underfull \vbox (badness 6658) has occurred while \output is active []
+
+ [4 <./pictures/zeeman-splitting.png> <./pictures/zeeman-vectors.png>] [5 <./pi
+ctures/breit-rabi.png> <./pictures/all-vectors.png>]
+<pictures/rough-apparatus.png, id=148, 631.35875pt x 175.65625pt>
+File: pictures/rough-apparatus.png Graphic file (type png)
+
+<use pictures/rough-apparatus.png>
+Package pdftex.def Info: pictures/rough-apparatus.png used on input line 402.
+(pdftex.def)             Requested size: 469.75502pt x 130.69653pt.
+
+<pictures/energy-lev-trans.png, id=151, 630.355pt x 418.56375pt>
+File: pictures/energy-lev-trans.png Graphic file (type png)
+
+<use pictures/energy-lev-trans.png>
+Package pdftex.def Info: pictures/energy-lev-trans.png used on input line 409.
+(pdftex.def)             Requested size: 469.75502pt x 311.92297pt.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 470.
+ [6] [7 <./pictures/rough-apparatus.png> <./pictures/energy-lev-trans.png>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 470.
  (./OPTICAL-PUMPING-HL.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 317.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 317.
-Package rerunfilecheck Info: File `OPTICAL-PUMPING-HL.out' has not changed.
-(rerunfilecheck)             Checksum: CB99BADB678301F7C4683B6C6C6489F6;262.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 317.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 470.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 470.
+
+
+Package rerunfilecheck Warning: File `OPTICAL-PUMPING-HL.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `OPTICAL-PUMPING-HL.out':
+(rerunfilecheck)             Before: 6981318E82094D0C1922A16130C44AB9;422
+(rerunfilecheck)             After:  EB26664E8DB7E26BA9BC1633B7EE8119;561.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 470.
  ) 
 Here is how much of TeX's memory you used:
- 7998 strings out of 493029
- 119723 string characters out of 6136234
- 219012 words of memory out of 5000000
- 11408 multiletter control sequences out of 15000+600000
- 11345 words of font info for 41 fonts, out of 8000000 for 9000
+ 8044 strings out of 493029
+ 120576 string characters out of 6136234
+ 219704 words of memory out of 5000000
+ 11435 multiletter control sequences out of 15000+600000
+ 11653 words of font info for 42 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  36i,9n,44p,255b,373s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share
-/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
-7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></
-usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/sh
-are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/tex
-live/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texlive/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on OPTICAL-PUMPING-HL.pdf (4 pages, 211004 bytes).
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/font
+s/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmmi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb>
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/sh
+are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texlive/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmti10.pfb>
+Output written on OPTICAL-PUMPING-HL.pdf (7 pages, 349614 bytes).
 PDF statistics:
- 172 PDF objects out of 1000 (max. 8388607)
- 136 compressed objects within 2 object streams
- 29 named destinations out of 1000 (max. 500000)
- 63 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 246 PDF objects out of 1000 (max. 8388607)
+ 196 compressed objects within 2 object streams
+ 43 named destinations out of 1000 (max. 500000)
+ 99 words of extra memory for PDF output out of 10000 (max. 10000000)
 

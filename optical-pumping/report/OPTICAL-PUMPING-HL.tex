@@ -399,32 +399,91 @@ the decrease of the angular momentum of the atom \cite{ref:1}.
 \subsection{Optical pumping in rubidium}
 \begin{figure*}
 \begin{minipage}[t]{\textwidth}
+\includegraphics[width=\linewidth]{pictures/rough-apparatus.png}
+\caption{\textit{Magnetic fields and angular momenta involved in the experiment
+\cite{ref:3}.}}
+\label{fig:9}
+\end{minipage}
+\vfill
+\begin{minipage}[t]{\textwidth}
 \includegraphics[width=\linewidth]{pictures/energy-lev-trans.png}
 \caption{\textit{Transitions involved in the optical pumping of $Rb^{87}$ 
 \cite{ref:3}.}}
-\label{fig:8}
+\label{fig:10}
 \end{minipage}
 \end{figure*}
-In optical pumping we are trying to drive for there to be a net population 
-difference in one state relative to another. On figure \ref{fig:8} we see the 
+In optical pumping we are trying to create a net population 
+difference in one state relative to another. From statistical mechanics we know 
+that electronic states can settle into a thermal equilibrium where ther is no 
+net population difference on one state. By making use of the hyperfine 
+splitting and the Zeeman effect along with some clever applications of the 
+incoming photons we can achieve this.
+\\
+On figure \ref{fig:10} we see the 
 types of transitions that are possible. On the left side of the figure we see 
 that there is a large separation between the energy levels that corresponds to 
-a transition energy of a 795 nm photon.
+a transition energy of a 795 nm photon. Then there are smaller gaps that come 
+from the hyperfine splitting and then the Zeeman levels.
 \\
 In order to create this 795 nm photon an RF discharge lamp is used to create 
-circulary polarized light at that wavelength. Inside it there is rubidium gas 
-and when it spontaneously emmits light it creates light at 795 and 780 nm. 
-By filtering out the 780 nm photons we get a circularly polarized 795 nm photon 
-beam.
+circulary polarized light at that wavelength. The RF discharge lamp along with 
+a general schematic of the experiment is shown on figure \ref{fig:9}. Inside 
+the RF discharge there is some $Rb^{87}$ gas along with some metal. When a 
+current is passed through the gas it induces a transition to populate the 
+first two excited states. By spontaneous emission it then emits two photons, 
+one at 795 nm and one at 780 nm. We are only interested in the 795 nm line 
+and can filter the 780 nm line by the interference filter \cite{ref:3}.
 \\
-On the right side of figure \ref{fig:8} we see the electronic levels from the 
-Zeeman splitting. The transitions between these energy levels are caused by the 
-RF magnetic field that runs perpendicular to the permanent coil.
+There is also a linear polarizer that serves a very important purpose. 
+Previously it was shown that the M levels can be increased by using circularly 
+polarized light. Meaning, we are not interested in the effects of the linearly 
+polarized light on the transitions. Why is it important that we do this you 
+may ask. the reason is because the $^2P_{1/2}$ state has the highest angular 
+momentum when it has a value of M = 2. Ther is no M = 3 state meaning that once 
+the electrons make the transition to the M = 2 state they will accumulate on 
+that level until they can relax back to their ground configuration. By this 
+method we create a population difference.
 \\
-After sufficient time is allowed for the transitions to be carried out it can 
-be seen that there will be a population on the M = 2 level since the circularly 
-polarized light will add angular momentum to the electrons on the orbital 
-levels and 
+Should always be noted that the Zeeman effect causes transitions within the 
+atomic orbitals where the circularly polarized light causes the transitions 
+beween the different energy levels. Should also mention that this is not 
+restricted to the positive values since it depends on the polarization 
+direction of the light.
+
+\subsection{Zero field transition}
+\begin{figure*}
+\begin{minipage}[t]{0.44\textwidth}
+\includegraphics[width=\linewidth]{pictures/zero-field-trans.png}
+\caption{\textit{Zero field transition with no RF field \cite{ref:3}.}}
+\label{fig:11}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.44\textwidth}
+\includegraphics[width=\linewidth]{pictures/energy-zero.png}
+\caption{\textit{Energy levels near zero field with no RF field \cite{ref:3}.}}
+\label{fig:12}
+\end{minipage}
+\end{figure*}
+Before going further to talk about RF induced transitions we should mention the 
+transitions that occur at values of zero magnetic field. The fundamental reason 
+this happens is because the atoms are still being irradiated with the photns 
+at the energy to excite the electrons. When the magnetic field is zero there 
+are no effects from the hyperfine splitting or the Zeeman effect so there is, 
+ideally, only two energy levels and have a completely degenerate system. Where, 
+it becomes simple to populate one of them.
+This results in the lineshape that is shown on figure \ref{fig:11}.
+//
+This can be used to tune the magnetic field of the appartus and cancel off most 
+if not all of the outside sources of magnetic fields. The equipment is 
+extremely sensitive to tiny changes in magnetic field where a laptop being on 
+or off can make a difference in the accuracy of the data.
+//
+One of the most prominent sources of outside magnetic field is the field that 
+is produced by the Earth and must be cancelled by using a combination of the 
+vertical, horizontal coils and lateral positioning of the apparatus.
+
+\subsection{RF spectroscopy of $Rb^{85}$ and $Rb^{87}$}
+
 
 \begin{thebibliography}{9}
 \bibitem{ref:1}
