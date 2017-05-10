@@ -334,6 +334,8 @@ def ringing_vs_rfamp():
   #print rb87,rb85
   for i in rf_fn.readlines():
     rf.append(float(i))
+  for i in range(len(rf)):
+    print str(rf[i])+" & "+str(rb85[i])+" & "+str(rb87[i])+r" \\ \hline"
   print "\n**************BEGIN******************************"
   print "Fit for Rb 85 period of ringing as a function of\nRF Amplitude"
   param,pcov = curve_fit(period_func,rf,rb85,(1100,70))

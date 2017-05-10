@@ -12,7 +12,7 @@
 \usepackage{hyperref}
 \renewcommand{\thesection}{\Roman{section}.}
 \renewcommand{\thesubsection}{(\roman{subsection})}
-\renewcommand{\thesubsubsection}{\thesubsection.\arabic{subsubsection}}
+\renewcommand{\thesubsubsection}{\thesubsection.\alph{subsubsection}}
 \setlength\parindent{5pt}
 \setlength{\columnsep}{1cm}
 
@@ -58,9 +58,9 @@ For this experiment the equipment that is being used is provided by TeachSpin
 and consists of an Radio Frequency (RF) discharge lamp, Interference Filter, 
 Polarizers, Quarter Wave plate, absorption cell, optical detector, three sets 
 of magnetic coils in a Helmholtz configuration and a RF magnetic coil. The 
-sample is a Rubidium glass bulb that contains neon gas with a pressure of 
+sample is a rubidium glass bulb that contains neon gas with a pressure of 
 approximately 0.04 atm pressure. The presence of the neon gas is important as 
-its spherical symmetry will reduce the interactions between the Rubidium atoms 
+its spherical symmetry will reduce the interactions between the rubidium atoms 
 and the outside environment. They will act as a buffer gas.
 \\
 Optical Pumping is a process in which has had much applicability in solid state 
@@ -71,6 +71,7 @@ increases thus broadening the energy levels \cite{ref:1}.
 \section{Theory}
 \subsection{Structure of alkali atoms}
 \begin{figure*}
+\center
 \begin{minipage}{0.45\linewidth}
 \includegraphics[width=\linewidth]{pictures/hyperfine-splitting.png}
 \caption{\textit{Hyperfine splitting energy diagram for I = 3/2 particle
@@ -85,7 +86,7 @@ increases thus broadening the energy levels \cite{ref:1}.
 \end{minipage}
 \end{figure*}
 In the experiment described in this paper we will be studying the absorption 
-and emission from Rubidium isotopes (85 and 87) which are alkali atoms. As such the electronic structure of Rubidium is as such,
+and emission from rubidium isotopes (85 and 87) which are alkali atoms. As such the electronic structure of rubidium is as such,
 \begin{equation*}
 1s^22s^22p^63s^23p^63d^104s^24p^65s
 \end{equation*}
@@ -167,7 +168,8 @@ Where, c is the speed of light and r is the radius of the atom. In the
 reference they are making an example to a hydrogen atom with r equal to a 
 (Bohr's atomic radius). This derivation can still be generalized to our use as 
 we are dealing with an atom that can be approximated to be one that is like a 
-hydrogen atom. Where we can also make the relation with the frequency as such.
+hydrogen atom, due to the closed nature of the inner shells. 
+Where we can also make the relation with the frequency as such.
 \begin{equation}
 \nu = \frac{\Delta E}{h}
 \label{eqn:4}
@@ -184,7 +186,7 @@ can cause transitions in the hyperfine structure with an RF wave. A pictoral
 representation of the coupling of the magnetic dipole moment spins is shown on 
 figure \ref{fig:4}. Where a rough enegy separation schematic is given in figure 
 \ref{fig:3}. As is clearly seen the energy that is required to jump from one 
-energy level to the next is muche greater than that required to make the 
+energy level to the next is much greater than that required to make the 
 transition in the hyperfine structure. Later we will discuss the implications 
 of this with respect to optical pumping.
 \\
@@ -193,6 +195,7 @@ energy levels of the electronic energy level diagram are split.
 
 \subsection{Interaction of an alkali atom with a magnetic field}
 \begin{figure*}
+\center
 \begin{minipage}{0.45\linewidth}
 \includegraphics[width=\linewidth]{pictures/zeeman-splitting.png}
 \caption{\textit{Energy levels of an alkali atom of the $^2S_{1/2}$ state in a 
@@ -220,7 +223,7 @@ The Zeeman effect is an effect which can break the spin-orbit coupling of an
 electron creating a difference in energy between the different orbitals of an 
 atom. The weak field Zeeman effect is named as such because the energy 
 splitting from the Zeeman effect is very small comparatively and as such the 
-Hyperfine splittings dominate with the Zeemna effect becoming the pertubation 
+Hyperfine splittings dominate with the Zeeman effect becoming the pertubation 
 \cite{ref:4}. The hamiltonian of this effect is as shown.
 \begin{equation}
 H=ha\vec{I}\cdot\vec{J}-\frac{\mu_J}{J}\vec{J}\cdot\vec{B}-\frac{\mu_I}{I}\vec{I}\cdot{B}
@@ -267,7 +270,7 @@ sign to equation \ref{eqn:7} from the negative charge of the electron. In the
 case of rubidium where we have a J and S value of 1/2 we find that the g-factor 
 is equal to 2.00232 \cite{ref:3}.
 \\
-Now, if we were to include the iteraction of the nucleus to find the 
+Now, if we were to include the interaction of the nucleus to find the 
 interaction energy the equation could be represented as follows.
 \begin{equation}
 U = -g_F\mu_B M B
@@ -285,7 +288,7 @@ nuclear spin angular momentum and J is the total electronic angular momentum.
 This quantity is highly dependent on the atom that is being used and as such 
 there is no one set value as with the Lande g-factor.
 \\
-Where we can then show the transition frequency as.
+We can then show the transition frequency as.
 \begin{equation}
 \nu = \frac{g_F\mu_B B}{h}
 \label{eqn:11}
@@ -298,7 +301,7 @@ Breit-Rabi equation which can be derived by diagonalizing the Hamiltonian in
 equation \ref{eqn:6} \cite{ref:3}. The result of such is the following.
 \begin{equation}
 \begin{aligned}
-W(F,M) = -&\frac{\Delta W}{2(2I+1)}-\frac{\mu_I}{I}MB\pm ...
+W(F,&M) = -\frac{\Delta W}{2(2I+1)}-\frac{\mu_I}{I}MB\pm ...
 \\
           &\frac{\Delta W}{2}\left[1+\frac{4M}{2I+I}x+x^2\right]^{1/2}
 \label{eqn:12}
@@ -385,7 +388,7 @@ selection rules for the hyperfine splitting which will add that $\Delta$F =
 = 0,$\pm$1.
 \\
 The selection rule for M can be somewhat different, because since angular 
-momentum must always be conserved the absorption of light must be circularly 
+momentum must always be conserved the photons that are absorbed  must be circularly 
 polarized. Of course, if light is circularly polarized we will be adding to 
 the angular momentum. The question then becomes how does it change depending on 
 the polarization.
@@ -420,7 +423,7 @@ the decrease of the angular momentum of the atom \cite{ref:1}.
 \end{figure*}
 In optical pumping we are trying to create a net population 
 difference in one state relative to another. From statistical mechanics we know 
-that electronic states can settle into a thermal equilibrium where ther is no 
+that electronic states can settle into a thermal equilibrium where there is no 
 net population difference on one state. By making use of the hyperfine 
 splitting and the Zeeman effect along with some clever applications of the 
 incoming photons we can achieve this.
@@ -444,13 +447,13 @@ There is also a linear polarizer that serves a very important purpose.
 Previously it was shown that the M levels can be increased by using circularly 
 polarized light. Meaning, we are not interested in the effects of the linearly 
 polarized light on the transitions. Why is it important that we do this you 
-may ask. the reason is because the $^2P_{1/2}$ state has the highest angular 
-momentum when it has a value of M = 2. Ther is no M = 3 state meaning that once 
+may ask. The reason is because the $^2P_{1/2}$ state has the highest angular 
+momentum when it has a value of M = 2. There is no M = 3 state meaning that once 
 the electrons make the transition to the M = 2 state they will accumulate on 
 that level until they can relax back to their ground configuration. By this 
 method we create a population difference.
 \\
-Should always be noted that the Zeeman effect causes transitions within the 
+One should always be note that the Zeeman effect causes transitions within the 
 atomic orbitals where the circularly polarized light causes the transitions 
 beween the different energy levels. Should also mention that this is not 
 restricted to the positive values since it depends on the polarization 
@@ -472,7 +475,7 @@ direction of the light.
 \end{figure*}
 Before going further to talk about RF induced transitions we should mention the 
 transitions that occur at values of zero magnetic field. The fundamental reason 
-this happens is because the atoms are still being irradiated with the photns 
+this happens is because the atoms are still being irradiated with the photnos 
 at the energy to excite the electrons. When the magnetic field is zero there 
 are no effects from the hyperfine splitting or the Zeeman effect so there is, 
 ideally, only two energy levels and have a completely degenerate system. Where, 
@@ -521,7 +524,7 @@ Resonance.
 \center
 \includegraphics[width=0.4\linewidth]{pictures/rf-larmor.png}
 \captionof{figure}{\textit{F vector an the precession about the magnetic field 
-with perpendicular field $B_RF$ \cite{ref:3}.}}
+with perpendicular field $B_{RF}$ \cite{ref:3}.}}
 \label{fig:13}
 \justify
 Figure \ref{fig:13} shows how the total atomic angular momentum precesses 
@@ -636,13 +639,13 @@ signal reaches a maximum value. In theory this should work since the light
 incident to the lenses should be made to be linearly aligned and then re-focus 
 into the detector to get the signal reading. If we do not get a maximum value 
 there are two thing that can be happening. The light that is coming from the 
-lamp is not being spread into a parallele beam correctly or the light that is 
-goiung into the detector is not being refocused properly.
+lamp is not being spread into a parallel beam correctly or the light that is 
+going into the detector is not being refocused properly.
 \\
 We shall look at the first problem. One possible way to troubleshoot the 
 problem is to use a sheet of whitepaper and place it infront of the lens. 
 Remember that the light that we are able to see with the slight purple color 
-is the light tha may be due to transitions in the xenon gas or higher energy 
+is the light that may be due to transitions in the xenon gas or higher energy 
 excitations in the rubidium atoms. So, we cannot do this after the interference 
 filter as we will not be able to see the light beam nor properly adjust the 
 lens position. By moving the paper back and forth one should be able to see 
@@ -793,6 +796,7 @@ Where, k is given as the product of the cross sectional area times the path
 length, x is the density of the rubidium atoms which was given in the 
 following table and y are the measured intensity values from the data.
 \begin{minipage}{\linewidth}
+\center
 \begin{tabular}{|c|c|}
 \hline
 Temperature & Density \\ 
@@ -852,7 +856,7 @@ coils.}}
 For this part of the experiment we began using the magnetic fields to be able 
 to create the weak field Zeeman effect and hyperfine splitting. The general 
 set-up for this part is given on figure \ref{fig:19}. We then found the 
-magnetic fields as a funtion of current using the equation.
+magnetic fields as a function of current using the equation.
 \begin{equation}
 B = \frac{8\mu_0 NI}{R\sqrt{125}}
 \label{eqn:21}
@@ -1000,7 +1004,7 @@ nuclear spin are 2.571 and 1.576 for $Rb^{85}$ and $Rb^{87}$ respectively.
 \hfill
 \begin{minipage}[t]{0.45\linewidth}
 \includegraphics[width=\linewidth]{pictures/rb87-high.png}
-\caption{\textit{$Rb^{87}$ quadratic zeeman effect at high RF power}}
+\caption{\textit{$Rb^{87}$ double quadratic zeeman effect at high RF power}}
 \label{fig:25}
 \end{minipage}
 \vfill
@@ -1012,7 +1016,7 @@ nuclear spin are 2.571 and 1.576 for $Rb^{85}$ and $Rb^{87}$ respectively.
 \hfill
 \begin{minipage}[t]{0.45\linewidth}
 \includegraphics[width=\linewidth]{pictures/rb85-high.png}
-\caption{\textit{$Rb^{85}$ quadratic zeeman effect at high RF power}}
+\caption{\textit{$Rb^{85}$ double quadratic zeeman effect at high RF power}}
 \label{fig:27}
 \end{minipage}
 \end{figure*}
@@ -1021,7 +1025,256 @@ isotopes. We will study the region in which the energy level splitting is no
 longer linear nor equally spaced and there will be a total of 2F resonances. 
 The relative intensities of the signals depend on the pumping conditions.
 
-\subsubsection{$Rb^{87}$ quadratic effect}
+\subsubsection{$Rb^{87}$ quadratic Zeeman effect}
+For this part of the experiment we used the following settings to view the 
+quadratic Zeeman effect at low RF power for the $Rb^{87}$.
+\\
+Detector amplifier gain = 20 \\
+Mutiplier = 20 \\
+$\nu$ = 5.95 MHz \\
+Time constant = 100 ms \\
+RF amplifier gain = 3 \\
+Sweep time = 50 s \\
+Horizontal Field current = 0.9872 A \\
+RF amplitude = 1 V \\
+\\
+The data that was collected is the following.
+\begin{minipage}{\linewidth}
+\center
+\begin{tabular}{|c|c|c|}
+\hline
+Peak & Amplitude (500 mV) & Voltage (V) \\ \hline
+1 & 1.2 & 0.1095 \\ \hline
+2 & 1.6 & 0.1337 \\ \hline
+3 & 2.5 & 0.1580 \\ \hline
+4 & 3.4 & 0.1821 \\ \hline
+\end{tabular}
+\captionof{table}{\textit{Data taken for low RF power quadratic Zeeman effect \\}}
+\label{tbl:8}
+\end{minipage}
+The plot of the data is shown on figure \ref{fig:24} where the Voltage column 
+is the voltage measured for the sweep field coil. To get the magnetic field we 
+added the magnetic fields of the sweep and the horizontal magnetic coils and 
+subtracted the zero field value.
+\\
+The screenshot of the data that was taken on the oscilloscope is shown below.
+\center
+\includegraphics[width=\linewidth]{pictures/rb87-low-raw.png}
+\caption{\textit{Quadratic Zeeman effect of $Rb^{87}$ at low RF power \\ }}
+\justify
+Now we will consider the double quadratic Zeeman effect. For this we used the 
+settings.
+\\
+Detector amplifier gain = 20 \\
+Mutiplier = 20 \\
+$\nu$ = 5.95 MHz \\
+Time constant = 100 ms \\
+RF amplifier gain = 3 \\
+Sweep time = 50 s \\
+Horizontal Field current = 0.9872 A \\
+RF amplitude = 2.5 V \\
+\\
+The data collected was the following.
+\begin{minipage}{\linewidth}
+\center
+\begin{tabular}{|c|c|c|}
+\hline
+Peak & Amplitude (500 mV) & Voltage (V) \\ \hline
+1 & 1.5 & 0.1096 \\ \hline
+2 & 1.5 & 0.1222 \\ \hline
+3 & 1.8 & 0.1347 \\ \hline
+4 & 1.4 & 0.1464 \\ \hline
+5 & 2.6 & 0.1594 \\ \hline
+6 & 2.8 & 0.1710 \\ \hline
+7 & 3.6 & 0.1828 \\ \hline
+\end{tabular}
+\captionof{table}{\textit{Data taken for high RF power double quadratic Zeeman 
+effect \\}}
+\label{tbl:9}
+\end{minipage}
+The plot of the data is shown on figure \ref{fig:25}. Where, the same 
+explanation as before still applies.
+\\
+The screenshot of the double quantum transition is the following.
+\center
+\includegraphics[width=\linewidth]{pictures/rb87-high-raw.png}
+\caption{\textit{Quadratic Zeeman effect of $Rb^{87}$ at high RF power \\ }}
+\justify
+
+\subsubsection{$Rb^{85}$ quadratic Zeeman effect}
+Now we consider the qudratic Zeeman effect of $Rb^{85}$. The settings are as 
+follows.
+\\
+Detector amplifier gain = 20 \\
+Mutiplier = 10 \\
+$\nu$ = 4.1 MHz \\
+Time constant = 100 ms \\
+RF amplifier gain = 3 \\
+Sweep time = 50 s \\
+Horizontal Field current = 0.9872 A \\
+RF amplitude = 1.0 V \\
+\\
+The data that was collected was the following.
+\begin{minipage}{\linewidth}
+\center
+\begin{tabular}{|c|c|c|}
+\hline
+Peak & Amplitude (200 mV) & Voltage (V) \\ \hline
+1 & 1.4 & 0.5060 \\ \hline
+2 & 2.2 & 0.5460 \\ \hline
+3 & 3.0 & 0.5839 \\ \hline
+4 & 3.8 & 0.6228 \\ \hline
+5 & 4.0 & 0.6604 \\ \hline
+6 & 4.2 & 0.7002 \\ \hline
+\end{tabular}
+\captionof{table}{\textit{Data taken for low RF power quadratic Zeeman
+effect \\}}
+\label{tbl:10}
+\end{minipage}
+The plot of the data is shown on figure \ref{fig:26}. The screenshot of the 
+osciloscope data is the following.
+\center
+\includegraphics[width=\linewidth]{pictures/rb85-low-raw.png}
+\caption{\textit{Quadratic Zeeman effect of $Rb^{85}$ at low RF power \\ }}
+\justify
+We will now consider the quadratic zeeman effect at high RF power.
+\\
+The settings used were the following.
+\\
+Detector amplifier gain = 20 \\
+Mutiplier = 10 \\
+$\nu$ = 4.1 MHz \\
+Time constant = 100 ms \\
+RF amplifier gain = 3 \\
+Sweep time = 50 s \\
+Horizontal Field current = 0.9872 A \\
+RF amplitude = 2.5 V \\
+\\
+With the data collected being the following.
+\begin{minipage}{\linewidth}
+\center
+\begin{tabular}{|c|c|c|}
+\hline
+Peak & Amplitude (200 mV) & Voltage (V) \\ \hline
+1 & 1.8 & 0.5080 \\ \hline
+2 & 1.8 & 0.5273 \\ \hline
+3 & 2.6 & 0.5463 \\ \hline
+4 & 3.2 & 0.5664 \\ \hline
+5 & 3.0 & 0.5848 \\ \hline
+6 & 4.2 & 0.6045 \\ \hline
+7 & 3.6 & 0.6239 \\ \hline
+8 & 5.0 & 0.6430 \\ \hline
+9 & 4.5 & 0.6620 \\ \hline
+10 & 5.0 & 0.6817 \\ \hline
+11 & 5.0 & 0.7005 \\ \hline
+\end{tabular}
+\captionof{table}{\textit{Data taken for low RF power quadratic Zeeman
+effect \\}}
+\label{tbl:11}
+\end{minipage}
+The plot of the data is shown on figure \ref{fig:27}. The screenshot of the
+osciloscope data is the following.
+\center
+\includegraphics[width=\linewidth]{pictures/rb85-high-raw.png}
+\caption{\textit{Quadratic Zeeman effect of $Rb^{85}$ at high RF power \\ }}
+\justify
+
+\subsection{Transient effects}
+\begin{figure*}
+\begin{minipage}[t]{\textwidth}
+\center
+\includegraphics[width=0.45\linewidth]{pictures/per-rf.png}
+\caption{\textit{Plot of the period of ringing in light intensity as a function 
+of RF amplitude.}}
+\label{fig:32}
+\end{minipage}
+\end{figure*}
+For this part of the experiment we wanted to see what would happen where we to 
+turn the RF magnetic field on and off quickly. Making pulses of RF magnetic 
+fields. We first set the following parameters.
+\\
+\\
+Detector amplifier gain = 1 \\
+Mutiplier = 1 \\
+$\nu$ = 100 kHz \\
+Time constant = min. \\
+RF amplifier gain = 8 \\
+Sweep time = 50 s \\
+Horizontal Field current = 3.68 mA \\
+RF amplitude = 1.0 V \\
+\\
+We found that by plotting the incoming channels against time on the 
+oscilloscope we got the following figure.
+\center
+\includegraphics[width=\linewidth]{pictures/resonance-stuff.png}
+\caption{\textit{Oscilations of the light intensity at 100 kHz and RF 
+amplitude of 1.0 V. \\ }}
+\justify
+When we have the RF oscilate on and off at a frequency of 5 Hz we find that we 
+get that picture when the RF is suddenly turned off. We did this for both of 
+the isotopes of rubidium from RF amplitudes of 1.00 V to 4.00 V. When we looked 
+for all the maxima in the figure and found the avreage period of oscilations 
+we found that we got the following periods of oscilations.
+\begin{minipage}{\linewidth}
+\center
+\begin{tabular}{|c|c|c|}
+\hline
+RF Amplitude & $Rb^{85}$ Period & $Rb^{87}$ Period \\ 
+(V) & ($\mu$s) & ($\mu$s) \\ \hline
+1.00 & 1067.2 & 723.0 \\ \hline
+1.20 & 861.6 & 606.7 \\ \hline
+1.40 & 757.0 & 508.8 \\ \hline
+1.60 & 659.2 & 442.0 \\ \hline
+1.80 & 586.0 & 390.0 \\ \hline
+2.00 & 534.4 & 352.8 \\ \hline
+2.20 & 501.3 & 334.4 \\ \hline
+2.40 & 457.7 & 304.8 \\ \hline
+2.60 & 421.7 & 279.3 \\ \hline
+2.80 & 394.5 & 264.7 \\ \hline
+3.00 & 377.5 & 252.7 \\ \hline
+3.20 & 367.0 & 246.7 \\ \hline
+3.40 & 360.5 & 240.7 \\ \hline
+3.60 & 354.0 & 238.0 \\ \hline
+3.80 & 350.9 & 233.3 \\ \hline
+4.00 & 347.5 & 232.7 \\ \hline
+\end{tabular}
+\captionof{table}{Data that was used for figure \ref{fig:32} \\ }
+\label{tbl:12}
+\end{minipage}
+The data for the RF amplitude on table \ref{tbl:12} was taken directly from the 
+RF signal generator. The second column was gotten by reading through the data 
+on each of the generated oscilation signals and finding the respective maxima. 
+This was done by exporting the screenshot of the osciloscope to save all of the 
+data files which includes two .CSV files for each of the signals. By using this 
+we can get a much better estimate for the period as we do not have to manually 
+do it and introduce human error due to inability to read difference in pixels.
+\\
+By fitting the plots to an equation that reads.
+\begin{equation}
+Y = \frac{A}{x} + B
+\label{eqn:23}
+\end{equation}
+Where, x is the RF amplitude, Y the period of the ringing and the A, B 
+parameters were calculated in Python with the curve fitting function to be.
+\begin{minipage}{\linewidth}
+\center
+\begin{tabular}{|c|c|c|}
+\hline
+{} & A & B \\ \hline
+$Rb^{85}$ & 960.0 $\pm$ 20.0 & 70.0 $\pm$ 10.0 \\ \hline
+$Rb^{85}$ & 670.0 $\pm$ 20.0 & 38.0 $\pm$ 9.0 \\ \hline
+\end{tabular}
+\captionof{table}{\textit{Fit parameters to equation \ref{eqn:23} \\ }}
+\label{tbl:13}
+\end{minipage}
+\\
+Having calculated these values we were then able to find the ratio of the 
+period of the ringing by dividing the A values. We found this value to be 1.44 
+$\pm$ 0.05.
+\\
+When we compare this value to the expected value of 1.50 we believe to be 
+sufficiently close to be able to take this value.
+
 
 
 \begin{thebibliography}{9}
