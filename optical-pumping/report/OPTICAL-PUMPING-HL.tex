@@ -285,7 +285,13 @@ nuclear spin angular momentum and J is the total electronic angular momentum.
 This quantity is highly dependent on the atom that is being used and as such 
 there is no one set value as with the Lande g-factor.
 \\
-the above equations are only applicable when the interaction energy with the 
+Where we can then show the transition frequency as.
+\begin{equation}
+\nu = \frac{g_F\mu_B B}{h}
+\label{eqn:11}
+\cite{ref:3}
+\end{equation}
+The above equations are only applicable when the interaction energy with the 
 magnetic field is very small and depends linearly. If the dependence is 
 quadratic, which will be studied in this experiment, we must apply the 
 Breit-Rabi equation which can be derived by diagonalizing the Hamiltonian in 
@@ -295,19 +301,19 @@ equation \ref{eqn:6} \cite{ref:3}. The result of such is the following.
 W(F,M) = -&\frac{\Delta W}{2(2I+1)}-\frac{\mu_I}{I}MB\pm ...
 \\
           &\frac{\Delta W}{2}\left[1+\frac{4M}{2I+I}x+x^2\right]^{1/2}
-\label{eqn:11}
+\label{eqn:12}
 \cite{ref:3}
 \end{aligned}
 \end{equation}
 Where,
 \begin{equation}
 x = (g_J - g_I)\frac{\mu_B B}{\Delta W}
-\label{eqn:12}
+\label{eqn:13}
 \cite{ref:3}
 \end{equation}
 \begin{equation}
 g_I = -\frac{\mu_I}{I\mu_B}
-\label{eqn:13}
+\label{eqn:14}
 \cite{ref:3}
 \end{equation}
 \begin{figure*}
@@ -358,7 +364,7 @@ be useful to use the concept of a cross section of the atoms. In the limit of
 low density this can be represented as.
 \begin{equation}
 n = n_0e^{-\sigma\rho l}
-\label{eqn:14}
+\label{eqn:15}
 \cite{ref:3}
 \end{equation}
 Where, n and n$_0$ are the incoming and outgoing flux of electrons and $\rho$ 
@@ -367,7 +373,7 @@ is the density of the gas.
 A similar concept can be employed when talking about a flux of photons.
 \begin{equation}
 I = I_0 e^{-\sigma_0\rho l}
-\label{eqn:15}
+\label{eqn:16}
 \cite{ref:3}
 \end{equation}
 Where the cross section in this equation is actually the cross section at the 
@@ -472,18 +478,327 @@ are no effects from the hyperfine splitting or the Zeeman effect so there is,
 ideally, only two energy levels and have a completely degenerate system. Where, 
 it becomes simple to populate one of them.
 This results in the lineshape that is shown on figure \ref{fig:11}.
-//
+\\
 This can be used to tune the magnetic field of the appartus and cancel off most 
 if not all of the outside sources of magnetic fields. The equipment is 
 extremely sensitive to tiny changes in magnetic field where a laptop being on 
 or off can make a difference in the accuracy of the data.
-//
+\\
 One of the most prominent sources of outside magnetic field is the field that 
 is produced by the Earth and must be cancelled by using a combination of the 
 vertical, horizontal coils and lateral positioning of the apparatus.
 
-\subsection{RF spectroscopy of $Rb^{85}$ and $Rb^{87}$}
+\subsection{Transient effects}
+Throughout this report we have been considering the optical pumping to happen 
+only when the RF has been constantly on. Now we will consider the case when the 
+RF signal is turned off and on at a certain frequency.
+\\
+When we are at resonance the Larmor frequency for the weak field Zeeman effect 
+is given by.
+\begin{equation}
+\begin{aligned}
+\omega_0 &= 2\pi\nu_0 
+         &= g_F\frac{\mu_B}{\hbar}B_0
+\label{eqn:17}
+\cite{ref:3}
+\end{aligned}
+\end{equation}
+Where, $\nu_0$ is given by equation \ref{eqn:11} and $g_F$ by equation 
+\ref{eqn:10}. We can then define the gyromagnetic ratio, $\gamma$, as.
+\begin{equation}
+\gamma = g_F\frac{\mu_B}{\hbar}
+\label{eqn:18}
+\cite{ref:3}
+\end{equation}
+We can then write the Larmor frequency as.
+\begin{equation}
+\omega_0 = \gamma B_0
+\label{eqn:19}
+\cite{ref:3}
+\end{equation}
+The equations above are very similar to those employed in Nuclear Magnetic 
+Resonance.
+\center
+\includegraphics[width=0.4\linewidth]{pictures/rf-larmor.png}
+\captionof{figure}{\textit{F vector an the precession about the magnetic field 
+with perpendicular field $B_RF$ \cite{ref:3}.}}
+\label{fig:13}
+\justify
+Figure \ref{fig:13} shows how the total atomic angular momentum precesses 
+about the magnetic field, $B$, when a perpendicular field tuned to the Larmor 
+frequency, $B_RF$.
 
+\section{Experimental Set-Up}
+For this experiment we are using a TeachSpin set-up that provides us access to 
+the equipment that is necessary to be able to carry out the experiment without 
+much dificulty or needing to set-up very complicated equipment.
+\subsection{Rubidium Discharge Lamp}
+The rubidium discharge lamp consists of an RF oscilator, oven and gas bulb. In 
+the bulb there is a mixture of gas containing rubidium gas and a buffer gas. 
+The buffer gas in the bulb is xenon. The remaining gas is a mixture of 
+$Rb^{85}$ and $Rb^{87}$ with concentrations of about 36\% and 64\% respectively.
+The oven is set to a temperature of 115$^0$ C.
+\\
+The lamp takes 10 to 20 minutes in order to fully turn on and be able to 
+equalize the temperature inside the gas bulb. It should be noted that the 
+rubidium atoms emmit light at the 795 nm range which is in the near infrared. 
+One may be able to see some light coming from the lamp, but this light may be 
+due to the xenon spectral line or higher lines of rubidium \cite{ref:3}.
+\\
+We are only interested in the 795 nm range line.
+
+\subsection{Detector}
+\begin{figure*}
+\begin{minipage}[t]{\textwidth}
+\includegraphics[width=\linewidth]{pictures/detector-schem.png}
+\caption{\textit{General Schematic of the photodiode detector with preamplifier 
+and preamp power connections \cite{ref:3}.}}
+\label{fig:14}
+\end{minipage}
+\end{figure*}
+The detector is a PDB-C108 silicon photodiode from Photonic Detectors Inc. 
+\cite{ref:3} With an active area of 0.25 inches in diameter and a spectral 
+response in the 795 nm range of 0.6 A/W. Figure \ref{fig:14} gives a general 
+schematic of the photodiode with some of the connections. The preamp is a 
+current-to-voltage converter with three gain settings selectable by a switch 
+on the detector itself.
+\\
+The photodiode preamplifier has a voltage range of 0.0 V to 11.5 V and it 
+should be kept in mind to avoid saturating the signal.
+\begin{minipage}[t]{\linewidth}
+\center
+\begin{tabular}{|c|c|c|}
+\hline
+Gain Resistor & Low pass 3dB point & Noise \\ 
+(M$\Omega$) $\pm$ 5\% & (kHz) $\pm$ 10\% & ($\mu V_{pp}$) \\ \hline
+1 & 12.0 & 20 \\ \hline
+3 & 8.0 & 40 \\ \hline
+10 & 5.0 & 100 \\ \hline
+\end{tabular}
+\captionof{table}{\textit{Photodiode preamplifier specifications \cite{ref:3}.}}
+\label{tbl:1}
+\end{minipage}
+The signal from the preamp is on a coaxial BNC connector labeled Detector that 
+feeds into the main housing for the analysis. This can be used to connect 
+the cable directly to an osciloscope and see what is being read.
+\\
+The electronics houses the following sections that can help to adjust the 
+signal from the detector \cite{ref:3}.
+\begin{enumerate}[label=\alph*).]
+\item DC offset: 0-10 V DC Set by a ten turn potentiiometer and fine control 
+adjustment 0-20 mV set by a one turn potentiometer. At low gain settings the 
+fine adjustment knob will not be very useful due to the scaling difference.
+\item Gain: 1,2,5 ... 100 Adjustable gain knob that will increase the signal 
+gain. The maximum value is 1000.
+\item Low Pass filter: A two pole low pass filter with time constants: min., 
+1 ms, 10 ms, 100 ms, 1 s, 3s. When the min. value is selected, the frequency 
+response is determined by the gain setting of the preamplifier.
+\item Meter: Displays the voltage reading from the detector output. The range 
+is from -4 to +4 V with a multiplier toggle switch to increase to a range of 
+-8 to +8 V.
+\end{enumerate}
+
+\subsection{Optics}
+\begin{figure*}
+\begin{minipage}[t]{\textwidth}
+\center
+\includegraphics[width=0.6\linewidth]{pictures/quarter-wave.png}
+\caption{\textit{Tilt tuning of the quarter wavelength plate \cite{ref:3}.}}
+\label{fig:15}
+\end{minipage}
+\end{figure*}
+In this section we will go into the optics that are used for this experiment. 
+The optics that will be discussed are: plano-convex lenses, 
+interference filter, polarizers, quarter wavelength plate.
+\begin{enumerate}[label=\alph*).]
+\item Two plano-convex lenses: Diameter 50 mm, focal length 50 mm.
+\item Interference filter: Diameter 50 mm. This filter is chosen since it has 
+the ability to absorb the 780 nm line that is emmited and still transmit the 
+795 nm line that is of interest in the experiment.
+\item Two linear polarizers on rotable mounts: Diameter 50 mm. The linear 
+polarizer will be used to filter out other polarizations of light so that they 
+can be converted into circularly polarized light with the help of a quarter 
+wavelength plate.
+\item Quarter wavelength plate on rotable mount: Diameter 50 mm, "optical 
+thickness" 205 $\pm$ 5 nm. When properly oriented, the plate can convert 
+linearly polarized light into circularly polarized light. The plate has 
+different optical axes which have different indices of refraction that will 
+slow down the light beam. To produce circularly polarized light, place the 
+quarter wave plate at a 45$^0$ angle to the linear polarizer.
+\\
+Figure \ref{fig:15} gives the retardation about the different axial tilt. 
+Tuning the optical thickness (retardation) can be accomplished by rotating the 
+plates.
+\item Alignment: Throughout the experiment the optics may need to be aligned to 
+be able to get the best results from the equipment. One way to do this is to 
+maximize the signal gotten from the detector by moving the lenses until the 
+signal reaches a maximum value. In theory this should work since the light 
+incident to the lenses should be made to be linearly aligned and then re-focus 
+into the detector to get the signal reading. If we do not get a maximum value 
+there are two thing that can be happening. The light that is coming from the 
+lamp is not being spread into a parallele beam correctly or the light that is 
+goiung into the detector is not being refocused properly.
+\\
+We shall look at the first problem. One possible way to troubleshoot the 
+problem is to use a sheet of whitepaper and place it infront of the lens. 
+Remember that the light that we are able to see with the slight purple color 
+is the light tha may be due to transitions in the xenon gas or higher energy 
+excitations in the rubidium atoms. So, we cannot do this after the interference 
+filter as we will not be able to see the light beam nor properly adjust the 
+lens position. By moving the paper back and forth one should be able to see 
+that the beam of light does not change in size which we will see as a circle. 
+If it does diverge slightly change the lens position until it does not 
+diverge anymore and the circle is at its maximum diameter.
+\\
+Now we shall look at the second problem which will be at the detector. For this 
+we can place the quarter wave plate and the linear polarizer infront of the 
+discahrge lamp. Due 
+to the fact that the emtire aparatus is bolted onto the rail and table we will 
+not be able to use the same troubleshooting method as we did before, since we 
+cannot see the light beam. What we 
+must do is to read a signal either on the osciloscope or a voltmeter and 
+maximize the signal. To do this change the position of the lens on the rail and assuming that the first lens was set to its correct position the second should 
+be in the correct position when the signal from the detector is at a maximum. 
+This is because, the light beam that incident on the lens is supposedly 
+parralel and constant so the lens should refosus the light back into a single 
+point and this point should be at the detector.
+\\
+It is important to check the heigth of the optics which should be set to a 
+heigth of approximately 3.5 inches.
+\end{enumerate}
+
+\subsection{Temperature regulation}
+The following component make up the cell temperature regulation system 
+\cite{ref:3}.
+\begin{enumerate}[label=\alph*).]
+\item Temperature regulator: Proportional, Integral, Derivative (PID) 
+temperature controller with associated electronics. The settings for the PID 
+are preset in the electronics box and cannot be change without changing the 
+inner electronics.
+\item Temperature probe: Type T (Copper - Constantan) Thermocouple (5 $\mu$m 
+wire). Constantan is magnetic, however, the wire was chosen to be so small so 
+that the effect of its magnetic field on the magnetic field in the sample can 
+be neglected.
+\item Oven: The oven consists of the following components.
+\begin{enumerate}[label=\arabic*).]
+\item Rubidium cell: Glass bulb that contains the rubidium sample that is to be 
+studied in the experiment.
+\item Cell holder: A foam insert that holds the sample.
+\item Heater: The heater is an open-ended glass heater that is wrapped with 
+non-magnetic bifilar wound heater wire. The resistance is measured to be 50 
+$\Omega$.
+\item Insulation: Foam layer surrounding the heater.
+\item Oven casing: A Plexiglass cylinder. Has endcaps of 50 mm optical windows. 
+Holes in the casing allow wires to be run into the oven.
+\end{enumerate}
+\item Operation: On the front face of the electronics box there is a controller 
+window with three buttons that control the menu up and down respectively. To 
+set a temperature one must press the menu button and cycle to SP (Set Point) 
+and using the up and down buttons one can set the desired temperature in 
+centigrade. To view the current temperature one can press the menu button again 
+and press it again to show the PRoC on the display. By leaving it on this 
+setting it will display the measured temperature.
+\\
+Do note that setting the temperature takes a very long time (20-30 minutes). 
+So, the first thing that should be done when starting the lab should be to set 
+the temperature and allow it to settle.
+\\
+The minimum temperature is ambient room temperature where the max is 
+approximately 100$^0$ C.
+\end{enumerate}
+
+\subsection{Magnetic Fields}
+All the DC magnetic fields are produced by magnetic coils that are placed in a 
+Helmholtz configuration. There are three magnetic coils whose specs are known.
+\begin{minipage}[t]{\linewidth}
+\center
+\begin{tabular}{|c|c|c|}
+\hline
+{} & Mean Radius & Turns/Side \\ {} & (cm) & {} \\ \hline
+Vertical Field & 11.735 & 20 \\ \hline
+Horizontal Field & 15.79 & 154 \\ \hline
+Sweep field & 16.39 & 11 \\ \hline
+\end{tabular}
+\captionof{table}{\textit{Mean Radius and turns given values for the coils 
+\cite{ref:3}.}}
+\label{tbl:2}
+\begin{tabular}{|c|c|c|}
+\hline
+{} & Field/Amp & Max Field \\ 
+{} & ($T\times10^{-4}/A$) & ($T\times10^{-4}$) \\ \hline
+Vertical Field & 1.5 & 1.5 \\ \hline
+Horizontal Field & 8.8 & 22.0 \\ \hline
+Sweep field & 0.60 & 0.60 \\ \hline
+\end{tabular}
+\captionof{table}{\textit{Field/Amp and Maximum field specs for the coils. The 
+Field/Amp specs are approximate \cite{ref:3}.}}
+\label{tbl:3}
+\end{minipage}
+
+\section{Results and Discussion}
+\subsection{Absorption of $Rb$ resonance radiation by atomic $Rb$}
+\begin{figure*}
+\begin{minipage}[t]{\textwidth}
+\includegraphics[width=\linewidth]{pictures/i-schem.png}
+\caption{\textit{General schematic of the set-up for part i \cite{ref:3}.}}
+\label{fig:16}
+\end{minipage}
+\end{figure*}
+For this part of the experiment we are trying to make an approximate 
+measurement of the cross sectional area of atomic rubidium. The method we used 
+to do so was by irradiating the sample with photons and measuring the 
+intensity of the light as a function of temperature. A general schematic is 
+outlined on figure \ref{fig:16}. The schematic shows us that we should only 
+have the two convex-plano lenses and the interference filter to make the 
+measurements.
+\\
+The data that was taken is given in the following table.
+\begin{minipage}{\linewidth}
+\center
+\begin{tabular}{|c|c|}
+\hline
+Temperature (\textsuperscript{0}C) & Intensity (V) \\ \hline
+27.0 & 10.727 \\ \hline
+37.0 & 8.819 \\ \hline
+47.0 & 6.875 \\ \hline
+57.0 & 4.473 \\ \hline
+67.0 & 2.602 \\ \hline
+77.0 & 1.496 \\ \hline
+87.0 & 1.035 \\ \hline
+97.0 & 0.866 \\ \hline
+\end{tabular}
+\captionof{table}{\textit{Data taken for part i of the experiment.}}
+\label{tbl:4}
+\end{minipage}
+We then fitted the data with an exponential curve that would follow the 
+form of equation \ref{eqn:16}, except with an added error term. The equation 
+that was fitted using Python was.
+\begin{equation}
+Y = Ae^{-k(x-2e16)}+B
+\label{eqn:20}
+\end{equation}
+Where, k is given as the product of the cross sectional area times the path 
+length and x is the density of the rubidium atoms which was given in the 
+following table.
+\begin{minipage}{\linewidth}
+\begin{tabular}{|c|c|}
+\hline
+Temperature & Density \\ 
+($^0C$) & ($m^{-3}$) \\ \hline
+17 & $3.3\times10^{15}$ \\ \hline
+27 & $3.3\times10^{15}$ \\ \hline
+37 & $3.3\times10^{15}$ \\ \hline
+47 & $3.3\times10^{15}$ \\ \hline
+57 & $3.3\times10^{15}$ \\ \hline
+67 & $3.3\times10^{15}$ \\ \hline
+77 & $3.3\times10^{15}$ \\ \hline
+17 & $3.3\times10^{15}$ \\ \hline
+87 & $3.3\times10^{15}$ \\ \hline
+97 & $3.3\times10^{15}$ \\ \hline
+107 & $3.3\times10^{15}$ \\ \hline
+117 & $3.3\times10^{15}$ \\ \hline
+127 & $3.3\times10^{15}$ \\ \hline
+\end{tabular}
 
 \begin{thebibliography}{9}
 \bibitem{ref:1}
