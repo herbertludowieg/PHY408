@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.1.31)  10 MAY 2017 11:35
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.1.31)  10 MAY 2017 14:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -737,7 +737,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 40--40
 
  []
 
-<pictures/hyperfine-splitting.png, id=69, 237.88875pt x 183.68625pt>
+<pictures/hyperfine-splitting.png, id=81, 237.88875pt x 183.68625pt>
 File: pictures/hyperfine-splitting.png Graphic file (type png)
 
 <use pictures/hyperfine-splitting.png>
@@ -745,7 +745,7 @@ Package pdftex.def Info: pictures/hyperfine-splitting.png used on input line 75
 .
 (pdftex.def)             Requested size: 211.38832pt x 163.23077pt.
 
-<pictures/hyperfine-vectors.png, id=72, 95.35625pt x 111.41624pt>
+<pictures/hyperfine-vectors.png, id=84, 95.35625pt x 111.41624pt>
 File: pictures/hyperfine-vectors.png Graphic file (type png)
 
 <use pictures/hyperfine-vectors.png>
@@ -755,7 +755,7 @@ Package pdftex.def Info: pictures/hyperfine-vectors.png used on input line 82.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
-<pictures/electron-angular-momentum.png, id=75, 151.56625pt x 161.60374pt>
+<pictures/electron-angular-momentum.png, id=87, 151.56625pt x 161.60374pt>
 File: pictures/electron-angular-momentum.png Graphic file (type png)
 
 <use pictures/electron-angular-momentum.png>
@@ -777,7 +777,7 @@ See the caption package documentation for explanation.
 
 
  <./pictures/electron-angular-momentum.png>]
-<pictures/energy-levels.png, id=103, 213.79875pt x 294.09875pt>
+<pictures/energy-levels.png, id=115, 213.79875pt x 294.09875pt>
 File: pictures/energy-levels.png Graphic file (type png)
 
 <use pictures/energy-levels.png>
@@ -795,28 +795,28 @@ Underfull \hbox (badness 1226) in paragraph at lines 194--194
 []\OT1/cmr/bx/n/12 Interaction of an al-kali atom
  []
 
-<pictures/zeeman-splitting.png, id=125, 426.59375pt x 302.12875pt>
+<pictures/zeeman-splitting.png, id=137, 426.59375pt x 302.12875pt>
 File: pictures/zeeman-splitting.png Graphic file (type png)
 
 <use pictures/zeeman-splitting.png>
 Package pdftex.def Info: pictures/zeeman-splitting.png used on input line 197.
 (pdftex.def)             Requested size: 211.38832pt x 149.71323pt.
 
-<pictures/zeeman-vectors.png, id=128, 130.4875pt x 167.62625pt>
+<pictures/zeeman-vectors.png, id=140, 130.4875pt x 167.62625pt>
 File: pictures/zeeman-vectors.png Graphic file (type png)
 
 <use pictures/zeeman-vectors.png>
 Package pdftex.def Info: pictures/zeeman-vectors.png used on input line 204.
 (pdftex.def)             Requested size: 63.41713pt x 81.46744pt.
  [3]
-<pictures/breit-rabi.png, id=160, 618.31pt x 557.08125pt>
+<pictures/breit-rabi.png, id=172, 618.31pt x 557.08125pt>
 File: pictures/breit-rabi.png Graphic file (type png)
 
 <use pictures/breit-rabi.png>
 Package pdftex.def Info: pictures/breit-rabi.png used on input line 321.
 (pdftex.def)             Requested size: 469.75502pt x 423.25015pt.
 
-<pictures/all-vectors.png, id=165, 626.34pt x 182.6825pt>
+<pictures/all-vectors.png, id=177, 626.34pt x 182.6825pt>
 File: pictures/all-vectors.png Graphic file (type png)
 
 <use pictures/all-vectors.png>
@@ -824,35 +824,35 @@ Package pdftex.def Info: pictures/all-vectors.png used on input line 345.
 (pdftex.def)             Requested size: 469.75502pt x 137.01709pt.
  [4 <./pictures/zeeman-splitting.png> <./pictures/zeeman-vectors.png>] [5 <./pi
 ctures/breit-rabi.png> <./pictures/all-vectors.png>] <pictures/rough-apparatus.
-png, id=191, 631.35875pt x 175.65625pt>
+png, id=203, 631.35875pt x 175.65625pt>
 File: pictures/rough-apparatus.png Graphic file (type png)
 
 <use pictures/rough-apparatus.png>
 Package pdftex.def Info: pictures/rough-apparatus.png used on input line 408.
 (pdftex.def)             Requested size: 469.75502pt x 130.69653pt.
 
-<pictures/energy-lev-trans.png, id=194, 630.355pt x 418.56375pt>
+<pictures/energy-lev-trans.png, id=206, 630.355pt x 418.56375pt>
 File: pictures/energy-lev-trans.png Graphic file (type png)
 
 <use pictures/energy-lev-trans.png>
 Package pdftex.def Info: pictures/energy-lev-trans.png used on input line 415.
 (pdftex.def)             Requested size: 469.75502pt x 311.92297pt.
 
-<pictures/zero-field-trans.png, id=200, 318.18875pt x 187.70125pt>
+<pictures/zero-field-trans.png, id=212, 318.18875pt x 187.70125pt>
 File: pictures/zero-field-trans.png Graphic file (type png)
 
 <use pictures/zero-field-trans.png>
 Package pdftex.def Info: pictures/zero-field-trans.png used on input line 462.
 (pdftex.def)             Requested size: 206.69334pt x 121.92703pt.
 
-<pictures/energy-zero.png, id=203, 404.51125pt x 165.61874pt>
+<pictures/energy-zero.png, id=215, 404.51125pt x 165.61874pt>
 File: pictures/energy-zero.png Graphic file (type png)
 
 <use pictures/energy-zero.png>
 Package pdftex.def Info: pictures/energy-zero.png used on input line 468.
 (pdftex.def)             Requested size: 206.69334pt x 84.62617pt.
  [6] [7 <./pictures/rough-apparatus.png> <./pictures/energy-lev-trans.png>]
-<pictures/rf-larmor.png, id=224, 160.6pt x 225.84375pt>
+<pictures/rf-larmor.png, id=236, 160.6pt x 225.84375pt>
 File: pictures/rf-larmor.png Graphic file (type png)
 
 <use pictures/rf-larmor.png>
@@ -864,7 +864,7 @@ Package caption Warning: The option `hypcap=true' will be ignored for this
 (caption)                particular \caption on input line 524.
 See the caption package documentation for explanation.
 
-<pictures/detector-schem.png, id=229, 794.97pt x 261.97874pt>
+<pictures/detector-schem.png, id=241, 794.97pt x 261.97874pt>
 File: pictures/detector-schem.png Graphic file (type png)
 
 <use pictures/detector-schem.png>
@@ -892,7 +892,7 @@ Underfull \hbox (badness 1642) in paragraph at lines 559--587
  []
 
 [8 <./pictures/zero-field-trans.png> <./pictures/energy-zero.png> <./pictures/r
-f-larmor.png>] <pictures/quarter-wave.png, id=246, 537.00626pt x 339.2675pt>
+f-larmor.png>] <pictures/quarter-wave.png, id=258, 537.00626pt x 339.2675pt>
 File: pictures/quarter-wave.png Graphic file (type png)
 
 <use pictures/quarter-wave.png>
@@ -913,84 +913,284 @@ Package caption Warning: The option `hypcap=true' will be ignored for this
 See the caption package documentation for explanation.
 
 
-Underfull \hbox (badness 8189) in paragraph at lines 711--736
+Underfull \hbox (badness 8189) in paragraph at lines 711--737
 \OT1/cmr/m/n/10 All the DC mag-netic fields are pro-duced
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 711--736
+Underfull \hbox (badness 10000) in paragraph at lines 711--737
 \OT1/cmr/m/n/10 by mag-netic coils that are placed in a
  []
 
 
-Underfull \hbox (badness 6510) in paragraph at lines 711--736
+Underfull \hbox (badness 6510) in paragraph at lines 711--737
 \OT1/cmr/m/n/10 Helmholtz con-fig-u-ra-tion. There are three
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 711--736
+Underfull \hbox (badness 10000) in paragraph at lines 711--737
 \OT1/cmr/m/n/10 mag-netic coils whose specs are known.
  []
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 738.
+(hyperref)                removing `math shift' on input line 739.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 738.
+(hyperref)                removing `math shift' on input line 739.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 738.
+(hyperref)                removing `math shift' on input line 739.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 738.
+(hyperref)                removing `math shift' on input line 739.
 
+<pictures/i-schem.png, id=291, 780.9175pt x 175.65625pt>
+File: pictures/i-schem.png Graphic file (type png)
+
+<use pictures/i-schem.png>
+Package pdftex.def Info: pictures/i-schem.png used on input line 742.
+(pdftex.def)             Requested size: 469.75502pt x 105.66525pt.
+
+<pictures/density-light.png, id=294, 578.16pt x 433.62pt>
+File: pictures/density-light.png Graphic file (type png)
+
+<use pictures/density-light.png>
+Package pdftex.def Info: pictures/density-light.png used on input line 747.
+(pdftex.def)             Requested size: 211.38832pt x 158.53795pt.
+
+<pictures/temp-density.png, id=296, 578.16pt x 433.62pt>
+File: pictures/temp-density.png Graphic file (type png)
+
+<use pictures/temp-density.png>
+Package pdftex.def Info: pictures/temp-density.png used on input line 754.
+(pdftex.def)             Requested size: 211.38832pt x 158.53795pt.
 
 Underfull \vbox (badness 5711) has occurred while \output is active []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 756.
- [11]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 756.
 
-(./OPTICAL-PUMPING-HL.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 756.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 756.
-Package rerunfilecheck Info: File `OPTICAL-PUMPING-HL.out' has not changed.
-(rerunfilecheck)             Checksum: 361E3DF915341876B09FEC2C8EFBC133;1093.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 756.
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 782.
+See the caption package documentation for explanation.
+
+
+Underfull \hbox (badness 1038) in paragraph at lines 759--788
+\OT1/cmr/m/n/10 lenses and the in-ter-fer-ence fil-ter to make the
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 759--788
+\OT1/cmr/m/n/10 The data that was taken is
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 759--788
+\OT1/cmr/m/n/10 given in the fol-low-ing ta-ble.
+ []
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 814.
+See the caption package documentation for explanation.
+
+
+Underfull \hbox (badness 4467) in paragraph at lines 791--830
+\OT1/cmr/m/n/10 Where, k is given as the prod-uct of the
+ []
+
+
+Underfull \hbox (badness 1152) in paragraph at lines 791--830
+\OT1/cmr/m/n/10 cross sec-tional area times the path length, x
+ []
+
+
+Underfull \hbox (badness 2080) in paragraph at lines 791--830
+\OT1/cmr/m/n/10 is the den-sity of the ru-bid-ium atoms which
+ []
+
+
+Underfull \hbox (badness 2269) in paragraph at lines 791--830
+\OT1/cmr/m/n/10 was given in the fol-low-ing ta-ble and y are
+ []
+
+
+Underfull \hbox (badness 1584) in paragraph at lines 791--830
+\OT1/cmr/m/n/10 the mea-sured in-ten-sity val-ues from the data.
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [11]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+<pictures/ii-schem.png, id=318, 791.95876pt x 236.885pt>
+File: pictures/ii-schem.png Graphic file (type png)
+
+<use pictures/ii-schem.png>
+Package pdftex.def Info: pictures/ii-schem.png used on input line 835.
+(pdftex.def)             Requested size: 469.75502pt x 140.51276pt.
+
+<pictures/current-field.png, id=321, 578.16pt x 433.62pt>
+File: pictures/current-field.png Graphic file (type png)
+
+<use pictures/current-field.png>
+Package pdftex.def Info: pictures/current-field.png used on input line 840.
+(pdftex.def)             Requested size: 211.38832pt x 158.53795pt.
+
+<pictures/field-frequency.png, id=322, 578.16pt x 433.62pt>
+File: pictures/field-frequency.png Graphic file (type png)
+
+<use pictures/field-frequency.png>
+Package pdftex.def Info: pictures/field-frequency.png used on input line 847.
+(pdftex.def)             Requested size: 211.38832pt x 158.53795pt.
+ [12 <./pictures/i-schem.png> <./pictures/density-light.png> <./pictures/temp-d
+ensity.png>] [13 <./pictures/ii-schem.png> <./pictures/current-field.png> <./pi
+ctures/field-frequency.png>]
+<pictures/zero-field-data.png, id=343, 435.6275pt x 481.8pt>
+File: pictures/zero-field-data.png Graphic file (type png)
+
+<use pictures/zero-field-data.png>
+Package pdftex.def Info: pictures/zero-field-data.png used on input line 872.
+(pdftex.def)             Requested size: 220.65114pt x 244.03856pt.
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 874.
+See the caption package documentation for explanation.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 883.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `subscript' on input line 883.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 883.
+
+<pictures/low-field-resonance.png, id=345, 448.67625pt x 481.8pt>
+File: pictures/low-field-resonance.png Graphic file (type png)
+
+<use pictures/low-field-resonance.png>
+Package pdftex.def Info: pictures/low-field-resonance.png used on input line 89
+2.
+(pdftex.def)             Requested size: 220.65114pt x 236.93684pt.
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 894.
+See the caption package documentation for explanation.
+
+[14 <./pictures/zero-field-data.png> <./pictures/low-field-resonance.png>]
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 964.
+See the caption package documentation for explanation.
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 964.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Optional argument of \twocolumn too tall on page 15.
+
+
+Overfull \vbox (30.0pt too high) has occurred while \output is active []
+
+
+
+LaTeX Warning: Text page 15 contains only floats.
+
+
+Overfull \vbox (30.0pt too high) has occurred while \output is active []
+
+
+Overfull \vbox (16.0pt too high) has occurred while \output is active []
+
+ [15
+
+]
+<pictures/rb87-low.png, id=368, 578.16pt x 433.62pt>
+File: pictures/rb87-low.png Graphic file (type png)
+
+<use pictures/rb87-low.png>
+Package pdftex.def Info: pictures/rb87-low.png used on input line 996.
+(pdftex.def)             Requested size: 211.38832pt x 158.53795pt.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 1006.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `superscript' on input line 1006.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 1006.
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1023.
+[16
+
+] [17 <./pictures/rb87-low.png>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1023.
+ (./OPTICAL-PUMPING-HL.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1023.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1023.
+
+
+
+Package rerunfilecheck Warning: File `OPTICAL-PUMPING-HL.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `OPTICAL-PUMPING-HL.out':
+(rerunfilecheck)             Before: 4F021D09DEB934EE59C9FC59247EEEF2;1349
+(rerunfilecheck)             After:  234990AE73E18D1AE5AEE2C4FC1E29BC;1503.
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1023.
  ) 
 Here is how much of TeX's memory you used:
- 8141 strings out of 493029
- 122037 string characters out of 6136234
- 221595 words of memory out of 5000000
- 11487 multiletter control sequences out of 15000+600000
- 11345 words of font info for 41 fonts, out of 8000000 for 9000
+ 8231 strings out of 493029
+ 123729 string characters out of 6136234
+ 237242 words of memory out of 5000000
+ 11544 multiletter control sequences out of 15000+600000
+ 11653 words of font info for 42 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 36i,10n,44p,267b,579s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share
-/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
-6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></
-usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texlive/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmti10.pfb>
-Output written on OPTICAL-PUMPING-HL.pdf (11 pages, 432136 bytes).
+ 36i,12n,44p,271b,579s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/font
+s/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmmi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb>
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/sh
+are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texlive/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmti10.pfb>
+Output written on OPTICAL-PUMPING-HL.pdf (17 pages, 709419 bytes).
 PDF statistics:
- 369 PDF objects out of 1000 (max. 8388607)
- 301 compressed objects within 4 object streams
- 84 named destinations out of 1000 (max. 500000)
- 204 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 469 PDF objects out of 1000 (max. 8388607)
+ 375 compressed objects within 4 object streams
+ 107 named destinations out of 1000 (max. 500000)
+ 273 words of extra memory for PDF output out of 10000 (max. 10000000)
 

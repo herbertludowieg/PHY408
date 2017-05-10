@@ -10,7 +10,7 @@
 \usepackage{enumitem}
 \usepackage{graphicx}
 \usepackage{hyperref}
-\renewcommand{\thesection}{\Roman{section}}
+\renewcommand{\thesection}{\Roman{section}.}
 \renewcommand{\thesubsection}{(\roman{subsection})}
 \renewcommand{\thesubsubsection}{\thesubsection.\arabic{subsubsection}}
 \setlength\parindent{5pt}
@@ -743,6 +743,18 @@ Field/Amp specs are approximate \cite{ref:3}.}}
 \caption{\textit{General schematic of the set-up for part i \cite{ref:3}.}}
 \label{fig:16}
 \end{minipage}
+\begin{minipage}[t]{0.45\textwidth}
+\includegraphics[width=\linewidth]{pictures/density-light.png}
+\caption{\textit{Light intensity as a function of density of rubidium atoms at 
+given temperature values.}}
+\label{fig:17}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.45\textwidth}
+\includegraphics[width=\linewidth]{pictures/temp-density.png}
+\caption{\textit{Density of rubidium atoms as a function of temperature.}}
+\label{fig:18}
+\end{minipage}
 \end{figure*}
 For this part of the experiment we are trying to make an approximate 
 measurement of the cross sectional area of atomic rubidium. The method we used 
@@ -778,27 +790,239 @@ Y = Ae^{-k(x-2e16)}+B
 \label{eqn:20}
 \end{equation}
 Where, k is given as the product of the cross sectional area times the path 
-length and x is the density of the rubidium atoms which was given in the 
-following table.
+length, x is the density of the rubidium atoms which was given in the 
+following table and y are the measured intensity values from the data.
 \begin{minipage}{\linewidth}
 \begin{tabular}{|c|c|}
 \hline
 Temperature & Density \\ 
 ($^0C$) & ($m^{-3}$) \\ \hline
 17 & $3.3\times10^{15}$ \\ \hline
-27 & $3.3\times10^{15}$ \\ \hline
-37 & $3.3\times10^{15}$ \\ \hline
-47 & $3.3\times10^{15}$ \\ \hline
-57 & $3.3\times10^{15}$ \\ \hline
-67 & $3.3\times10^{15}$ \\ \hline
-77 & $3.3\times10^{15}$ \\ \hline
-17 & $3.3\times10^{15}$ \\ \hline
-87 & $3.3\times10^{15}$ \\ \hline
-97 & $3.3\times10^{15}$ \\ \hline
-107 & $3.3\times10^{15}$ \\ \hline
-117 & $3.3\times10^{15}$ \\ \hline
-127 & $3.3\times10^{15}$ \\ \hline
+27 & $1.1\times10^{16}$ \\ \hline
+37 & $2.9\times10^{16}$ \\ \hline
+47 & $7.5\times10^{17}$ \\ \hline
+57 & $1.8\times10^{17}$ \\ \hline
+67 & $4.3\times10^{17}$ \\ \hline
+77 & $8.3\times10^{17}$ \\ \hline
+87 & $1.5\times10^{18}$ \\ \hline
+97 & $3.7\times10^{18}$ \\ \hline
+107 & $6.3\times10^{18}$ \\ \hline
+117 & $1.2\times10^{19}$ \\ \hline
+127 & $2.4\times10^{19}$ \\ \hline
 \end{tabular}
+\captionof{table}{\textit{Density of rubidium atoms as a function of 
+temperature \cite{ref:3}.}}
+\label{tbl:5}
+\end{minipage}
+Using all of the values and the curve fitting functions in Python the cross 
+sectional area was found to be: $1.8\times10^{-16}$ $\pm$ $0.3\times10^{-16}$ 
+m\textsuperscript{2}. The data was plotted on figure \ref{fig:17}.
+\\
+We also plotted the data that is given on table \ref{tbl:5} and fitted an 
+exponential curve to the data using Python. The results are shown on figure 
+\ref{fig:18}.
+\\
+A quick note on the fitting functions. The values that are subtracting from x 
+were chosen to be those because we needed to shift the entire curve and they 
+gave the lowest uncertainty values comparatively. The B term in equation 
+\ref{eqn:20} is an error term that accounts for outside sources of light that 
+are not eliminated by the aparatus.
+
+\subsection{Low field resonances}
+\begin{figure*}
+\center
+\begin{minipage}[t]{\textwidth}
+\includegraphics[width=\linewidth]{pictures/ii-schem.png}
+\caption{\textit{General schematic for part ii of the experiment \cite{ref:3}.}}
+\label{fig:19}
+\end{minipage}
+\begin{minipage}[t]{0.45\textwidth}
+\includegraphics[width=\linewidth]{pictures/current-field.png}
+\caption{\textit{Magnetic field as a function of current for the three magnetic 
+coils.}}
+\label{fig:20}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.45\textwidth}
+\includegraphics[width=\linewidth]{pictures/field-frequency.png}
+\caption{\textit{Frequency as a function of magnetic field.}}
+\label{fig:21}
+\end{minipage}
+\end{figure*}
+For this part of the experiment we began using the magnetic fields to be able 
+to create the weak field Zeeman effect and hyperfine splitting. The general 
+set-up for this part is given on figure \ref{fig:19}. We then found the 
+magnetic fields as a funtion of current using the equation.
+\begin{equation}
+B = \frac{8\mu_0 NI}{R\sqrt{125}}
+\label{eqn:21}
+\cite{ref:3}
+\end{equation}
+Where, $\mu_0$ is the permeability constant, N and R are the turns and mean 
+radius values that are given in table \ref{tbl:2} and \ref{tbl:3} and I was 
+varied. During the experiment we measure the voltage value that is running 
+through the coils but on the electrical box we can see the resistances that 
+are given for each of the coils and by Ohm's law can calculate the current.
+\subsubsection{Zero field transition:}
+In the theory section we talked about the zero field transition and for the 
+experiment we had to find this transition so as to be able to calibrate our 
+maesured magnetic field values so that there was no outside field 
+interferences. A screenshot was taken of the zero field transition.
+\center
+\includegraphics[width=\linewidth]{pictures/zero-field-data.png}
+\captionof{figure}{\textit{Zero field transition taken during part ii of the 
+experiment in XY mode of the oscilloscope.\\}}
+\label{fig:22}
+\justify
+What we found was that the zero field transition had to be found by changing 
+both the fields in the horizontal and vertical components. The vertical field 
+was found to be 51.2 $\pm$ 0.3 $\mu$T. The horizontal was found to be 10.1 
+$\pm$ 0.1 $\mu$T when assuming the error in the voltmeter readings to be 
+0.002 V. We set the temperature to be $50^oC$.
+
+\subsubsection{Measurement of $g_F$ factors and nuclear spins:}
+In this section we wanted to find the $g_F$ factors that we defined in equation 
+\ref{eqn:10} along with the nuclear spin (I). The method that we used to do 
+this was by using an RF signal we varied the signal from 100 kHz up to 1 GHz in 
+intervals of 50 kHz and measured the voltage on the coils at the moment that 
+the rubidium atoms underwent the transition. The first transition at the 
+resonance condition was taken as a screenshot from the oscilloscope and shown 
+below.
+\center
+\includegraphics[width=\linewidth]{pictures/low-field-resonance.png}
+\captionof{figure}{\textit{Screenshot of the first resonance condition at low 
+fields at a frequency value of 100 kHz.}}
+\label{fig:23}
+\justify
+Data was taken at each frequency value and the values of the sweep field and 
+horizontal field voltages, current and magnetic field were calculated along 
+with the total field value. The data is shown on the table on the next page.
+
+\twocolumn[
+\begin{@twocolumnfalse}
+\center
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+\hline
+\multicolumn{9}{c}{Rb\textsuperscript{85}} \\ \hline
+{} & \multicolumn{3}{c}{Sweep field coil} &
+\multicolumn{3}{c}{Horizontal field coil} && Combined \\ \hline
+Frequency & Voltage & Current & Field & Voltage & Current & Field && Field \\  
+(kHz) & (V) & (A) & ($\mu T$) & (V) & (A) & ($\mu T$) && ($\mu T$) \\ \hline
+100.0 & 0.5134 & 0.5134 & 30.9824 & 0.00184 & 0.0037 & 3.2272 && 24.0712 \\ \hline
+150.0 & 0.685 & 0.685 & 41.338 & 0.00184 & 0.0037 & 3.2272 && 34.4268 \\ \hline
+200.0 & 0.8575 & 0.8575 & 51.7479 & 0.00184 & 0.0037 & 3.2272 && 44.8368 \\ \hline
+250.0 & 0.7743 & 0.7743 & 46.727 & 0.0108 & 0.0216 & 18.9425 && 55.5311 \\ \hline
+300.0 & 0.579 & 0.579 & 34.9411 & 0.0239 & 0.0478 & 41.919 && 66.7218 \\ \hline
+350.0 & 0.5596 & 0.5596 & 33.7704 & 0.0308 & 0.0616 & 54.0212 && 77.6532 \\ \hline
+400.0 & 0.7333 & 0.7333 & 44.2527 & 0.0308 & 0.0616 & 54.0212 && 88.1356 \\ \hline
+450.0 & 0.9069 & 0.9069 & 54.7291 & 0.0308 & 0.0616 & 54.0212 && 98.6119 \\ \hline
+500.0 & 0.7126 & 0.7126 & 43.0036 & 0.044 & 0.088 & 77.1731 && 110.0383 \\ \hline
+550.0 & 0.7828 & 0.7828 & 47.2399 & 0.0477 & 0.0954 & 83.6627 && 120.7643 \\ \hline
+600.0 & 0.933 & 0.933 & 56.3041 & 0.0485 & 0.097 & 85.0658 && 131.2316 \\ \hline
+650.0 & 0.7178 & 0.7178 & 43.3174 & 0.0623 & 0.1246 & 109.2701 && 142.4491 \\ \hline
+700.0 & 0.4578 & 0.4578 & 27.627 & 0.0778 & 0.1556 & 136.4561 && 153.9448 \\ \hline
+750.0 & 0.446 & 0.446 & 26.9149 & 0.0844 & 0.1688 & 148.0321 && 164.8087 \\ \hline
+800.0 & 0.4736 & 0.4736 & 28.5805 & 0.0897 & 0.1794 & 157.3279 && 175.7701 \\ \hline
+850.0 & 0.6453 & 0.6453 & 38.9422 & 0.0897 & 0.1794 & 157.3279 && 186.1318 \\ \hline
+900.0 & 0.8175 & 0.8175 & 49.334 & 0.0897 & 0.1794 & 157.3279 && 196.5236 \\ \hline
+950.0 & 0.8299 & 0.8299 & 50.0823 & 0.0954 & 0.1908 & 167.3254 && 207.2693 \\ \hline
+1000.0 & 0.9125 & 0.9125 & 55.067 & 0.0986 & 0.1972 & 172.938 && 217.8666 \\ \hline
+\end{tabular}
+\captionof{table}{\textit{Data taken and calculated from known values. The 
+Voltage columns and the frequency columns are from data that was taken.\\}}
+\label{tbl:6}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+\hline
+\multicolumn{9}{c}{Rb\textsuperscript{87}} \\ \hline
+{} & \multicolumn{3}{c}{Sweep field coil} & 
+\multicolumn{3}{c}{Horizontal field coil} && Combined \\ \hline
+Frequency & Voltage & Current & Field & Voltage & Current & Field && Field \\ 
+(kHz) & (V) & (A) & ($\mu T$) & (V) & (A) & ($\mu T$) && ($\mu T$) \\ \hline
+100.0 & 0.3974 & 0.3974 & 23.9821 & 0.00184 & 0.0037 & 3.2272 && 17.0709 \\ \hline
+150.0 & 0.511 & 0.511 & 30.8375 & 0.00184 & 0.0037 & 3.2272 && 23.9264 \\ \hline
+200.0 & 0.6265 & 0.6265 & 37.8076 & 0.00184 & 0.0037 & 3.2272 && 30.8965 \\ \hline
+250.0 & 0.4843 & 0.4843 & 29.2262 & 0.0108 & 0.0216 & 18.9425 && 38.0304 \\ \hline
+300.0 & 0.2327 & 0.2327 & 14.0428 & 0.0239 & 0.0478 & 41.919 && 45.8235 \\ \hline
+350.0 & 0.1553 & 0.1553 & 9.372 & 0.0308 & 0.0616 & 54.0212 && 53.2548 \\ \hline
+400.0 & 0.2728 & 0.2728 & 16.4628 & 0.0308 & 0.0616 & 54.0212 && 60.3456 \\ \hline
+450.0 & 0.388 & 0.388 & 23.4148 & 0.0308 & 0.0616 & 54.0212 && 67.2976 \\ \hline
+500.0 & 0.1347 & 0.1347 & 8.1288 & 0.044 & 0.088 & 77.1731 && 75.1636 \\ \hline
+550.0 & 0.1486 & 0.1486 & 8.9676 & 0.0477 & 0.0954 & 83.6627 && 82.4919 \\ \hline
+600.0 & 0.2413 & 0.2413 & 14.5618 & 0.0485 & 0.097 & 85.0658 && 89.4893 \\ \hline
+650.0 & 0.3565 & 0.3565 & 21.5138 & 0.0485 & 0.097 & 85.0658 && 96.4413 \\ \hline
+700.0 & 0.2671 & 0.2671 & 16.1188 & 0.0558 & 0.1116 & 97.8696 && 103.85 \\ \hline
+750.0 & 0.1556 & 0.1556 & 9.3901 & 0.064 & 0.128 & 112.2518 && 111.5035 \\ \hline
+800.0 & 0.2695 & 0.2695 & 16.2636 & 0.064 & 0.128 & 112.2518 && 118.3771 \\ \hline
+850.0 & 0.2678 & 0.2678 & 16.161 & 0.068 & 0.136 & 119.2676 && 125.2902 \\ \hline
+900.0 & 0.384 & 0.384 & 23.1734 & 0.068 & 0.136 & 119.2676 && 132.3026 \\ \hline
+950.0 & 0.4989 & 0.4989 & 30.1073 & 0.068 & 0.136 & 119.2676 && 139.2365 \\ \hline
+1000.0 & 0.5807 & 0.5807 & 35.0437 & 0.0693 & 0.1386 & 121.5477 && 146.4531 \\ \hline
+\end{tabular}
+\captionof{table}{\textit{Data taken and calculated from known values. The 
+Voltage columns and the frequency columns are from data that was taken.\\}}
+\label{tbl:7}
+\end{@twocolumnfalse}]
+The data from tables \ref{tbl:5} and \ref{tbl:6} is included under the 
+frequency and the voltage columns for the the sweep field and the horizontal 
+field coil. The currents were calculated from Ohm's law where the sweep field 
+had a 1 $\Omega$ resistor and the horizontal field had a 0.5 $\Omega$ resistor. 
+The fields were calculated using equation \ref{eqn:21}. The combined field was 
+found by adding the magnetic fields from both coils and then subtracting the 
+value of the zero field magnetic field value. 
+\\
+A plot of the frequency as a function of the combined magnetic field is shown 
+on figure \ref{fig:21}. Using equation \ref{eqn:11} it is easy to see the 
+linear relationship between the slope and the $g_F$ factor which when the 
+equation is solved for the value we get values of 0.3260 $\pm$ 0.0005 and 0.482 
+$\pm$ 0.001 for $Rb^{85}$ and $Rb^{87}$ respectively. By then having the $g_F$ 
+factor we can solve for the nuclear angular momentum (I) by rewriting equation 
+\ref{eqn:10} for I and we get the algebraic expression.
+\begin{equation}
+\begin{aligned}
+0 = 2&I^2g_F + 2I\left(g_F+J\left[2g_F-g_J\right]\right)
+\\
+      &- 2J\left(J+1\right)\left(g_J-g_F\right)
+\label{eqn:22}
+\end{aligned}
+\end{equation}
+Where, $g_F$ has just been calculated, $g_J$ is the Lande g-factor, J is equal 
+to 1/2. Equation \ref{eqn:22} takes the form of a quadratic and can be solved 
+for I and when taking the positive roots the values that are gotten for the 
+nuclear spin are 2.571 and 1.576 for $Rb^{85}$ and $Rb^{87}$ respectively.
+
+\subsection{Quadratic Zeeman Effect}
+\begin{figure*}
+\begin{minipage}[t]{0.45\linewidth}
+\includegraphics[width=\linewidth]{pictures/rb87-low.png}
+\caption{\textit{$Rb^{87}$ quadratic zeeman effect at low RF power}}
+\label{fig:24}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.45\linewidth}
+\includegraphics[width=\linewidth]{pictures/rb87-high.png}
+\caption{\textit{$Rb^{87}$ quadratic zeeman effect at high RF power}}
+\label{fig:25}
+\end{minipage}
+\vfill
+\begin{minipage}[t]{0.45\linewidth}
+\includegraphics[width=\linewidth]{pictures/rb85-low.png}
+\caption{\textit{$Rb^{85}$ quadratic zeeman effect at low RF power}}
+\label{fig:26}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.45\linewidth}
+\includegraphics[width=\linewidth]{pictures/rb85-high.png}
+\caption{\textit{$Rb^{85}$ quadratic zeeman effect at high RF power}}
+\label{fig:27}
+\end{minipage}
+\end{figure*}
+For this part of the experiment we studied the Zeeman resonances of both 
+isotopes. We will study the region in which the energy level splitting is no 
+longer linear nor equally spaced and there will be a total of 2F resonances. 
+The relative intensities of the signals depend on the pumping conditions.
+
+\subsubsection{$Rb^{87}$ quadratic effect}
+
 
 \begin{thebibliography}{9}
 \bibitem{ref:1}
