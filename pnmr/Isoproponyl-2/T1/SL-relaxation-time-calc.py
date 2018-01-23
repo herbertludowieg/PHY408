@@ -1,0 +1,1 @@
+/home/silvefight/Documents/PHY408/pnmr/scripts/SL-relaxation-time-calc.py

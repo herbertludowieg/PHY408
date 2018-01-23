@@ -1,0 +1,290 @@
+[33mcommit 8ca1256650aed14587b0bff2ffd84794c49d9619[m
+Author: Herbert Ludowieg <herbertl@buffalo.edu>
+Date:   Thu May 4 17:11:39 2017 -0400
+
+    It works well with the new function but the curve fit has higher uncertainties and will need to check if the exponential can be used instead of the inverse function.
+
+[33mcommit 9f5b7fba873888a1f82e433500a7f6c4345a66fc[m
+Author: Herbert Ludowieg <herbertl@buffalo.edu>
+Date:   Thu May 4 14:38:37 2017 -0400
+
+    Created new branch to attempt to fix the fitting function to the ringing which should not be an exponential function.
+
+[33mcommit 3da5f495e92293766db6a5aff0c1fed9b4b5e832[m
+Author: Herbert Ludowieg <herbertl@buffalo.edu>
+Date:   Thu May 4 13:12:41 2017 -0400
+
+    the test was successful and will now merge with the optical branch. Added all necessary code to complete parts 1 through 4 stil check everything and make sure the values that are in output are the ones needed.
+
+[33mcommit 90e9c3056480e8a933e478d9860b26e098ea7026[m
+Author: Herbert Ludowieg <herbertl@buffalo.edu>
+Date:   Wed May 3 21:45:20 2017 -0400
+
+    First commit will try to remove the b term in the fit equation with the hope that the uncertainties do not jump to kingdom come.
+
+[33mcommit 8e949a2f30703ca47df6260eec9cc6e6abefa76d[m
+Author: Herbert Ludowieg <herbertl@buffalo.edu>
+Date:   Wed May 3 21:17:31 2017 -0400
+
+    completed part ii with the exzception of checking the zero field value. It is slightly off and requires checking the value with the Horizontal field at a voltage of 1.84e-3 V. Moving on to part iii to the histogram data will need to check if we need to calculate the theoretical value.
+
+[33mcommit 55a605851eb606b29750c10cd0f452cbb0d18e7f[m
+Author: Herbert Ludowieg <herbertl@buffalo.edu>
+Date:   Wed May 3 18:40:14 2017 -0400
+
+    Got the data for part ii to plot but missing a clever way to interpret the curve fitting algorithm for one parameter and have some slight errors.
+
+[33mcommit 9fb68598f4d494158702b8237c2c600fe7dc5733[m
+Author: Herbert Ludowieg <herbertl@buffalo.edu>
+Date:   Wed May 3 15:47:22 2017 -0400
+
+    Added calculation of the magnetic fields and currents for part ii with latex formatting output. Need to make plot to find g-factor. Completed parts 1,4. Check these parts for completeness.
+
+[33mcommit e06a1e40f39148e80edd1609b39838bc70ebe24d[m
+Author: Herbert Ludowieg <herbertl@buffalo.edu>
+Date:   Wed May 3 11:47:30 2017 -0400
+
+    Adding data from the analysis of the periodicity data. Added a new function in expo_plot.py to plot and find the best fit lines for Rb 85 and 87 from the oscilations in the data as a function of RF amplitude. Need to make more plots.
+
+[33mcommit b1124d878ec34c9bf6f700b4822dbe5e5bb281fd[m
+Author: Herbert Ludowieg <herbertl@buffalo.edu>
+Date:   Wed May 3 10:21:23 2017 -0400
+
+    Fixed the algorithm for data_extract.py and got the expected results after comparison with the screenshots from the data-iv directories. Now need to proceed to make plot and exponential fit of the data.
+
+[33mcommit 61413310c2d61c8d47ffd8c8b3d7392d3e3fcfc5[m
+Author: Herbert Ludowieg <herbertl@buffalo.edu>
+Date:   Wed May 3 10:05:36 2017 -0400
+
+    Adding shell script to run through all of the files for the iv part of the experiment. Still need to look over outputs and fix algorithm for data-extract.py.
+
+[33mcommit 0ae0223e226e3b9d7364a476e04b3d580f52b64b[m
+Author: Herbert Ludowieg <herbertl@buffalo.edu>
+Date:   Thu Apr 27 13:37:45 2017 -0400
+
+    Adding final data taken for experiment and python script that will be able to find the maxima and find the frequency and period of the oscilations.
+
+[33mcommit dc7445f041c890422a8369dee3159f889419a179[m
+Author: Herbert Ludowieg <herbertl@buffalo.edu>
+Date:   Thu Apr 27 09:53:17 2017 -0400
+
+    Added interface like functionality and Current versus Magnetic field plot. Need to fix units and legend for this plot.
+
+[33mcommit 15a811c9a61bf946c285f1a87058cca74a852432[m
+Author: Herbert Ludowieg <herbertl@buffalo.edu>
+Date:   Thu Apr 27 00:33:52 2017 -0400
+
+    Adding mgnet properties data file along with uncertainty values that were calculated for the fitparameters with the python expo-plot.py script. On the script boxes containing fit parameters and other goodies were added for simplicity in reading.Need to make plot for the magnets now.
+
+[33mcommit 838cfd3b45b3e3c670a2ff3764c2dfa90bdb1229[m
+Author: Herbert Ludowieg <herbertl@buffalo.edu>
+Date:   Thu Apr 27 00:29:12 2017 -0400
+
+    Compared the uncertainty values and determined that there was not a
+    significant difference in the values so the z values for the temp v density and density v intensity were chosen to be 100 and 2e16 respectively.
+
+[33mcommit 77ccc9f447693a91ec8e793712689135550a92ad[m
+Author: Herbert Ludowieg <herbertl@buffalo.edu>
+Date:   Wed Apr 26 16:07:04 2017 -0400
+
+    Added percentage uncertain to be able to compare uncertaities as we change the z value
+
+[33mcommit 319e9c728b6f186a36880c4103d400f43b630f80[m
+Author: Herbert Ludowieg <herbertl@buffalo.edu>
+Date:   Wed Apr 26 15:26:35 2017 -0400
+
+    got better uncertainty values by evaluating a*exp(k*(x-87)) so it will be kept as a 2 parameter exponential fit
+
+[33mcommit 78568ea6c5165b9054bf598842e50d9e695a690e[m
+Author: Herbert Ludowieg <herbertl@buffalo.edu>
+Date:   Wed Apr 26 15:20:14 2017 -0400
+
+    It was succesful and will now be merged with optical branch and another will be made to see if the temp vs density looks better without the b value.
+
+[33mcommit dfdcd2cb9e90959a76e16d99c57738f843baba7e[m
+Author: Herbert Ludowieg <herbertl@buffalo.edu>
+Date:   Wed Apr 26 13:50:53 2017 -0400
+
+    Adding all initial materials. On expo_plot.py will be tring to set a value for z rather than finding one with curve_fit function in python. Will create branch z-test for git.
+
+[33mcommit 05e2a7343b15063fafc370d415317f5dc455fbbd[m
+Author: Herbert Ludowieg <herbertl@buffalo.edu>
+Date:   Mon Apr 10 17:04:20 2017 -0400
+
+    All materials finished and submitted
+
+[33mcommit a49811c4813edd51296dcbc60e2e2069b2c30416[m
+Author: Herbert Ludowieg <herbertl@buffalo.edu>
+Date:   Mon Apr 10 12:27:37 2017 -0400
+
+    Advancing in report. Up to results and discussion. Fixed room temp picture units to Volts and included error analysys in van der Pauw resistivity calculations.
+
+[33mcommit 581f8eb4172d096c49848ad097850626137a9cdb[m
+Author: Herbert Ludowieg <herbertl@buffalo.edu>
+Date:   Sun Apr 9 15:43:28 2017 -0400
+
+    working on report almost through the theory section. Adding some other pictures that are being used in the report
+    .
+
+[33mcommit 53a75729c958a5372bf2c61aefc1107c5dbbceab[m
+Author: Herbert Ludowieg <herbertl@buffalo.edu>
+Date:   Fri Apr 7 12:52:53 2017 -0400
+
+    Added error calculations for the program and also fixed the output of the data to look nicer and easier to read
+
+[33mcommit b01ff5e1acea3807640996450e860a32ac553d18[m
+Author: Herbert Ludowieg <herbertl@buffalo.edu>
+Date:   Thu Apr 6 23:00:48 2017 -0400
+
+    Adding materials for the report
+
+[33mcommit 96fe263ff7f65d85843db96c0a03198d282e088d[m
+Author: Herbert Ludowieg <herbertl@buffalo.edu>
+Date:   Thu Apr 6 22:53:53 2017 -0400
+
+    Fixed the plotting method to have a single linestyle but different colors with the color=(r,g,b) functionality in matplotlib for the Average Hall Voltage plot
+
+[33mcommit 95e1b9f00224ab651e85926cfbe0163e2c61d675[m
+Author: Herbert Ludowieg <herbertl@buffalo.edu>
+Date:   Thu Apr 6 21:59:42 2017 -0400
+
+    Working Backup
+
+[33mcommit 5affb8ec7145c06d36f2a9c7e74c77bba7f7d2c9[m
+Author: Herbert Ludowieg <herbertl@buffalo.edu>
+Date:   Thu Apr 6 13:31:54 2017 -0400
+
+    Finished up plotting program and fixed the method in which the CT-AE data is interpreted so it foloows the same trend as that of the CT-BF data. Only thing left to do is to plot the Magnetic field as a function of current and placing error bars in the plots.
+
+[33mcommit 4c39875d7ba6c282f063d736ce6fe326c972472d[m
+Author: Herbert Ludowieg <herbertl@buffalo.edu>
+Date:   Thu Apr 6 11:03:32 2017 -0400
+
+    Adding all of the files and code that are used for hall effect
+
+[33mcommit 2922014c487054da3cad1cc50630a54f1ef2074f[m
+Author: Herbert Ludowieg <herbertl@buffalo.edu>
+Date:   Mon Mar 27 23:49:42 2017 -0400
+
+    Adding other files to github including data
+
+[33mcommit 39e39fe277095c94770f39a1bb3965f99441df02[m
+Author: Herbert Ludowieg <herbertl@buffalo.edu>
+Date:   Thu Mar 9 14:03:45 2017 -0500
+
+    Adding initial data from 03/09 and initialization of program to find slope for iii
+
+[33mcommit af92b51a3574abbf30c14915aad99affe987c4a9[m
+Author: Herbert Ludowieg <herbertl@buffalo.edu>
+Date:   Mon Mar 6 16:39:39 2017 -0500
+
+    Done!
+
+[33mcommit 35cc37ebcc92af88bb736f3d3cc2978c22d0a30e[m
+Author: Herbert Ludowieg <herbertl@buffalo.edu>
+Date:   Mon Mar 6 16:15:39 2017 -0500
+
+    Almost there
+
+[33mcommit 90cfda99fa5f68aa06ebc7ad0be7a07ab388aa9b[m
+Author: Herbert Ludowieg <herbertl@buffalo.edu>
+Date:   Mon Mar 6 03:36:11 2017 -0500
+
+    Added more stuff to theory section. Need to add about rotating fields.
+
+[33mcommit eb5204231eaeeacfa04903a3e351458495314ce3[m
+Author: Herbert Ludowieg <herbertl@buffalo.edu>
+Date:   Sun Mar 5 13:47:01 2017 -0500
+
+    changes made
+
+[33mcommit 4dc7d460dbc46a8fd0097a6a184b568bfb514dad[m
+Author: Herbert Ludowieg <herbertl@buffalo.edu>
+Date:   Sun Mar 5 12:57:41 2017 -0500
+
+    Adding branch to track changes to the report
+
+[33mcommit 52bab79e4ea6b313bc225f06d725adb24ba70740[m
+Author: Herbert Ludowieg <herbertl@buffalo.edu>
+Date:   Fri Mar 3 10:43:21 2017 -0500
+
+    Forgot about the allresults file
+
+[33mcommit 7c8918d4ea464fc7519508f36699f0004ada4011[m
+Author: Herbert Ludowieg <herbertl@buffalo.edu>
+Date:   Fri Mar 3 10:42:08 2017 -0500
+
+    starting the report
+
+[33mcommit bae36fdd2616274e7c9685a929a9e29ed05cdff1[m
+Merge: 08fba89 40c41c0
+Author: Herbert Ludowieg <herbertl@buffalo.edu>
+Date:   Fri Mar 3 06:22:48 2017 -0500
+
+    Merge branch 'pnmrwork'
+    
+    because i said so
+
+[33mcommit 08fba891d9835857da714a74005f1bc535ae483a[m
+Author: Herbert Ludowieg <herbertl@buffalo.edu>
+Date:   Fri Mar 3 06:21:55 2017 -0500
+
+    Adding molar data
+
+[33mcommit 9553ed970f493a58fe976511a1bc40ddd765283f[m
+Author: Herbert Ludowieg <herbertl@buffalo.edu>
+Date:   Fri Mar 3 06:19:32 2017 -0500
+
+    Adding a bunch of stuff
+
+[33mcommit 7047bc636755e86866571734c9dc7cf9cc2801c3[m
+Author: Herbert Ludowieg <herbertl@buffalo.edu>
+Date:   Thu Mar 2 17:56:18 2017 -0500
+
+    Revert "Created initial repository for PHY 408 files and now uploading programs for pnmr."
+    
+    This reverts commit eeed63f2719d4739d5f41d6ec5e602e48eaab81d.
+    
+    Don't merge yet
+
+[33mcommit 40c41c0d2d3ffa89e3f3475ce243b8448b329183[m
+Author: Herbert Ludowieg <herbertl@buffalo.edu>
+Date:   Thu Mar 2 17:47:38 2017 -0500
+
+    Adding the pictures, script, and data for the molar data plots. Fixed SL-relaxation-time-calc.py to adjust the initial data and flip the sign of the initial slope so that it looks like what is to be expected and can be included in the fit line.
+
+[33mcommit 03a661bed223ed9ab850543f0834093d47579f81[m
+Author: Herbert Ludowieg <herbertl@buffalo.edu>
+Date:   Thu Mar 2 10:29:29 2017 -0500
+
+    Uploading minor changes to scripts for data and pictorial results of mineral water, CuSO4 and Isoproponyl T1 & T2. Also, uploading the Molar concentration data to be used in the plot of 1/T1 and 1/T2.
+
+[33mcommit 2dd36f32b0a2f4d6e6ee623c1fbf98851bcbab8f[m
+Author: Herbert Ludowieg <herbertl@buffalo.edu>
+Date:   Wed Mar 1 11:06:28 2017 -0500
+
+    Modified files to be able to fit to the specified data correctly
+
+[33mcommit 528c5cfde51edf7639c59494befe961132b47539[m
+Author: Herbert Ludowieg <herbertl@buffalo.edu>
+Date:   Fri Feb 24 14:43:14 2017 -0500
+
+    Fixed the files. Can now calculate uncertainties from the curve_fit function. SS-relaxation-time-calc.py can now handle two or one file input with error message if not. dataextract-CP.py can now eliminate the first point for the CP and MG methods since the max constitues to the first 90 degree pulse.
+
+[33mcommit f005b1c138ef81ce1217cad6f8232d315ef33fd2[m
+Author: Herbert Ludowieg <herbertl@buffalo.edu>
+Date:   Thu Feb 23 13:07:41 2017 -0500
+
+    Made changes to the files adding comments for a brief description of the programs
+
+[33mcommit 8d5e7832541f482a6a22d7cd1b4114e21dfc68f8[m
+Author: Herbert Ludowieg <herbertl@buffalo.edu>
+Date:   Thu Feb 23 12:40:26 2017 -0500
+
+    Changed scripts location and added a few files to original list to calculate the different data
+
+[33mcommit eeed63f2719d4739d5f41d6ec5e602e48eaab81d[m
+Author: Herbert Ludowieg <herbertl@buffalo.edu>
+Date:   Wed Feb 22 23:52:12 2017 -0500
+
+    Created initial repository for PHY 408 files and now uploading programs for pnmr.
